@@ -13,6 +13,8 @@ public class BirdSO : ScriptableObject
    public AudioClip birdCall;
    public Sprite birdImage;
    public GameObject birdModel;
+   public bool Hostile;
+   public int ID;
 
 
 
