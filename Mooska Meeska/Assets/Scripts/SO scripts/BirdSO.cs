@@ -24,6 +24,6 @@ public class BirdSO : ScriptableObject
    public bool Hostile;
    
 
-
+ 
 
 }
