@@ -9,6 +9,11 @@ public class Movement : MonoBehaviour
     public CharacterController c;
     public float speed = 5f;
 
+    public float turnSmoothTime = 0.1f;
+    float turnSmoothVelocity;
+    public Transform cam;
+
+
 
     // Update is called once per frame
     void Update()
@@ -19,9 +24,12 @@ public class Movement : MonoBehaviour
 
         if(dir.magnitude >= 0.1f)
         {
-            float taregetAngle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, taregetAngle, 0f);
-            c.Move(dir * speed * Time.deltaTime);
+            float targetAngle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            c.Move(moveDir * speed * Time.deltaTime);
         }
     }
 }
