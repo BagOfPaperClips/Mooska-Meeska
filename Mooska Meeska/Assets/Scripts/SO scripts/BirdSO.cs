@@ -21,7 +21,9 @@ public class BirdSO : ScriptableObject
 
    [Header("Reference")]
    public GameObject birdModel;
+   public bool Hostile;
+   
 
-
+ 
 
 }
