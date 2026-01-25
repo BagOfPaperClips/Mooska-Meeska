@@ -12,11 +12,13 @@ public class BirdSO : ScriptableObject
 
    [Header("Bird Log")]
    public string birdName;
-   public string birdDescription;
+   [TextArea]public string birdDescription;
    public int birdSpeed;
 
    [Header ("Audio")]
    public AudioClip birdCall;
+
+   [Header("Image")]
    public Sprite birdImage;
 
    [Header("Reference")]
