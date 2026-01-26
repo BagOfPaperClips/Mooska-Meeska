@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579506d3d697a4736bceda7c75873414, type: 3}
   m_Name: BlackCrownedCraneSO
   m_EditorClassIdentifier: 
+  id: 1
   birdName: Black Crowned Crane
   birdDescription: National bird of
   birdSpeed: 0
   birdCall: {fileID: 0}
   birdImage: {fileID: 0}
+  LockedBirdName: ??????????
+  LockedBirdDescription: ..........................................
   birdModel: {fileID: 0}
   Hostile: 0
-  ID: 0
