@@ -12,13 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579506d3d697a4736bceda7c75873414, type: 3}
   m_Name: PhilippineEagleSO
   m_EditorClassIdentifier: 
-  id: 6
   birdName: Philippine Eagle
   birdDescription: Bird from the Philippines
   birdSpeed: 5
   birdCall: {fileID: 0}
   birdImage: {fileID: 0}
-  LockedbirdName: 
-  LockedBirdDescription: 
   birdModel: {fileID: 0}
-  Hostile: 0

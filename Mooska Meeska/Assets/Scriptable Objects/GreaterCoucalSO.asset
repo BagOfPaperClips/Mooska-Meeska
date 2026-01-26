@@ -10,15 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 579506d3d697a4736bceda7c75873414, type: 3}
-  m_Name: LoonSO
+  m_Name: GreaterCoucalSO
   m_EditorClassIdentifier: 
-  id: 5
   birdName: 
   birdDescription: 
   birdSpeed: 0
   birdCall: {fileID: 0}
   birdImage: {fileID: 0}
-  LockedbirdName: 
-  LockedBirdDescription: 
   birdModel: {fileID: 0}
-  Hostile: 0
