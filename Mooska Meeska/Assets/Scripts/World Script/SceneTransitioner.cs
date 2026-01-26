@@ -22,6 +22,11 @@ public class SceneTransitioner : MonoBehaviour
     {
         SceneManager.LoadScene("Credits");
     }
+
+    public void Death()
+    {
+        SceneManager.LoadScene("Death");
+    }
     public void Quit()
     {
         Application.Quit();
