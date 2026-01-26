@@ -21,7 +21,11 @@ public class BirdSO : ScriptableObject
    [Header("Image")]
    public Sprite birdImage;
 
-   [Header("Reference")]
+    [Header("Unlocked")]
+    public string LockedBirdName;
+   [TextArea]public string LockedBirdDescription;
+
+    [Header("Reference")]
    public GameObject birdModel;
    public bool Hostile;
    
