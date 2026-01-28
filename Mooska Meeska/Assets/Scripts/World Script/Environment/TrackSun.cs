@@ -16,6 +16,8 @@ public class TrackSun : MonoBehaviour
         {
             //PLAYER IN SHADOW
 
+            Debug.Log("IN SHADOW");
+
         }
 
         //PLAYER IN SUN
