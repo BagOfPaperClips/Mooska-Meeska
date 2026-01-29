@@ -10,15 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 579506d3d697a4736bceda7c75873414, type: 3}
-  m_Name: GreaterCoucalSO
+  m_Name: Emerald Dove
   m_EditorClassIdentifier: 
   id: 2
-  birdName: Greater Coucal
-  birdDescription: 
-  birdSpeed: 0
+  birdPrefab: {fileID: 0}
+  birdName: Emerald Dove
+  birdDescription: The Emerald Dove is the National Bird Of Tamil. It is not hostile
   birdCall: {fileID: 0}
   birdImage: {fileID: 0}
-  LockedBirdName: ?????????
-  LockedBirdDescription: .............................
+  LockedBirdName: ??????????
+  LockedBirdDescription: ..........................................
   birdModel: {fileID: 0}
   Hostile: 0
+  found: 0
+  birdSpeed: 0
+  diveTimer: 0

@@ -22,7 +22,15 @@ public class BirdBook : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null && instance != this)
+       
+       for(int i = 0; i< Birds.Length; i++)
+        {
+            Birds[i].found = false;
+        }
+       
+       
+       
+       if (instance != null && instance != this)
         {
             Destroy(gameObject);
             return;
@@ -180,9 +188,10 @@ public class BirdBook : MonoBehaviour
     {
         if (so == null)
         {
+            
             return;
+            
         }
-
         UnlockID(so.id);
     }
 

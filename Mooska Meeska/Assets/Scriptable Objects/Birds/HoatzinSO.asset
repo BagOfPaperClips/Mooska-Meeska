@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: HoatzinSO
   m_EditorClassIdentifier: 
   id: 3
+  birdPrefab: {fileID: 0}
   birdName: Hoatzin
-  birdDescription: 
-  birdSpeed: 0
+  birdDescription: The Hoatzin is the national bird of Guyana. It is not hostile
   birdCall: {fileID: 0}
   birdImage: {fileID: 0}
   LockedBirdName: ????????
   LockedBirdDescription: .....................................
   birdModel: {fileID: 0}
   Hostile: 0
+  found: 0
+  birdSpeed: 0
+  diveTimer: 0

@@ -48,6 +48,7 @@ public class Interactables : MonoBehaviour
     {
         if (BirdBook.instance != null)
         {
+             
             BirdBook.instance.UnlockBird(birdSO);
         }
 

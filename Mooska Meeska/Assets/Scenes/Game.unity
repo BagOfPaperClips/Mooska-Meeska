@@ -1431,7 +1431,7 @@ GameObject:
   - component: {fileID: 866271080}
   m_Layer: 0
   m_Name: 1
-  m_TagString: Untagged
+  m_TagString: Poster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2709,7 +2709,7 @@ GameObject:
   - component: {fileID: 1225563714}
   m_Layer: 0
   m_Name: 2
-  m_TagString: Untagged
+  m_TagString: Poster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2741,7 +2741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b376edbce90a3e499e448aa7897cc60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdSO: {fileID: 11400000, guid: 749b3fa4dae9f48b382268c6eff0311a, type: 2}
+  birdSO: {fileID: 11400000, guid: 34ccfa9b30dda457c991f91ff8e3ef05, type: 2}
   Distance: 0
 --- !u!65 &1225563715
 BoxCollider:
@@ -2876,7 +2876,7 @@ MonoBehaviour:
   - {fileID: 1004238115}
   Birds:
   - {fileID: 11400000, guid: ea1372efba00e402a83786119a093745, type: 2}
-  - {fileID: 11400000, guid: 749b3fa4dae9f48b382268c6eff0311a, type: 2}
+  - {fileID: 11400000, guid: 34ccfa9b30dda457c991f91ff8e3ef05, type: 2}
   - {fileID: 11400000, guid: cb5abe837d4c5487a9595c71e58c71a0, type: 2}
   - {fileID: 11400000, guid: d145efc0190d4439a8a503c617f05cf1, type: 2}
   - {fileID: 11400000, guid: 289e0f9018cb44f728621e87dcdd5639, type: 2}
@@ -3213,7 +3213,7 @@ GameObject:
   - component: {fileID: 1380728434}
   m_Layer: 0
   m_Name: 3
-  m_TagString: Untagged
+  m_TagString: Poster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

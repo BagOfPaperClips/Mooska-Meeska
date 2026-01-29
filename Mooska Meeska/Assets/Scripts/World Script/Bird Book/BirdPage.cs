@@ -36,6 +36,7 @@ public class BirdPage : MonoBehaviour
 
         if (birdImage != null)
         {
+            
             birdImage.sprite = LockedBirdImage;
         }
     }
@@ -46,6 +47,7 @@ public class BirdPage : MonoBehaviour
         {
             return;
         }
+
 
         IsUnlocked = true;
 

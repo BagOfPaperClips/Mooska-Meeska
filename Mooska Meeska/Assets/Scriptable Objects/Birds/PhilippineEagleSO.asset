@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: PhilippineEagleSO
   m_EditorClassIdentifier: 
   id: 6
+  birdPrefab: {fileID: 0}
   birdName: Philippine Eagle
-  birdDescription: Bird from the Philippines
-  birdSpeed: 5
+  birdDescription: the Philippine Eagle is the National Bird of the Philippines.
+    It is a hostile bird
   birdCall: {fileID: 0}
   birdImage: {fileID: 0}
   LockedBirdName: 
   LockedBirdDescription: 
   birdModel: {fileID: 0}
-  Hostile: 0
+  Hostile: 1
+  found: 0
+  birdSpeed: 5
+  diveTimer: 0

@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: BlackCrownedCraneSO
   m_EditorClassIdentifier: 
   id: 1
+  birdPrefab: {fileID: 0}
   birdName: Black Crowned Crane
-  birdDescription: National bird of
-  birdSpeed: 0
+  birdDescription: The Black Crowned Crane is the National Bird of Nigeria. It is
+    hostile
   birdCall: {fileID: 0}
   birdImage: {fileID: 0}
   LockedBirdName: ??????????
   LockedBirdDescription: ..........................................
   birdModel: {fileID: 0}
-  Hostile: 0
+  Hostile: 1
+  found: 0
+  birdSpeed: 0
+  diveTimer: 0
