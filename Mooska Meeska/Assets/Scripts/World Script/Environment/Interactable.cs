@@ -27,9 +27,19 @@ public class Interactables : MonoBehaviour
 
         if (Distance <= 3.0f)
         {
-            if (Input.GetKeyDown(KeyCode.B))
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                PageCollected();
+
+                switch (gameObject.tag)
+                {
+                    case "Poster":
+                    PageCollected();
+                    break;
+
+                }
+                
+                
+                
             }
         }
     }

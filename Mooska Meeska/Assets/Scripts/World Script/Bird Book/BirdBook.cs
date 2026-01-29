@@ -203,7 +203,7 @@ public class BirdBook : MonoBehaviour
         if (!so.found)
         {
             so.found = true;
-            birdSpawner.RefreshBirds();
+            //birdSpawner.RefreshBirds();
         }
         for (int i = 0; i < BookPages.Length; i++)
         {
