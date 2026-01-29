@@ -35,6 +35,12 @@ public class Interactables : MonoBehaviour
                     case "Poster":
                     PageCollected();
                     break;
+                    case "FakeChest":
+                    NoKey();
+                    break;
+                    case "TrueChest":
+                    HasKey();
+                    break;
 
                 }
                 
@@ -52,6 +58,21 @@ public class Interactables : MonoBehaviour
             BirdBook.instance.UnlockBird(birdSO);
         }
 
+        Destroy(gameObject);
+    }
+
+
+    void NoKey()
+    {   
+        
+        Debug.Log("Dang, it's empty");
+        Destroy(gameObject);
+    }
+
+    void HasKey()
+    {
+
+        Debug.Log("You found a key");
         Destroy(gameObject);
     }
 }
