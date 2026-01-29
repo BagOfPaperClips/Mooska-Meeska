@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour
     float turnSmoothVelocity;
     public Transform cam;
 
+    public Rigidbody player;
+
 
 
     // Update is called once per frame
