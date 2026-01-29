@@ -8,6 +8,7 @@ public class TrackSun : MonoBehaviour
     public Transform sun;
     public Transform player;
     public LayerMask wall;
+    public bool hidden;
 
     // Start is called before the first frame update
     void Update()
@@ -17,7 +18,12 @@ public class TrackSun : MonoBehaviour
             //PLAYER IN SHADOW
 
             Debug.Log("IN SHADOW");
+            hidden = true;
 
+        }
+        
+        else {
+            hidden = false;
         }
 
         //PLAYER IN SUN
