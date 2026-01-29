@@ -17,6 +17,9 @@ public class BirdBook : MonoBehaviour
 
     private Dictionary<int, BirdSO> birdId;
 
+    [Header("Bird Spawner")]
+    private BirdSpawner birdSpawner;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -196,7 +199,12 @@ public class BirdBook : MonoBehaviour
         {
             return;
         }
-
+       //if (birdfound), updatemodels()
+        if (!so.found)
+        {
+            so.found = true;
+            birdSpawner.RefreshBirds();
+        }
         for (int i = 0; i < BookPages.Length; i++)
         {
             BirdPage page = BookPages[i];

@@ -10,10 +10,13 @@ public class BirdSO : ScriptableObject
    [Header("Identification")]
    public int id;
 
+   [Header("Model Prefab")]
+   public GameObject birdPrefab;
+
    [Header("Bird Log")]
    public string birdName;
    [TextArea]public string birdDescription;
-   public int birdSpeed;
+
 
    [Header ("Audio")]
    public AudioClip birdCall;
@@ -29,9 +32,10 @@ public class BirdSO : ScriptableObject
    public GameObject birdModel;
    public bool Hostile;
 
-   [Header("Found")]
+   [Header("Data")]
    public bool found;
-
+   public int birdSpeed;
+   public int diveTimer;
  
 
 }
