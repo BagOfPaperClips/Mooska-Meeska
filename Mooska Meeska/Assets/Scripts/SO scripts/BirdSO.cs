@@ -12,6 +12,7 @@ public class BirdSO : ScriptableObject
 
    [Header("Model Prefab")]
    public GameObject birdPrefab;
+   public GameObject splinePrefab;
 
    [Header("Bird Log")]
    public string birdName;
@@ -30,12 +31,14 @@ public class BirdSO : ScriptableObject
 
    [Header("Reference")]
    public GameObject birdModel;
-   public bool Hostile;
+   public bool hostile;
 
    [Header("Data")]
    public bool found;
    public int birdSpeed;
    public int diveTimer;
+
+
  
 
 }
