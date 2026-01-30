@@ -7,6 +7,7 @@ public class Interactables : MonoBehaviour
     [Header("References")]
     public BirdSO birdSO;
     private Transform player;
+    public GameObject alert;
 
     [Header("DEBUGGING")]
     public float Distance;
@@ -21,34 +22,48 @@ public class Interactables : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+
+
+    private bool canInteract;
+
+void OnCollisionEnter(Collision collision)
+{
+    if (collision.gameObject.CompareTag("Player"))
     {
-        Distance = Vector3.Distance(transform.position, player.position);
+        canInteract = true;
+        alert.SetActive(true);
+    }
+}
 
-        if (Distance <= 3.0f)
+void OnCollisionExit(Collision collision)
+{
+    if (collision.gameObject.CompareTag("Player"))
+    {
+        canInteract = false;
+        alert.SetActive(false);
+    }
+}
+
+void Update()
+{
+    if (!canInteract) return;
+
+    if (Input.GetKeyDown(KeyCode.E))
+    {
+        switch (gameObject.tag)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-
-                switch (gameObject.tag)
-                {
-                    case "Poster":
-                    PageCollected();
-                    break;
-                    case "FakeChest":
-                    NoKey();
-                    break;
-                    case "TrueChest":
-                    HasKey();
-                    break;
-
-                }
-                
-                
-                
-            }
+            case "Poster":
+                PageCollected();
+                break;
+            case "FakeChest":
+                NoKey();
+                break;
+            case "TrueChest":
+                HasKey();
+                break;
         }
     }
+}
 
     void PageCollected()
     {
