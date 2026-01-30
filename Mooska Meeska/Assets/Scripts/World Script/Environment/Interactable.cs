@@ -26,25 +26,26 @@ public class Interactables : MonoBehaviour
 
     private bool canInteract;
 
-void OnCollisionEnter(Collision collision)
-{
-    if (collision.gameObject.CompareTag("Player"))
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
     {
         canInteract = true;
         alert.SetActive(true);
     }
-}
+    }
 
-void OnCollisionExit(Collision collision)
-{
-    if (collision.gameObject.CompareTag("Player"))
+
+    void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
     {
         canInteract = false;
         alert.SetActive(false);
     }
-}
+    }
 
-void Update()
+    void Update()
 {
     if (!canInteract) return;
 
