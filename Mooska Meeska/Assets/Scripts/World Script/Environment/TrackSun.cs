@@ -8,7 +8,8 @@ public class TrackSun : MonoBehaviour
     public Transform sun;
     public Transform player;
     public LayerMask wall;
-    public LayerMask bird;
+        // public Transform bird;
+            public LayerMask bird;
 
     public bool hidden;
 

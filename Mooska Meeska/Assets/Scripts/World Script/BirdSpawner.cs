@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Splines;
-
 
 public class BirdSpawner : MonoBehaviour
 {
 
+public GameObject defaultBirdPrefab; 
+public Transform bird;
+public TrackSun mouse;
 public List<BirdSO> birds;
 
-   
+//Instantiate bird model if firstBird is not "found"
     // Start is called before the first frame update
     void Start()
     {
-        RefreshBirds();
+        
     }
 
     // Update is called once per frame
@@ -24,18 +25,20 @@ public List<BirdSO> birds;
        //else if (timer = 0) kill mouse 
     }
 
-    public void InstantiateSpline(BirdSO bird) {
-        Vector3 position = new Vector3(0, 0, 0);
-        // Instantiate(bird.splinePrefab, position, Quaternion.identity);
-        Instantiate(bird.birdPrefab, position, Quaternion.identity);
+    // public void InstantiateBird(BirdSO birdName) {    
+    //     //random instantiation
+    //     //needed.?
+    //      what about random instantiation of all birds at the start?
+    // }
 
-        SplineAnimate anim = bird.birdPrefab.GetComponent<SplineAnimate>();
-        anim.StartOffset = 10;
+    public void InstantiateBird(BirdSO birdName, int x, int y) {    
+        //instantiate 
+
     }
 
     public void RefreshBirds() {
         for (int i = 0; i < birds.Count; i++) {
-            InstantiateSpline(birds[i]);
+            if (birds[i].found) InstantiateBird(birds[i], 0, 0);
         }
     }
 }
