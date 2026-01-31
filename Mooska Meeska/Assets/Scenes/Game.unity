@@ -1722,7 +1722,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 45883541}
-  - {fileID: 988520290}
+  - {fileID: 2081468295}
   m_Father: {fileID: 271707792}
   m_LocalEulerAnglesHint: {x: 0, y: -74.769, z: 0}
 --- !u!114 &866271080
@@ -1738,7 +1738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdSO: {fileID: 11400000, guid: ea1372efba00e402a83786119a093745, type: 2}
-  alert: {fileID: 470252570}
+  alert: {fileID: 2081468294}
   Distance: 0
 --- !u!65 &866271081
 BoxCollider:
@@ -2078,7 +2078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &988520290
 Transform:
   m_ObjectHideFlags: 0
@@ -2088,11 +2088,11 @@ Transform:
   m_GameObject: {fileID: 988520289}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.60716075, z: -0, w: 0.7945791}
-  m_LocalPosition: {x: 13.150005, y: 1.5608735, z: 0.16997337}
+  m_LocalPosition: {x: 0.05000142, y: 1.5608735, z: -0.030001614}
   m_LocalScale: {x: 2.7588997, y: 2.7589, z: 2.7588997}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 866271079}
+  m_Father: {fileID: 1380728433}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &988520291
 MonoBehaviour:
@@ -3249,7 +3249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdSO: {fileID: 11400000, guid: 34ccfa9b30dda457c991f91ff8e3ef05, type: 2}
-  alert: {fileID: 470252570}
+  alert: {fileID: 1960198345}
   Distance: 0
 --- !u!65 &1225563715
 BoxCollider:
@@ -3768,7 +3768,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 120258775}
-  - {fileID: 2081468295}
+  - {fileID: 988520290}
   m_Father: {fileID: 271707792}
   m_LocalEulerAnglesHint: {x: 0, y: -74.769, z: 0}
 --- !u!114 &1380728434
@@ -3784,7 +3784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdSO: {fileID: 11400000, guid: cb5abe837d4c5487a9595c71e58c71a0, type: 2}
-  alert: {fileID: 470252570}
+  alert: {fileID: 988520289}
   Distance: 0
 --- !u!65 &1380728435
 BoxCollider:
@@ -4116,7 +4116,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1480235554
 Transform:
   m_ObjectHideFlags: 0
@@ -4819,7 +4819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdSO: {fileID: 0}
-  alert: {fileID: 470252570}
+  alert: {fileID: 1480235553}
   Distance: 0
 --- !u!54 &1666971552
 Rigidbody:
@@ -4970,7 +4970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdSO: {fileID: 0}
-  alert: {fileID: 470252570}
+  alert: {fileID: 1910600405}
   Distance: 0
 --- !u!54 &1670312797
 Rigidbody:
@@ -5666,7 +5666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1910600406
 Transform:
   m_ObjectHideFlags: 0
@@ -5897,7 +5897,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1960198346
 Transform:
   m_ObjectHideFlags: 0
@@ -6400,7 +6400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2081468295
 Transform:
   m_ObjectHideFlags: 0
@@ -6410,11 +6410,11 @@ Transform:
   m_GameObject: {fileID: 2081468294}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.60716075, z: -0, w: 0.7945791}
-  m_LocalPosition: {x: -12.95, y: 1.5608735, z: -0.55}
+  m_LocalPosition: {x: 0.15000431, y: 1.5608735, z: -0.35002315}
   m_LocalScale: {x: 2.7588997, y: 2.7589, z: 2.7588997}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1380728433}
+  m_Father: {fileID: 866271079}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2081468296
 MonoBehaviour:
