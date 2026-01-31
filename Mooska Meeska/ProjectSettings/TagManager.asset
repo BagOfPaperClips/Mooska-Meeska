@@ -45,3 +45,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: bleh
+    uniqueID: 1227767377
+    locked: 0
