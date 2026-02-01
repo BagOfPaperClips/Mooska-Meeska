@@ -8,7 +8,9 @@ public class TrackSun : MonoBehaviour
     public Transform sun;
     public Transform player;
     public LayerMask wall;
-    public LayerMask bird;
+        // public Transform bird;
+            public LayerMask bird;
+
     public bool hidden;
 
     // Start is called before the first frame update
@@ -22,17 +24,13 @@ public class TrackSun : MonoBehaviour
             hidden = true;
 
         }
-
-        RaycastHit hit;
-        if(Physics.Linecast(sun.position, player.position, out hit, bird))
+        if(Physics.Linecast(sun.position, player.position, bird))
         {
+            //PLAYER IN SHADOW
 
             Debug.Log("CAUGHT");
             //hostile == true;
-            //find the bird that caught it, go to individual instance (does that work when its not an instance.? and make dive methoid{})
-            BirdInstance bird = hit.collider.GetComponentInParent<BirdInstance>();
-            Debug.Log("Who's that pokemon? ITS " + bird.data.birdName);
-            bird.diveStart();
+
         }
         
         else {

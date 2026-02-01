@@ -10,8 +10,8 @@ public class BirdSO : ScriptableObject
    [Header("Identification")]
    public int id;
 
-   // [Header("Model Prefab")]
-   // public GameObject birdPrefab;
+   [Header("Model Prefab")]
+   public GameObject birdPrefab;
 
    [Header("Bird Log")]
    public string birdName;
