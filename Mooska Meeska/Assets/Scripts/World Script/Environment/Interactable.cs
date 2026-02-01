@@ -11,6 +11,10 @@ public class Interactables : MonoBehaviour
 
     [Header("DEBUGGING")]
     public float Distance;
+
+    [Header("Inventory")]
+    public InventoryManager inventoryManager;
+
     private void Awake()
     {
         var p = GameObject.FindWithTag("Player");
