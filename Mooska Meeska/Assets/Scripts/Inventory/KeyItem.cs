@@ -6,15 +6,12 @@ using UnityEngine.UI;
 using UnityEditor.UI;
 public class KeyItem : MonoBehaviour
 {
-   [SerializeField] KeySO key;
+   [HideInInspector] KeySO key;
    
    [SerializeField] Image image;
 
 
-    private void Start()
-    {
-        InitializeKey(key);
-    }
+    
 
     public void InitializeKey(KeySO newKey)
     {

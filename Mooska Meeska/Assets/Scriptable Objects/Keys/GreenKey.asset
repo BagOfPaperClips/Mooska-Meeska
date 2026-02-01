@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: GreenKey
   m_EditorClassIdentifier: 
   color: Green
-  icon: {fileID: 0}
-  key: {fileID: 0}
+  icon: {fileID: 21300000, guid: de382ea994eb247498b9bcae61eb8850, type: 3}

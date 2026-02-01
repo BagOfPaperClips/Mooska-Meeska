@@ -14,6 +14,8 @@ public class Interactables : MonoBehaviour
 
     [Header("Inventory")]
     public InventoryManager inventoryManager;
+    public KeySO key;
+    
 
     private void Awake()
     {
@@ -93,6 +95,9 @@ public class Interactables : MonoBehaviour
     {
 
         Debug.Log("You found a key");
+        inventoryManager.AddKey(key);
         Destroy(gameObject);
+       
+
     }
 }
