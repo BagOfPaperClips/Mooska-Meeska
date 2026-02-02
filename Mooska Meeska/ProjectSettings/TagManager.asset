@@ -8,6 +8,8 @@ TagManager:
   - Poster
   - TrueChest
   - FakeChest
+  - Cage
+  - Meeska
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Interactables : MonoBehaviour
 {
@@ -68,6 +70,12 @@ public class Interactables : MonoBehaviour
             case "TrueChest":
                 HasKey();
                 break;
+            case "Cage":
+                OpenCage();
+            break;
+            case "Meeska":
+                FreeMeeska();
+            break;
         }
     }
 }
@@ -97,7 +105,18 @@ public class Interactables : MonoBehaviour
         Debug.Log("You found a key");
         inventoryManager.AddKey(key);
         Destroy(gameObject);
-       
+    }
 
+    void OpenCage()
+    {
+        if(inventoryManager.redKey != 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void FreeMeeska()
+    {
+        SceneManager.LoadScene("Win");
     }
 }
