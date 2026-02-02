@@ -208,11 +208,11 @@ public class BirdBook : MonoBehaviour
         {
             return;
         }
-       //if (birdfound), updatemodels()
+
         if (!so.found)
         {
             so.found = true;
-            //birdSpawner.RefreshBirds();
+            refreshBirdInstances(so);
         }
         for (int i = 0; i < BookPages.Length; i++)
         {
@@ -228,4 +228,18 @@ public class BirdBook : MonoBehaviour
             }
         }
     }
+
+        void refreshBirdInstances(BirdSO so)
+    {
+        BirdInstance[] birds = FindObjectsOfType<BirdInstance>();
+
+        foreach (BirdInstance bird in birds)
+        {
+            if (bird.data == so)
+            {
+                bird.updateModel();
+            }
+        }
+    }
+
 }
