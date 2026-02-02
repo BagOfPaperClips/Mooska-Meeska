@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using JetBrains.Annotations;
 using UnityEngine.UI;
-using UnityEditor.UI;
 public class KeyItem : MonoBehaviour
 {
    [HideInInspector] KeySO key;
