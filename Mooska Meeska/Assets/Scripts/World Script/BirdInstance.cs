@@ -1,22 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class BirdInstance : MonoBehaviour
 {
     public BirdSO data;
     float timer = 0;
-    // Start is called before the first frame update
-    void Start()
+
+    SplineAnimate splineAnim;
+    SplineContainer spline;
+
+    void Awake()
     {
+
+        splineAnim = GetComponent<SplineAnimate>();
+        spline = GetComponent<SplineContainer>();
         
     }
 
-    // Update is called once per frame
-    void Update()
+    enum BirdState
     {
-        
+
+    OnSpline,
+    Diving,
+    Returning
+
     }
+
+BirdState state = BirdState.OnSpline;
 
     public void diveStart() {
         startTimer();
