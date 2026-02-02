@@ -17,10 +17,13 @@ public class Instructions : MonoBehaviour
     public TextMeshProUGUI bodyText;
     public TextMeshProUGUI nextBtn;
     public GameObject instructionPanel;
+        public GameObject journalText;
+
 
 
     // Start is called before the first frame update
     void Start() {
+        journalText.SetActive(false);
                 if (PauseManager.instance != null)
         {
             PauseManager.instance.SetPaused(true);
@@ -37,12 +40,13 @@ public class Instructions : MonoBehaviour
         if (pageindex == pageText.Length - 1) {
             instructionPanel.SetActive(false);
             PauseManager.instance.SetPaused(false);
-
+            journalText.SetActive(true);
         }
         else {
             pageindex++;
             showPage();
             if (pageindex == pageText.Length - 1) {
+                // nextBtn.Witdh = 140;
                 nextBtn.text = "Start Game";
             }
          }
