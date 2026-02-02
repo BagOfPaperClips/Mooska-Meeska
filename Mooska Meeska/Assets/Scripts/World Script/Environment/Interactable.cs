@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,10 @@ public class Interactables : MonoBehaviour
     [Header("Inventory")]
     public InventoryManager inventoryManager;
     public KeySO key;
+
+    [Header("Display")]
+    public TextMeshProUGUI text;
+    public bool hold = false;
     
 
     private void Awake()
@@ -88,7 +93,10 @@ public class Interactables : MonoBehaviour
             BirdBook.instance.UnlockBird(birdSO);
         }
 
-        Destroy(gameObject);
+        text.text = "You have collected a page\nfor the Bird Book";
+        text.gameObject.SetActive(true);
+        StartCoroutine(WaitForSeconds());
+
     }
 
 
@@ -96,27 +104,59 @@ public class Interactables : MonoBehaviour
     {   
         
         Debug.Log("Dang, it's empty");
-        Destroy(gameObject);
+        text.text = "Dang, it's empty";
+        text.gameObject.SetActive(true);
+        StartCoroutine(WaitForSeconds());
+
+        
     }
 
     void HasKey()
     {
 
         Debug.Log("You found a key");
+        text.text = "You Found a Key";
+        text.gameObject.SetActive(true);
+        StartCoroutine(WaitForSeconds());
         inventoryManager.AddKey(key);
-        Destroy(gameObject);
     }
 
     void OpenCage()
     {
         if(inventoryManager.redKey != 0)
         {
-            Destroy(gameObject);
+            text.text = "You Open the Cage";
+            text.gameObject.SetActive(true);
+            StartCoroutine(WaitForSeconds());
+        }
+        else
+        {
+            text.text = "The Cage is Locked";
+            text.gameObject.SetActive(true);
+            hold = true;
+            StartCoroutine(WaitForSeconds());
         }
     }
 
     void FreeMeeska()
     {
         SceneManager.LoadScene("Win");
+    }
+
+
+    IEnumerator WaitForSeconds()
+    {
+        yield return new WaitForSeconds(3);
+        text.gameObject.SetActive(false);
+        
+        if(hold == false)
+        {
+            Destroy(gameObject);
+            
+        }
+
+        hold = false;
+        
+        
     }
 }
