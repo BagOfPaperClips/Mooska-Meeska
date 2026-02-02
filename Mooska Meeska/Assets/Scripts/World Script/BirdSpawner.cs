@@ -5,9 +5,9 @@ using UnityEngine;
 public class BirdSpawner : MonoBehaviour
 {
 
-public GameObject defaultBirdPrefab; 
-public Transform bird;
-public TrackSun mouse;
+// public GameObject defaultBirdPrefab; 
+// public Transform bird;
+// public TrackSun mouse;
 public List<GameObject> birds;
 
 float timer = 0f;
@@ -38,24 +38,18 @@ int lastInactive = 0;
     }
 
     public int ToggleBird(int active) { 
-        if (active == 0) {
-            Debug.Log("currently no inactive birds");
-        }
-        else {
-            Debug.Log("Current inactive bird: " + active);
-        }
-            Debug.Log("Num of birds" + birds.Count);
 
         if (active == 0) {
         active = Random.Range(1, birds.Count + 1);
         }
+
         birds[active - 1].SetActive(true);
         int inactive = Random.Range(1, birds.Count + 1);
+
         while (inactive  == active) {
             inactive = Random.Range(1, birds.Count + 1);
         }
-                Debug.Log("New inactive bird = : " + inactive);
-
+        
         birds[inactive -1].SetActive(false);
         return inactive;
 
