@@ -20,16 +20,24 @@ public class Instructions : MonoBehaviour
 
 
     // Start is called before the first frame update
-
+    void Start() {
+                if (PauseManager.instance != null)
+        {
+            PauseManager.instance.SetPaused(true);
+        }
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return)) {
             nextPage();
         }
+
     }
     public void nextPage() {
         if (pageindex == pageText.Length - 1) {
             instructionPanel.SetActive(false);
+            PauseManager.instance.SetPaused(false);
+
         }
         else {
             pageindex++;
