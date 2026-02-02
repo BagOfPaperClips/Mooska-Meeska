@@ -10,6 +10,7 @@ TagManager:
   - FakeChest
   - Cage
   - Meeska
+  - MouseTrap
   layers:
   - Default
   - TransparentFX
