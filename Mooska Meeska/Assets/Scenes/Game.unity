@@ -9118,6 +9118,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059626606}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1062569961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1062569962}
+  m_Layer: 0
+  m_Name: MouseTrapIcons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1062569962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062569961}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1673286670}
+  m_Father: {fileID: 1904234578}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1066643438
 GameObject:
   m_ObjectHideFlags: 0
@@ -12491,6 +12523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   traps:
   - {fileID: 6175361124820781581}
+  activatedTraps: []
 --- !u!1 &1480235553
 GameObject:
   m_ObjectHideFlags: 0
@@ -13857,7 +13890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1673286670
 Transform:
   m_ObjectHideFlags: 0
@@ -13866,12 +13899,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1673286669}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0.78, z: 0}
-  m_LocalScale: {x: 2.1137, y: 2.1137, z: 2.1137}
+  m_LocalRotation: {x: -0, y: -0.33077705, z: -0, w: 0.94370896}
+  m_LocalPosition: {x: -44.6952, y: 1.0720279, z: 24.086802}
+  m_LocalScale: {x: 5.289746, y: 5.2897453, z: 5.289746}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2375309744848754027}
+  m_Father: {fileID: 1062569962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1673286671
 MonoBehaviour:
@@ -14393,7 +14426,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5, y: 1, z: 2.5}
+  m_Size: {x: 1, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1699747793
 GameObject:
@@ -15601,6 +15634,7 @@ Transform:
   - {fileID: 1848893450}
   - {fileID: 536413290}
   - {fileID: 5639405849519705761}
+  - {fileID: 1062569962}
   - {fileID: 1479939856}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18557,13 +18591,14 @@ GameObject:
   - component: {fileID: 5771747360871157574}
   - component: {fileID: 6175361124820781580}
   - component: {fileID: 6175361124820781581}
+  - component: {fileID: 6175361124820781582}
   m_Layer: 0
   m_Name: MouseTrap1
-  m_TagString: Untagged
+  m_TagString: MouseTrap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &514528229939618928
 Transform:
   m_ObjectHideFlags: 0
@@ -19083,7 +19118,6 @@ Transform:
   m_LocalScale: {x: 2.5026, y: 2.5026, z: 2.5026}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1673286670}
   - {fileID: 1688655488}
   m_Father: {fileID: 1479939856}
   m_LocalEulerAnglesHint: {x: 0, y: -38.632, z: 0}
@@ -20185,6 +20219,27 @@ MonoBehaviour:
   key: {fileID: 0}
   text: {fileID: 0}
   hold: 0
+--- !u!65 &6175361124820781582
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376907259711016627}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5, y: 1.5, z: 2.5}
+  m_Center: {x: 0, y: 0.0876315, z: 0}
 --- !u!23 &6187763433687273633
 MeshRenderer:
   m_ObjectHideFlags: 0
