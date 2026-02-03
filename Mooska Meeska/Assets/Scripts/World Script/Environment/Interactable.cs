@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,6 +22,9 @@ public class Interactables : MonoBehaviour
     [Header("Display")]
     public TextMeshProUGUI text;
     public bool hold = false;
+
+    [Header("Traps")]
+    public GameObject[] traps;
     
 
     private void Awake()
@@ -31,6 +35,8 @@ public class Interactables : MonoBehaviour
         {
             player = p.transform;
         }
+
+
     }
 
     // Update is called once per frame
@@ -42,8 +48,17 @@ public class Interactables : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
     {
-        canInteract = true;
-        alert.SetActive(true);
+        
+            if(this.gameObject.tag != "MouseTrap")
+            {
+                canInteract = true;
+            alert.SetActive(true);
+            }
+            else
+            {
+                SceneManager.LoadScene("Death");
+            }
+        
     }
     }
 
@@ -156,6 +171,9 @@ public class Interactables : MonoBehaviour
 
         hold = false;
         
-        
     }
+
+
+    
+    
 }
