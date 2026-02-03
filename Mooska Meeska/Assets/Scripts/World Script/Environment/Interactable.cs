@@ -23,8 +23,6 @@ public class Interactables : MonoBehaviour
     public TextMeshProUGUI text;
     public bool hold = false;
 
-    [Header("Traps")]
-    public GameObject[] traps;
     
 
     private void Awake()

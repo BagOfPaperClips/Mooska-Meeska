@@ -25,11 +25,13 @@ public class TrapSystem : MonoBehaviour
 
             for(int i = 0; i < traps.Length; i++)
             {
+                
                 traps[i].gameObject.SetActive(false);
+                traps[i].alert.gameObject.SetActive(false);
 
-                if(Random.Range(0,3) == 0)
+                if(Random.Range(0,2) == 0)
                 {
-                    traps[i].alert.SetActive(true);
+                    traps[i].alert.gameObject.SetActive(true);
                     yield return new WaitForSeconds(2);
                     traps[i].gameObject.SetActive(true);
                     
