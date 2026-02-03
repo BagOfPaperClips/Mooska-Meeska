@@ -20,7 +20,7 @@ public class TrapSystem : MonoBehaviour
         
         while (true)
         {
-            yield return new WaitForSeconds(10);
+            
             
             activatedTraps.Clear();
 
@@ -53,6 +53,8 @@ public class TrapSystem : MonoBehaviour
                 activatedTraps[i].gameObject.SetActive(true);
             }
 
+            
+            yield return new WaitForSeconds(10);
         }
         
         
