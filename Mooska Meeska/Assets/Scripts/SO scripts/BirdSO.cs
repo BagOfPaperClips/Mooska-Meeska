@@ -34,7 +34,7 @@ public class BirdSO : ScriptableObject
 
    [Header("Data")]
    public bool found;
-   public int birdSpeed;
+   public string birdSpeed;
    public int diveTimer;
  
 
