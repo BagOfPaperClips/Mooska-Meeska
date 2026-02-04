@@ -36,7 +36,7 @@ public class TrackSun : MonoBehaviour
 
     
         RaycastHit hit;
-        if(Physics.Linecast(sun.position, player.position, out hit, bird))
+        if(Physics.Linecast(sun.position, player.position, out hit, bird) && !hidden)
         {
 
             Debug.Log("CAUGHT");
