@@ -1170,7 +1170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174.45921, y: -316.8269}
+  m_AnchoredPosition: {x: -174.45921, y: -187.42693}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &81637437
@@ -3918,6 +3918,7 @@ MonoBehaviour:
   nextBtn: {fileID: 555977606}
   instructionPanel: {fileID: 2051408208}
   journalText: {fileID: 1210129724}
+  count: 0
 --- !u!4 &291711774
 Transform:
   m_ObjectHideFlags: 0
@@ -4083,7 +4084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdBookUI: {fileID: 1251267654}
-  WaitTime: 0.001
+  WaitTime: 0.5
 --- !u!1 &308905432
 GameObject:
   m_ObjectHideFlags: 0
@@ -9671,7 +9672,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -261.2, y: -320.4}
+  m_AnchoredPosition: {x: -261.2, y: -191}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &893897507
@@ -22393,6 +22394,7 @@ MonoBehaviour:
   nextBtn: {fileID: 0}
   instructionPanel: {fileID: 0}
   journalText: {fileID: 0}
+  count: 0
 --- !u!1 &2052302862
 GameObject:
   m_ObjectHideFlags: 0

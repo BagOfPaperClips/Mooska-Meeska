@@ -7,7 +7,8 @@ using TMPro;
 public class BirdInstance : MonoBehaviour
 {
     public BirdSO data;
-    float timer = 0;
+    private float timerSpeed = 1f;
+
 
     public GameObject defaultModel;
     public GameObject foundModel;
@@ -16,8 +17,9 @@ public class BirdInstance : MonoBehaviour
     public TextMeshProUGUI alertText;
     Coroutine timerCoroutine;
 
+    // private float remainingTime;
     public bool hostile = false;
-BirdState state = BirdState.OnSpline;
+    BirdState state = BirdState.OnSpline;
 
     void Start()
     {
@@ -48,10 +50,9 @@ BirdState state = BirdState.OnSpline;
 
     void Update() 
     {
-        if (hostile && TrackSun.instance != null && TrackSun.instance.hidden)
+        if (state == BirdState.Diving && TrackSun.instance != null && TrackSun.instance.hidden)
         {
             CancelDive();
-            alertText.text = "SAFE";
 
         }
 
@@ -60,7 +61,7 @@ BirdState state = BirdState.OnSpline;
 
     public void diveStart() 
     {
-        if (state != BirdState.OnSpline) return; // 
+        if (state == BirdState.Diving) return; // 
 
             state = BirdState.Diving;
             hostile = true;
@@ -79,21 +80,21 @@ BirdState state = BirdState.OnSpline;
     {
         float current = timer;
         
-        while (current > 0) {
+        while (current > 1) {
         
-            timerText.text = Mathf.CeilToInt(current).ToString();
-            current -= Time.deltaTime;  
-            yield return null;
+            timerText.text = current.ToString("0");
+            yield return new WaitForSeconds(timerSpeed);
+            current -= timerSpeed;  
+
 
         }
-                alertText.text = "DEAD";
         timerCoroutine = null; // mark finished
-        diveEnd();     
+        diveEnd();
     }
 
     public void diveEnd()
     {
-           if (state != BirdState.Diving) return;
+           if (state == BirdState.OnSpline) return;
 
     hostile = false;
     state = BirdState.OnSpline;
@@ -103,19 +104,8 @@ BirdState state = BirdState.OnSpline;
   }
 
 
-    public void endTimer()
-    {
-        if (timerCoroutine != null)
-        {
-            StopCoroutine(timerCoroutine);
-            timerCoroutine = null;
-        }
-    }
-
     void CancelDive()
     {
-        // endTimer(); // stop countdown early
-        // diveEnd();  // cleanup + return
 
         if (state != BirdState.Diving) return;
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TrackSun : MonoBehaviour
 {
@@ -43,9 +44,14 @@ public class TrackSun : MonoBehaviour
             //find the bird that caught it, go to individual instance (does that work when its not an instance.? and make dive methoid{})
             BirdInstance bird = hit.collider.GetComponentInParent<BirdInstance>();
             Debug.Log("Who's that pokemon? ITS " + bird.data.birdName);
-            bird.diveStart();
+
+            // bird.diveStart();
+                    SceneManager.LoadScene("Death");
+
         }
 
         //PLAYER IN SUN
     }
+
+
 }
