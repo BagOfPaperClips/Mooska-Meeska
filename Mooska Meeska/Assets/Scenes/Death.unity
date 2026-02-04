@@ -440,7 +440,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back
+  m_text: 'Back '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dff929f340ef3494b95428fe21b55284, type: 2}
   m_sharedMaterial: {fileID: 4895914957546390395, guid: dff929f340ef3494b95428fe21b55284, type: 2}
@@ -663,6 +663,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149ed4588eae8c946bce4f21a90740f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1242582968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1242582970}
+  - component: {fileID: 1242582969}
+  m_Layer: 0
+  m_Name: KILLMOOSKA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1242582969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242582968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818a8a15de90a624e9d55ad01e1e4493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1242582970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242582968}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.290537, y: 4.8950033, z: 6.6357126}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1500576770
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,3 +1021,4 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 2087188530}
   - {fileID: 1500576773}
+  - {fileID: 1242582970}
