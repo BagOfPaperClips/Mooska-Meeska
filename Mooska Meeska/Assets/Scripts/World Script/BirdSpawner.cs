@@ -36,7 +36,8 @@ int lastInactive = 0;
        //if hidden = true, timer ends and hostile = false
        //else if (timer = 0) kill mouse 
     }
-
+    
+    //shouldn't toggle if visible
     public int ToggleBird(int active) { 
 
         if (active == 0) {
@@ -49,7 +50,7 @@ int lastInactive = 0;
         while (inactive  == active) {
             inactive = Random.Range(1, birds.Count + 1);
         }
-        
+
         birds[inactive -1].SetActive(false);
         return inactive;
 
