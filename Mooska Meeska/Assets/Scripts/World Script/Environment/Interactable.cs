@@ -22,11 +22,13 @@ public class Interactables : MonoBehaviour
     [Header("Display")]
     public TextMeshProUGUI text;
     public bool hold = false;
+    private MouseLook mouseLook;
+    private bool dead = false;
 
-    
 
-    private void Awake()
+    void Awake()
     {
+        mouseLook = FindFirstObjectByType<MouseLook>();
         var p = GameObject.FindWithTag("Player");
 
         if (p != null)
@@ -34,7 +36,7 @@ public class Interactables : MonoBehaviour
             player = p.transform;
         }
 
-
+        
     }
 
     // Update is called once per frame
@@ -54,6 +56,7 @@ public class Interactables : MonoBehaviour
             }
             else
             {
+                mouseLook.UnlockCursor();
                 SceneManager.LoadScene("Death");
             }
         
