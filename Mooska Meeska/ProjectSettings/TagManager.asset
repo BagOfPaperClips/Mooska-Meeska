@@ -11,6 +11,7 @@ TagManager:
   - Cage
   - Meeska
   - MouseTrap
+  - Bird Book
   layers:
   - Default
   - TransparentFX

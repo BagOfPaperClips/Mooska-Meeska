@@ -7,6 +7,9 @@ public class BirdBookManager : MonoBehaviour
     [Header("Book UI")]
     [SerializeField] private GameObject birdBookUI;
 
+    [Header("DEBUG")]
+    [SerializeField] private float WaitTime = 0.5f;
+
     private bool isOpen;
 
     // Start is called before the first frame update
@@ -14,15 +17,14 @@ public class BirdBookManager : MonoBehaviour
     {
         isOpen = false;
 
-        if (birdBookUI != null)
-        {
-            birdBookUI.SetActive(false);
-        }
-
-        else if (birdBookUI == null)
+        if (birdBookUI == null)
         {
             birdBookUI = GameObject.FindWithTag("Bird Book");
         }
+        birdBookUI.SetActive(true);
+
+        StartCoroutine(WaitToDeactivate(WaitTime));
+
     }
 
     // Update is called once per frame
@@ -61,5 +63,15 @@ public class BirdBookManager : MonoBehaviour
             //Cursor.visible = true;
             //Cursor.lockState = CursorLockMode.None;
         }
+    }
+
+    IEnumerator WaitToDeactivate(float wait)
+    {
+        Debug.Log("Waiting");
+        yield return new WaitForSecondsRealtime(wait);
+        Debug.Log("Done Waiting");
+
+        birdBookUI.SetActive(false);
+
     }
 }

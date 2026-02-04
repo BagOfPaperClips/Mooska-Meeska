@@ -3949,6 +3949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdBookUI: {fileID: 1251267654}
+  WaitTime: 0.001
 --- !u!1 &308905432
 GameObject:
   m_ObjectHideFlags: 0
@@ -13832,7 +13833,7 @@ GameObject:
   - component: {fileID: 1251267657}
   m_Layer: 5
   m_Name: Bird Book
-  m_TagString: Untagged
+  m_TagString: Bird Book
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15009,6 +15010,7 @@ GameObject:
   - component: {fileID: 1400704294}
   - component: {fileID: 1400704296}
   - component: {fileID: 1400704295}
+  - component: {fileID: 1400704297}
   m_Layer: 5
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
@@ -15132,6 +15134,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400704293}
   m_CullTransparentMesh: 1
+--- !u!114 &1400704297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400704293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762fbf713f18c1f42a710d682d2ea62f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextMesh: {fileID: 0}
+  Key: 108
+  changeRatePerSecond: 5
+  currentValueR: 0
+  currentValueG: 0
+  currentValueB: 0
+  currentValueA: 0
 --- !u!1 &1405631282
 GameObject:
   m_ObjectHideFlags: 0
@@ -21015,6 +21036,7 @@ GameObject:
   - component: {fileID: 1964962408}
   - component: {fileID: 1964962410}
   - component: {fileID: 1964962409}
+  - component: {fileID: 1964962411}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -21138,6 +21160,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964962407}
   m_CullTransparentMesh: 1
+--- !u!114 &1964962411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964962407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762fbf713f18c1f42a710d682d2ea62f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextMesh: {fileID: 0}
+  Key: 107
+  changeRatePerSecond: 5
+  currentValueR: 0
+  currentValueG: 0
+  currentValueB: 0
+  currentValueA: 0
 --- !u!1 &1973351540
 GameObject:
   m_ObjectHideFlags: 3
