@@ -34,6 +34,12 @@ public class BirdBookManager : MonoBehaviour
         {
             ToggleBook();
         }
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            birdBookUI.SetActive(false);
+            isOpen = false;
+        }
     }
 
     public void ToggleBook()

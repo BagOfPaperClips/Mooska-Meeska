@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Threading;
 
 public class Instructions : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class Instructions : MonoBehaviour
     public GameObject instructionPanel;
         public GameObject journalText;
 
+    [SerializeField] private int count = 0;
+
 
 
     // Start is called before the first frame update
@@ -33,6 +36,15 @@ public class Instructions : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return)) {
             nextPage();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Escape) && count < 1)
+        {
+            count++;
+
+            instructionPanel.SetActive(false);
+            PauseManager.instance.SetPaused(false);
+            journalText.SetActive(true);
         }
 
     }
