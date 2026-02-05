@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
     private bool canDash = true;
     private bool isDashing;
     private float dashingPower = 1000f;
-    private float dashingTime = 0.2f;
+    private float dashingTime = 1f;
     private float dashingCooldown = 1f;
 
     // Update is called once per frame
