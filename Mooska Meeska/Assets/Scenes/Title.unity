@@ -1482,7 +1482,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mooksa Meeska
+  m_text: Mooska Meeska
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dff929f340ef3494b95428fe21b55284, type: 2}
   m_sharedMaterial: {fileID: 4895914957546390395, guid: dff929f340ef3494b95428fe21b55284, type: 2}
