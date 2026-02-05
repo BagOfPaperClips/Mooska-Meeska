@@ -254,11 +254,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'wasd to move
-
-    mouse for camera
-
-    e/f to interact'
+  m_text: "wasd to move\t\tInteract with posters and go to journal to find out \nmouse
+    for camera\t\tmore about the birds\ne/f to interact\t\t\nj for journal\t\t"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fa6fdd7d0b2a86d408c47df620460bca, type: 2}
   m_sharedMaterial: {fileID: 8359076039453552289, guid: fa6fdd7d0b2a86d408c47df620460bca, type: 2}
@@ -285,14 +282,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 69.4
-  m_fontSizeBase: 69.4
+  m_fontSize: 59.79
+  m_fontSizeBase: 59.79
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -321,7 +318,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -874.9243, y: 0, z: -860.45386, w: 0}
+  m_margin: {x: -813.0416, y: 0, z: -860.45386, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
