@@ -78,7 +78,7 @@ public class Interactables : MonoBehaviour
 {
     if (!canInteract) return;
 
-    if (Input.GetKeyDown(KeyCode.E))
+    if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.F))
     {
         switch (gameObject.tag)
         {
