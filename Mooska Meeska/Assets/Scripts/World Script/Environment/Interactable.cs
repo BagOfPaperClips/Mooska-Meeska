@@ -56,6 +56,7 @@ public class Interactables : MonoBehaviour
             }
             else
             {
+                mouseLook.enabled = false;
                 mouseLook.UnlockCursor();
                 SceneManager.LoadScene("Death");
             }
@@ -158,6 +159,8 @@ public class Interactables : MonoBehaviour
     void FreeMeeska()
     {
         
+        mouseLook.enabled = false;
+        mouseLook.UnlockCursor();
         SceneManager.LoadScene("Win");
     }
 
