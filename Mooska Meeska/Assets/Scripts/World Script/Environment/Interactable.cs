@@ -140,14 +140,16 @@ public class Interactables : MonoBehaviour
     {
         if(inventoryManager.redKey != 0)
         {
-            text.text = "You Open the Cage";
+            
             text.gameObject.SetActive(true);
+            text.text = "You Open the Cage";
             StartCoroutine(WaitForSeconds());
         }
         else
         {
-            text.text = "The Cage is Locked";
+            
             text.gameObject.SetActive(true);
+            text.text = "The Cage is Locked";
             hold = true;
             StartCoroutine(WaitForSeconds());
         }
@@ -155,20 +157,24 @@ public class Interactables : MonoBehaviour
 
     void FreeMeeska()
     {
+        
         SceneManager.LoadScene("Win");
     }
 
 
     IEnumerator WaitForSeconds()
     {
-        yield return new WaitForSeconds(3);
-        text.gameObject.SetActive(false);
         
         if(hold == false)
         {
             Destroy(gameObject);
             
         }
+        
+        yield return new WaitForSeconds(3);
+        text.gameObject.SetActive(false);
+        
+        
 
         hold = false;
         

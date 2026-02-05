@@ -54781,7 +54781,7 @@ MonoBehaviour:
   Distance: 0
   inventoryManager: {fileID: 1170087620}
   key: {fileID: 0}
-  text: {fileID: 0}
+  text: {fileID: 135238777}
   hold: 0
 --- !u!33 &7958042628041677653
 MeshFilter:
