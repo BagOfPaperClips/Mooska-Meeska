@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
@@ -16,21 +17,46 @@ public class Movement : MonoBehaviour
 
     Vector3 moveDir;
 
-    //DASH SECTION
-    private bool canDash = true;
-    private bool isDashing;
-    private float dashingPower = 1000f;
-    private float dashingTime = 1f;
-    private float dashingCooldown = 1f;
+    public float sprintTime = 3;
+    public float remainingTime;
+    [SerializeField] int seconds;
+    public Image stamBar;
 
+    public float maxStam;
+    public bool isReady = false;
+    public bool start = true;
+
+    private void Start()
+    {
+        remainingTime = sprintTime;
+    }
     // Update is called once per frame
     void Update()
     {
-        
-        if (isDashing)
+
+        if ((Input.GetKey(KeyCode.LeftShift)) && remainingTime > 0 && start)
         {
-            return;
+            speed = 20f;
+            remainingTime -= Time.deltaTime;
+            isReady = true;
+
+
         }
+        else
+        {
+            isReady = false;
+            if (remainingTime < 3 && isReady == false)
+            {
+                remainingTime += Time.deltaTime * 0.7f;
+                start = false;
+            }
+            else
+            {
+                start = true;
+            }
+                speed = 7f;
+        }
+        stamBar.fillAmount = remainingTime / sprintTime;
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -45,25 +71,9 @@ public class Movement : MonoBehaviour
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             c.Move(moveDir * speed * Time.deltaTime);
 
-            if ((Input.GetKeyDown(KeyCode.LeftShift) && canDash) || (Input.GetKeyDown(KeyCode.LeftShift) && canDash))
-            {
-                StartCoroutine(Dash());
-            }
+            
         }
 
     }
 
-    private IEnumerator Dash()
-    {
-        canDash = false;
-        isDashing = true;
-        Debug.Log(moveDir);
-        c.Move(moveDir * 100f * Time.deltaTime);
-
-        yield return new WaitForSeconds(dashingTime);
-        isDashing = false;
-
-        yield return new WaitForSeconds(dashingCooldown);
-        canDash = true;
-    }
 }
