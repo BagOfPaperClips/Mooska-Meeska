@@ -657,6 +657,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &41719015
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,6 +767,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &45883540
 GameObject:
   m_ObjectHideFlags: 0
@@ -4886,6 +4888,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &175849317
 GameObject:
   m_ObjectHideFlags: 0
@@ -5812,6 +5815,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &220712679
 GameObject:
   m_ObjectHideFlags: 0
@@ -9656,6 +9660,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &353902873
 GameObject:
   m_ObjectHideFlags: 0
@@ -11746,6 +11751,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &439459917
 GameObject:
   m_ObjectHideFlags: 0
@@ -13746,6 +13752,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &510184755
 GameObject:
   m_ObjectHideFlags: 0
@@ -14954,6 +14961,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &553230518
 GameObject:
   m_ObjectHideFlags: 0
@@ -15178,6 +15186,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!4 &555820852
 Transform:
   m_ObjectHideFlags: 0
@@ -16339,6 +16348,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &604397572
 GameObject:
   m_ObjectHideFlags: 0
@@ -17022,6 +17032,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &636504980
 GameObject:
   m_ObjectHideFlags: 0
@@ -18428,6 +18439,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &728095993
 GameObject:
   m_ObjectHideFlags: 0
@@ -20381,6 +20393,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &835896800
 GameObject:
   m_ObjectHideFlags: 0
@@ -23874,6 +23887,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1003652189
 GameObject:
   m_ObjectHideFlags: 0
@@ -24545,6 +24559,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1024283365
 GameObject:
   m_ObjectHideFlags: 0
@@ -25466,6 +25481,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1043468763
 GameObject:
   m_ObjectHideFlags: 0
@@ -26305,6 +26321,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1066643438
 GameObject:
   m_ObjectHideFlags: 0
@@ -27058,6 +27075,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1093125549
 GameObject:
   m_ObjectHideFlags: 0
@@ -27630,6 +27648,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1121700971
 GameObject:
   m_ObjectHideFlags: 0
@@ -28917,6 +28936,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1170087619
 GameObject:
   m_ObjectHideFlags: 0
@@ -29024,6 +29044,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1185072618
 GameObject:
   m_ObjectHideFlags: 0
@@ -30974,6 +30995,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1260369149
 GameObject:
   m_ObjectHideFlags: 0
@@ -31371,6 +31393,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1277143388
 GameObject:
   m_ObjectHideFlags: 0
@@ -31550,6 +31573,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1298622787
 GameObject:
   m_ObjectHideFlags: 0
@@ -31708,6 +31732,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1308230028
 GameObject:
   m_ObjectHideFlags: 0
@@ -31971,6 +31996,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1319974456
 GameObject:
   m_ObjectHideFlags: 0
@@ -35058,6 +35084,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1475323025
 GameObject:
   m_ObjectHideFlags: 0
@@ -35111,6 +35138,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1476889670
 GameObject:
   m_ObjectHideFlags: 0
@@ -35941,7 +35969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174.45921, y: -187.42691}
+  m_AnchoredPosition: {x: -174.45921, y: -88}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1513499274
@@ -35997,6 +36025,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1518122212
 GameObject:
   m_ObjectHideFlags: 0
@@ -36050,6 +36079,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!114 &1520749804 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8155067146560788093, guid: cd529ada51be6497284272b741a58dd2, type: 3}
@@ -38013,6 +38043,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1617920749
 GameObject:
   m_ObjectHideFlags: 0
@@ -38550,6 +38581,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1636360102
 GameObject:
   m_ObjectHideFlags: 0
@@ -39909,6 +39941,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1682887236
 GameObject:
   m_ObjectHideFlags: 0
@@ -42615,6 +42648,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1758730376
 GameObject:
   m_ObjectHideFlags: 0
@@ -43367,6 +43401,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1787588501
 GameObject:
   m_ObjectHideFlags: 0
@@ -44151,6 +44186,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &1831256660
 GameObject:
   m_ObjectHideFlags: 0
@@ -49597,6 +49633,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &2031489724
 GameObject:
   m_ObjectHideFlags: 0
@@ -50927,6 +50964,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!4 &2073555805
 Transform:
   m_ObjectHideFlags: 0
@@ -51358,6 +51396,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &2085231595
 GameObject:
   m_ObjectHideFlags: 0
@@ -51978,6 +52017,7 @@ MonoBehaviour:
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
   hostile: 0
+  remainingTime: 0
 --- !u!1 &2122269263
 GameObject:
   m_ObjectHideFlags: 0

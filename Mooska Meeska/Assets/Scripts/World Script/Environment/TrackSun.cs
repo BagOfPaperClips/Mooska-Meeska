@@ -49,7 +49,7 @@ public class TrackSun : MonoBehaviour
             BirdInstance bird = hit.collider.GetComponentInParent<BirdInstance>();
             Debug.Log("Who's that pokemon? ITS " + bird.data.birdName);
             mouseLook.UnlockCursor();
-            // bird.diveStart();
+            //bird.diveStart();
             SceneManager.LoadScene("Death");
 
         }

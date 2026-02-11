@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System.IO;
 
 public class BirdInstance : MonoBehaviour
 {
@@ -17,13 +19,24 @@ public class BirdInstance : MonoBehaviour
     public TextMeshProUGUI alertText;
     Coroutine timerCoroutine;
 
+    private MouseLook mouseLook;
+
     // private float remainingTime;
     public bool hostile = false;
     BirdState state = BirdState.OnSpline;
 
+    public float remainingTime;
+
+    private Transform path;
+
+
     void Start()
     {
+        path = transform.Find("Path");
+        mouseLook = FindFirstObjectByType<MouseLook>();
+        remainingTime = data.diveTimer;
         updateModel();
+        
     }
 
         public void updateModel()
@@ -61,7 +74,7 @@ public class BirdInstance : MonoBehaviour
 
     public void diveStart() 
     {
-        if (state == BirdState.Diving) return; // 
+        if (state == BirdState.Diving) return;
 
             state = BirdState.Diving;
             hostile = true;
@@ -73,6 +86,13 @@ public class BirdInstance : MonoBehaviour
 
             timerCoroutine = StartCoroutine(startTimer(data.diveTimer));
 
+        remainingTime -= Time.deltaTime;
+        path.gameObject.SetActive(false);
+
+        //Get closer
+
+
+
         //diving animation, bird leaves spline
     }
 
@@ -80,7 +100,7 @@ public class BirdInstance : MonoBehaviour
     {
         float current = timer;
         
-        while (current > 1) {
+        while (current > 0) {
         
             timerText.text = current.ToString("0");
             yield return new WaitForSeconds(timerSpeed);
@@ -95,13 +115,15 @@ public class BirdInstance : MonoBehaviour
     public void diveEnd()
     {
            if (state == BirdState.OnSpline) return;
+            
+        hostile = false;
+        state = BirdState.OnSpline;
 
-    hostile = false;
-    state = BirdState.OnSpline;
-
-    alertText.text = "DEAD";
-    timerText.text = "";
-  }
+        mouseLook.UnlockCursor();
+        alertText.text = "DEAD";
+        timerText.text = "";
+        SceneManager.LoadScene("Death");
+    }
 
 
     void CancelDive()
