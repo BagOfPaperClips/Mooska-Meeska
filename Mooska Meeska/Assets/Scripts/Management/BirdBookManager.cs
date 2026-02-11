@@ -7,10 +7,27 @@ public class BirdBookManager : MonoBehaviour
     [Header("Book UI")]
     [SerializeField] private GameObject birdBookUI;
 
+    [Header("References")]
+    [SerializeField] private GameObject Instructions;
+
     [Header("DEBUG")]
     [SerializeField] private float WaitTime = 0.5f;
 
     private bool isOpen;
+    private SceneLoader sceneLoader;
+
+    private void Awake()
+    {
+        if (sceneLoader == null)
+        {
+            sceneLoader = FindFirstObjectByType<SceneLoader>(); 
+
+            if (sceneLoader == null)
+            {
+                Debug.Log("No SceneLoaders present in scene");
+            }
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -30,15 +47,17 @@ public class BirdBookManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.J))
-        {
-            ToggleBook();
-        }
+        if (!Instructions.activeSelf) {
+            if (Input.GetKeyUp(KeyCode.J))
+            {
+                ToggleBook();
+            }
 
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            birdBookUI.SetActive(false);
-            isOpen = false;
+            if (Input.GetKeyUp(KeyCode.Escape))
+            {
+                birdBookUI.SetActive(false);
+                isOpen = false;
+            }
         }
     }
 
@@ -78,6 +97,6 @@ public class BirdBookManager : MonoBehaviour
         Debug.Log("Done Waiting");
 
         birdBookUI.SetActive(false);
-
+        sceneLoader.FinishLoading();
     }
 }

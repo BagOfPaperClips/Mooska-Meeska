@@ -73,9 +73,9 @@ public class PauseManager : MonoBehaviour
 
         if (!Paused)
         {
-            if (pauseMechanics != null && pauseMechanics.SettingsGO != null)
+            if (pauseMechanics != null && pauseMechanics.HelpGO != null)
             {
-                pauseMechanics.SettingsGO.SetActive(false);
+                pauseMechanics.HelpGO.SetActive(false);
             }
         }
     }
@@ -112,9 +112,9 @@ public class PauseManager : MonoBehaviour
             return;
         }
 
-        if (pauseMechanics != null && pauseMechanics.SettingsGO != null)
+        if (pauseMechanics != null && pauseMechanics.HelpGO != null)
         {
-            if (pauseMechanics.SettingsGO.activeInHierarchy)
+            if (pauseMechanics.HelpGO.activeInHierarchy)
             {
                 pauseMechanics.BackSettings();
 
@@ -129,9 +129,9 @@ public class PauseManager : MonoBehaviour
 
         if (isPaused)
         {
-            if (pauseMechanics != null && pauseMechanics.SettingsGO != null)
+            if (pauseMechanics != null && pauseMechanics.HelpGO != null)
             {
-                pauseMechanics.SettingsGO.SetActive(false);
+                pauseMechanics.HelpGO.SetActive(false);
             }
         }
     }

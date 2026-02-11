@@ -1,19 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMechanics : MonoBehaviour
 {
-    [SerializeField] public GameObject SettingsGO;
+    [SerializeField] public GameObject HelpGO;
     [SerializeField] public GameObject ExitGO;
 
     private void Awake()
     {
-        if (SettingsGO != null)
+        if (HelpGO != null)
         {
-            SettingsGO.SetActive(false);
+            HelpGO.SetActive(false);
         }
     }
     public void Resume()
@@ -27,13 +24,13 @@ public class PauseMechanics : MonoBehaviour
 
         PauseManager.instance.ShowPauseScreen(false);
 
-        if (SettingsGO != null)
+        if (HelpGO != null)
         {
-            SettingsGO.SetActive(false);
+            HelpGO.SetActive(false);
         }
     }
 
-    public void Settings()
+    public void Help()
     {
         if (PauseManager.instance == null)
         {
@@ -42,9 +39,9 @@ public class PauseMechanics : MonoBehaviour
 
         PauseManager.instance.SetPaused(true);
 
-        if (SettingsGO != null)
+        if (HelpGO != null)
         {
-            SettingsGO.SetActive(true);
+            HelpGO.SetActive(true);
         }
 
         gameObject.SetActive(false);
@@ -61,9 +58,9 @@ public class PauseMechanics : MonoBehaviour
 
         PauseManager.instance.SetPaused(true);
 
-        if (SettingsGO != null)
+        if (HelpGO != null)
         {
-            SettingsGO.SetActive(false);
+            HelpGO.SetActive(false);
         }
     }
 
