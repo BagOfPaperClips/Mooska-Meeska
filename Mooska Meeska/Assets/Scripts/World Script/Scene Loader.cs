@@ -15,9 +15,9 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private Image LoadingBarFill;
 
     [Header("Fill")]
-    [SerializeField] private float MaxfillSpeed = 2.5f;
-    [SerializeField] private float MinfillSpeed = 5.5f;
-    private float fillSpeed;
+    //[SerializeField] private float MaxfillSpeed = 2.5f;
+    //[SerializeField] private float MinfillSpeed = 5.5f;
+    [Range(0.1f, 1.0f)] [SerializeField] private float fillSpeed = 0.4f;
 
     [Header("UI Warmup")]
     [SerializeField] private bool preWarm = true;
@@ -37,12 +37,12 @@ public class SceneLoader : MonoBehaviour
     {
 
 
-        if (MinfillSpeed > MaxfillSpeed)
-        {
-            float temp = MinfillSpeed;
-            MinfillSpeed = MaxfillSpeed;
-            MaxfillSpeed = temp;
-        }
+        //if (MinfillSpeed > MaxfillSpeed)
+        //{
+        //    float temp = MinfillSpeed;
+        //    MinfillSpeed = MaxfillSpeed;
+        //    MaxfillSpeed = temp;
+        //}
 
         if (LoadingScreen != null)
         {
@@ -62,7 +62,7 @@ public class SceneLoader : MonoBehaviour
     public void BeginLoading()
     {
         IsLoading = true;
-        fillSpeed = Random.Range(MinfillSpeed, MaxfillSpeed);
+        //fillSpeed = Random.Range(MinfillSpeed, MaxfillSpeed);
 
         if (LoadingScreen != null)
         {

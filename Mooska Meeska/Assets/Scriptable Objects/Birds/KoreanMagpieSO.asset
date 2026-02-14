@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: KoreanMagpieSO
   m_EditorClassIdentifier: 
   id: 4
-  birdPrefab: {fileID: 0}
   birdName: 
   birdDescription: The Korean Magpie is the National Bird of South Korea. It is a
     hostile bird.
+  birdStats: 
   birdCall: {fileID: 0}
   birdImage: {fileID: 0}
-  LockedBirdName: 
-  LockedBirdDescription: 
+  LockedBirdName: ????????????????????
+  LockedBirdDescription: ...............
+  LockedBirdStats: 'Bird Speed: .............
+
+    Dive Timer: .........'
   birdModel: {fileID: 0}
   Hostile: 1
   found: 0

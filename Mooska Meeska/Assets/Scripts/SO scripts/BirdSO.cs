@@ -16,9 +16,10 @@ public class BirdSO : ScriptableObject
    [Header("Bird Log")]
    public string birdName;
    [TextArea]public string birdDescription;
+   [TextArea] public string birdStats;
 
 
-   [Header ("Audio")]
+    [Header ("Audio")]
    public AudioClip birdCall;
 
    [Header("Image")]
@@ -27,8 +28,9 @@ public class BirdSO : ScriptableObject
     [Header("Locked")]
     public string LockedBirdName;
     [TextArea] public string LockedBirdDescription;
+    [TextArea] public string LockedBirdStats;
 
-   [Header("Reference")]
+    [Header("Reference")]
    public GameObject birdModel;
    public bool Hostile;
 

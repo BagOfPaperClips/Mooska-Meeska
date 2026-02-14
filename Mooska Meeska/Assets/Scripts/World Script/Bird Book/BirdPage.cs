@@ -13,6 +13,7 @@ public class BirdPage : MonoBehaviour
     [Header("References")]
     [SerializeField] private TextMeshProUGUI Name;
     [SerializeField] private TextMeshProUGUI Description;
+    [SerializeField] private TextMeshProUGUI Stats;
     [SerializeField] private Image birdImage;
 
     [Header("Locked")]
@@ -32,6 +33,11 @@ public class BirdPage : MonoBehaviour
         if (Description != null)
         {
             Description.text = so.LockedBirdDescription;
+        }
+
+        if (Stats != null)
+        {
+            Stats.text = so.LockedBirdStats;
         }
 
         if (birdImage != null)
@@ -59,6 +65,11 @@ public class BirdPage : MonoBehaviour
         if (Description != null)
         {
             Description.text = birdSO.birdDescription;
+        }
+
+        if (Stats != null)
+        {
+            Stats.text = birdSO.birdStats;
         }
 
         if (birdImage != null)

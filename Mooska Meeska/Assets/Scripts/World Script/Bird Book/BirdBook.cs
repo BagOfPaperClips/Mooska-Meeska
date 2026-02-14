@@ -85,7 +85,7 @@ public class BirdBook : MonoBehaviour
         }
     }
 
-    private void MoveRight()
+    public void MoveRight()
     {
         currentIndex++;
 
@@ -97,7 +97,7 @@ public class BirdBook : MonoBehaviour
         ShowOnlyIndex(currentIndex);
     }
 
-    private void MoveLeft()
+    public void MoveLeft()
     {
         currentIndex--;
 

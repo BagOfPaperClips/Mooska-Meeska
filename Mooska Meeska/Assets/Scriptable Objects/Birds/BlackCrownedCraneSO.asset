@@ -16,10 +16,16 @@ MonoBehaviour:
   birdName: Black Crowned Crane
   birdDescription: The Black Crowned Crane is the National Bird of Nigeria. It is
     hostile
+  birdStats: 'Bird Speed: Slow
+
+    Dive Timer: 3'
   birdCall: {fileID: 0}
   birdImage: {fileID: 0}
   LockedBirdName: ??????????
   LockedBirdDescription: ..........................................
+  LockedBirdStats: 'Bird Speed: .............
+
+    Dive Timer: .........'
   birdModel: {fileID: 0}
   Hostile: 1
   found: 0

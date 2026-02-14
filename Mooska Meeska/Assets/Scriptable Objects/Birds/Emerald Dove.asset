@@ -15,10 +15,16 @@ MonoBehaviour:
   id: 2
   birdName: Emerald Dove
   birdDescription: The Emerald Dove is the National Bird Of Tamil. It is not hostile
+  birdStats: 'Bird Speed: Medium
+
+    Dive Timer: 4'
   birdCall: {fileID: 0}
   birdImage: {fileID: 0}
   LockedBirdName: ??????????
   LockedBirdDescription: ..........................................
+  LockedBirdStats: 'Bird Speed: .............
+
+    Dive Timer: .........'
   birdModel: {fileID: 0}
   Hostile: 0
   found: 0

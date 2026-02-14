@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: LoonSO
   m_EditorClassIdentifier: 
   id: 5
-  birdPrefab: {fileID: 0}
   birdName: 
   birdDescription: The Loon is a common bird found in Canada, it is not hostile
+  birdStats: 
   birdCall: {fileID: 0}
   birdImage: {fileID: 0}
-  LockedBirdName: 
-  LockedBirdDescription: 
+  LockedBirdName: ??????????
+  LockedBirdDescription: ............. .................... ....... ...................
+  LockedBirdStats: 'Bird Speed: .............
+
+    Dive Timer: .........'
   birdModel: {fileID: 0}
   Hostile: 0
   found: 0

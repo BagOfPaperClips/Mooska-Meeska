@@ -59,4 +59,10 @@ public class KeysIdentifier : MonoBehaviour
             TextMesh.color = Color.Lerp(TextMesh.color, initialColor, t);
         }
     }
+
+    public void keyButton()
+    {
+        TextMesh.color = Color.red;
+        revert = true;
+    }
 }

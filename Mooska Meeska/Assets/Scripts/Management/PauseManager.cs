@@ -5,14 +5,19 @@ using static UnityEngine.CullingGroup;
 
 public class PauseManager : MonoBehaviour
 {
+    [Header ("Pause Menu")]
     [SerializeField] private GameObject PauseScreen;
     [SerializeField] private GameObject SettingScreen;
     [SerializeField] private GameObject ExitScreen;
+
+    [Header("Sounds(s)")]
+    [SerializeField] private AudioSource audioSource;
 
     private PauseMechanics pauseMechanics;
     private MouseLook mouseLook;
     private BirdBookManager birdBookManager;
     private SceneLoader sceneLoader;
+    
 
     public static PauseManager instance { get; private set; }
 
@@ -80,11 +85,22 @@ public class PauseManager : MonoBehaviour
         if (paused)
         {
             Time.timeScale = 0f;
+
+            if (audioSource != null)
+            {
+                audioSource.Pause();
+            }
         }
 
         else
         {
             Time.timeScale = 1f;
+
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+
             ShowPauseScreen(false);
         }
     }

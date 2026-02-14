@@ -15,10 +15,16 @@ MonoBehaviour:
   id: 3
   birdName: Hoatzin
   birdDescription: The Hoatzin is the national bird of Guyana. It is not hostile
+  birdStats: 'Bird Speed: Fast
+
+    Dive Timer: 5'
   birdCall: {fileID: 0}
   birdImage: {fileID: 0}
   LockedBirdName: ????????
   LockedBirdDescription: .....................................
+  LockedBirdStats: 'Bird Speed: .............
+
+    Dive Timer: .........'
   birdModel: {fileID: 0}
   Hostile: 0
   found: 0
