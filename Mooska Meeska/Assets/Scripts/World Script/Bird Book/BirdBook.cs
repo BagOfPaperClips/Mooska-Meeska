@@ -74,11 +74,6 @@ public class BirdBook : MonoBehaviour
             return;
         }
 
-        if (!PauseManager.instance.isPaused)
-        {
-            return;
-        }
-
         if (Input.GetKeyDown(KeyCode.K))
         {
             MoveRight();

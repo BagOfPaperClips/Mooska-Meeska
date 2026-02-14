@@ -9,24 +9,26 @@ public class BirdBookManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private GameObject Instructions;
+    [SerializeField] private GameObject[] PauseMenu;
 
-    [Header("DEBUG")]
-    [SerializeField] private float WaitTime = 0.5f;
 
-    private bool isOpen;
+    public bool isOpen { private set; get; }
     private SceneLoader sceneLoader;
+    private PauseManager pauseManager;
 
     private void Awake()
     {
         if (sceneLoader == null)
         {
-            sceneLoader = FindFirstObjectByType<SceneLoader>(); 
+            sceneLoader = FindFirstObjectByType<SceneLoader>();
 
             if (sceneLoader == null)
             {
                 Debug.Log("No SceneLoaders present in scene");
             }
         }
+
+        pauseManager = FindFirstObjectByType<PauseManager>();
     }
 
     // Start is called before the first frame update
@@ -34,20 +36,23 @@ public class BirdBookManager : MonoBehaviour
     {
         isOpen = false;
 
-        if (birdBookUI == null)
+        if (birdBookUI != null)
         {
-            birdBookUI = GameObject.FindWithTag("Bird Book");
+            birdBookUI.SetActive(false);
         }
-        birdBookUI.SetActive(true);
-
-        StartCoroutine(WaitToDeactivate(WaitTime));
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!Instructions.activeSelf) {
+        if (Instructions == null)
+        {
+            return;
+        }
+
+        if (!Instructions.activeSelf)
+        {
             if (Input.GetKeyUp(KeyCode.J))
             {
                 ToggleBook();
@@ -58,6 +63,26 @@ public class BirdBookManager : MonoBehaviour
                 birdBookUI.SetActive(false);
                 isOpen = false;
             }
+        }
+
+        if (PauseMenuActive())
+        {
+            if (isOpen)
+            {
+                birdBookUI.SetActive(false);
+                isOpen = false;
+            }
+            return;
+        }
+    }
+
+    public void ForceShow(bool open)
+    {
+        isOpen = open; 
+
+        if (birdBookUI != null)
+        {
+            birdBookUI.SetActive(open);
         }
     }
 
@@ -71,32 +96,30 @@ public class BirdBookManager : MonoBehaviour
         isOpen = !isOpen;
         birdBookUI.SetActive(isOpen);
 
-        if (PauseManager.instance != null)
-        {
-            PauseManager.instance.SetPaused(isOpen);
-        }
-
-        if (isOpen)
-        {
-            //IF PLAYERS ARE GOING TO USE KEYS TO NAVIGATE THROUGH THE BOOK THEN UNCOMMENT THE BELOW
-            //Cursor.visible = false;
-            //Cursor.lockState = CursorLockMode.Locked;
-        }
-
-        else
-        {
-            //Cursor.visible = true;
-            //Cursor.lockState = CursorLockMode.None;
-        }
+        //if (PauseManager.instance != null)
+        //{
+        //    PauseManager.instance.SetPaused(isOpen);
+        //}
     }
 
-    IEnumerator WaitToDeactivate(float wait)
+    private bool PauseMenuActive()
     {
-        Debug.Log("Waiting");
-        yield return new WaitForSecondsRealtime(wait);
-        Debug.Log("Done Waiting");
+        if (PauseMenu == null)
+        {
+            return false;
+        }
 
-        birdBookUI.SetActive(false);
-        sceneLoader.FinishLoading();
+        for (int i = 0; i < PauseMenu.Length; i++)
+        {
+            if (PauseMenu[i] != null)
+            {
+                if (PauseMenu[i].activeInHierarchy)
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }

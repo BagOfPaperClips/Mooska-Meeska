@@ -11,6 +11,8 @@ public class PauseManager : MonoBehaviour
 
     private PauseMechanics pauseMechanics;
     private MouseLook mouseLook;
+    private BirdBookManager birdBookManager;
+    private SceneLoader sceneLoader;
 
     public static PauseManager instance { get; private set; }
 
@@ -41,11 +43,34 @@ public class PauseManager : MonoBehaviour
             ExitScreen.SetActive(false);
         }
 
-        isPaused = false;
+        isPaused = true;
         Time.timeScale = 1.0f;
 
         pauseMechanics = FindFirstObjectByType<PauseMechanics>();
         mouseLook = FindFirstObjectByType<MouseLook>();
+        birdBookManager = FindFirstObjectByType<BirdBookManager>();
+        sceneLoader = FindFirstObjectByType<SceneLoader>();
+    }
+
+    public void ForcePauseShow (bool show)
+    {
+        if (PauseScreen != null)
+        {
+            PauseScreen.SetActive(show);
+        }
+
+        if (!show)
+        {
+            if (SettingScreen != null)
+            {
+                SettingScreen.SetActive(false);
+            }
+
+            if (ExitScreen != null)
+            {
+                ExitScreen.SetActive(false);
+            }
+        }
     }
 
     public void SetPaused(bool paused)
@@ -112,6 +137,14 @@ public class PauseManager : MonoBehaviour
             return;
         }
 
+        if (birdBookManager != null)
+        {
+            if (birdBookManager.isOpen)
+            {
+                return;
+            }
+        }
+
         if (pauseMechanics != null && pauseMechanics.HelpGO != null)
         {
             if (pauseMechanics.HelpGO.activeInHierarchy)
@@ -135,5 +168,4 @@ public class PauseManager : MonoBehaviour
             }
         }
     }
-
 }

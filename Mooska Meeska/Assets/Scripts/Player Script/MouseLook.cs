@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
     private bool locked = false;
+    private BirdBookManager birdBookManager;
+
+    private void Awake()
+    {
+        birdBookManager = FindFirstObjectByType<BirdBookManager>();
+    }
 
     private void Start()
     {
@@ -17,9 +24,20 @@ public class MouseLook : MonoBehaviour
     {
         bool lockin = false;
 
-        if (PauseManager.instance.isPaused)
+        if (PauseManager.instance != null)
         {
-            lockin = true;
+            if (PauseManager.instance.isPaused)
+            {
+                lockin = true;
+            }
+        }
+
+        if (birdBookManager != null)
+        {
+            if (birdBookManager.isOpen)
+            {
+                lockin = true;
+            }
         }
 
         if (lockin)
