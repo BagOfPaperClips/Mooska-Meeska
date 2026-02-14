@@ -96,8 +96,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 2d93a4638256f482e91c51330e653fd2, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: af033775e181f6a41845371108325eda, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -656,7 +656,7 @@ MonoBehaviour:
   foundModel: {fileID: 742398710}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &41719015
 GameObject:
@@ -766,7 +766,7 @@ MonoBehaviour:
   foundModel: {fileID: 554306122}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &45883540
 GameObject:
@@ -4887,7 +4887,7 @@ MonoBehaviour:
   foundModel: {fileID: 1762433936}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &175849317
 GameObject:
@@ -5814,7 +5814,7 @@ MonoBehaviour:
   foundModel: {fileID: 300405443}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &220712679
 GameObject:
@@ -9659,7 +9659,7 @@ MonoBehaviour:
   foundModel: {fileID: 1962823975}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &353902873
 GameObject:
@@ -11645,7 +11645,7 @@ MonoBehaviour:
   foundModel: {fileID: 167796394}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &439459917
 GameObject:
@@ -13646,7 +13646,7 @@ MonoBehaviour:
   foundModel: {fileID: 323837420}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &510184755
 GameObject:
@@ -14927,7 +14927,7 @@ MonoBehaviour:
   foundModel: {fileID: 1530257891}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &553230518
 GameObject:
@@ -15152,7 +15152,7 @@ MonoBehaviour:
   foundModel: {fileID: 2125726241}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!4 &555820852
 Transform:
@@ -16314,7 +16314,7 @@ MonoBehaviour:
   foundModel: {fileID: 591234210}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &604397572
 GameObject:
@@ -16998,7 +16998,7 @@ MonoBehaviour:
   foundModel: {fileID: 1202903842}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &636504980
 GameObject:
@@ -17450,6 +17450,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1351386244}
+  - {fileID: 1746582780}
   - {fileID: 392690532}
   - {fileID: 1142849212}
   - {fileID: 1859980445}
@@ -18405,7 +18406,7 @@ MonoBehaviour:
   foundModel: {fileID: 741789435}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &728095993
 GameObject:
@@ -20359,7 +20360,7 @@ MonoBehaviour:
   foundModel: {fileID: 252697715}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &835896800
 GameObject:
@@ -22627,6 +22628,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -22742,6 +22744,50 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &978454075
 GameObject:
   m_ObjectHideFlags: 0
@@ -23748,7 +23794,7 @@ MonoBehaviour:
   foundModel: {fileID: 1403490794}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1003652189
 GameObject:
@@ -24420,7 +24466,7 @@ MonoBehaviour:
   foundModel: {fileID: 869148169}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1024283365
 GameObject:
@@ -25342,7 +25388,7 @@ MonoBehaviour:
   foundModel: {fileID: 1709712592}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1043468763
 GameObject:
@@ -26077,7 +26123,7 @@ MonoBehaviour:
   foundModel: {fileID: 1111555507}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1066643438
 GameObject:
@@ -26831,7 +26877,7 @@ MonoBehaviour:
   foundModel: {fileID: 888256957}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1093125549
 GameObject:
@@ -27404,7 +27450,7 @@ MonoBehaviour:
   foundModel: {fileID: 1028439681}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1121700971
 GameObject:
@@ -28587,7 +28633,7 @@ MonoBehaviour:
   foundModel: {fileID: 445073337}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1170087619
 GameObject:
@@ -28695,7 +28741,7 @@ MonoBehaviour:
   foundModel: {fileID: 1203522946}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1185072618
 GameObject:
@@ -30541,7 +30587,7 @@ MonoBehaviour:
   foundModel: {fileID: 70602762}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1260369149
 GameObject:
@@ -30939,7 +30985,7 @@ MonoBehaviour:
   foundModel: {fileID: 866852209}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1277143388
 GameObject:
@@ -31119,7 +31165,7 @@ MonoBehaviour:
   foundModel: {fileID: 354844688}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1298622787
 GameObject:
@@ -31278,7 +31324,7 @@ MonoBehaviour:
   foundModel: {fileID: 228259732}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1308230028
 GameObject:
@@ -31542,7 +31588,7 @@ MonoBehaviour:
   foundModel: {fileID: 1398541835}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1319974456
 GameObject:
@@ -32174,7 +32220,7 @@ Transform:
   m_GameObject: {fileID: 1351386243}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.26808396, z: -0, w: 0.96339554}
-  m_LocalPosition: {x: 1.19, y: 42.383858, z: -35.4}
+  m_LocalPosition: {x: 1.79, y: 42.383858, z: -36.4}
   m_LocalScale: {x: 6.615967, y: 13.380688, z: 16.166504}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34630,7 +34676,7 @@ MonoBehaviour:
   foundModel: {fileID: 1765017177}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1475323025
 GameObject:
@@ -34684,7 +34730,7 @@ MonoBehaviour:
   foundModel: {fileID: 41719015}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1476889670
 GameObject:
@@ -35466,7 +35512,7 @@ MonoBehaviour:
   foundModel: {fileID: 1220385296}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1518122212
 GameObject:
@@ -35520,7 +35566,7 @@ MonoBehaviour:
   foundModel: {fileID: 130472467}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!114 &1520749804 stripped
 MonoBehaviour:
@@ -37379,7 +37425,7 @@ MonoBehaviour:
   foundModel: {fileID: 220712679}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1617920749
 GameObject:
@@ -37917,7 +37963,7 @@ MonoBehaviour:
   foundModel: {fileID: 732564764}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1636360102
 GameObject:
@@ -39277,7 +39323,7 @@ MonoBehaviour:
   foundModel: {fileID: 1476889670}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1682887236
 GameObject:
@@ -40405,6 +40451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1709570167}
   - component: {fileID: 1709570166}
+  - component: {fileID: 1709570168}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -40421,10 +40468,10 @@ Light:
   m_GameObject: {fileID: 1709570165}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 0
+  m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.89433956, g: 0.5722291, b: 0, a: 1}
-  m_Intensity: 3
+  m_Intensity: 1
   m_Range: 500
   m_SpotAngle: 84
   m_InnerSpotAngle: 21.80208
@@ -40466,7 +40513,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 0
+  m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -40489,6 +40536,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1709570168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709570165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1709712592
 GameObject:
   m_ObjectHideFlags: 0
@@ -41746,6 +41816,111 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743774452}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1746582779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1746582780}
+  - component: {fileID: 1746582783}
+  - component: {fileID: 1746582782}
+  - component: {fileID: 1746582781}
+  m_Layer: 3
+  m_Name: Cube (68)
+  m_TagString: Shadow
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1746582780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746582779}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.26808396, z: -0, w: 0.96339554}
+  m_LocalPosition: {x: 1.63, y: 42.383858, z: -11.33}
+  m_LocalScale: {x: 6.615967, y: 13.380688, z: 4.354771}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 664749711}
+  m_LocalEulerAnglesHint: {x: 0, y: -31.101, z: 0}
+--- !u!65 &1746582781
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746582779}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1746582782
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746582779}
+  m_Enabled: 1
+  m_CastShadows: 3
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1746582783
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746582779}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1747194972
 GameObject:
   m_ObjectHideFlags: 0
@@ -41984,7 +42159,7 @@ MonoBehaviour:
   foundModel: {fileID: 1114226259}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1758730376
 GameObject:
@@ -42737,7 +42912,7 @@ MonoBehaviour:
   foundModel: {fileID: 984577596}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1787588501
 GameObject:
@@ -43522,7 +43697,7 @@ MonoBehaviour:
   foundModel: {fileID: 853634571}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &1831256660
 GameObject:
@@ -49165,7 +49340,7 @@ MonoBehaviour:
   foundModel: {fileID: 827718702}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &2031489724
 GameObject:
@@ -50496,7 +50671,7 @@ MonoBehaviour:
   foundModel: {fileID: 110993734}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!4 &2073555805
 Transform:
@@ -50929,7 +51104,7 @@ MonoBehaviour:
   foundModel: {fileID: 1677343390}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &2085231595
 GameObject:
@@ -51445,7 +51620,7 @@ MonoBehaviour:
   foundModel: {fileID: 427018563}
   timerText: {fileID: 893897507}
   alertText: {fileID: 81637437}
-  hostile: 0
+  hostile: 1
   remainingTime: 0
 --- !u!1 &2122269263
 GameObject:
