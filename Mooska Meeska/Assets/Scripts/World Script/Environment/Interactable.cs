@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -26,6 +27,9 @@ public class Interactables : MonoBehaviour
     private bool dead = false;
 
     private KeyCode InteractKey;
+
+    [Header("Puzzles")]
+    public GameObject Keypad;
 
     void Awake()
     {
@@ -99,6 +103,9 @@ public class Interactables : MonoBehaviour
             break;
             case "Meeska":
                 FreeMeeska();
+            break;
+            case "Keypad":
+                OpenKeypad();
             break;
         }
     }
@@ -184,6 +191,11 @@ public class Interactables : MonoBehaviour
 
         hold = false;
         
+    }
+
+    void OpenKeypad()
+    {
+        Keypad.SetActive(true);
     }
 
 

@@ -12,6 +12,7 @@ TagManager:
   - Meeska
   - MouseTrap
   - Bird Book
+  - Keypad
   layers:
   - Default
   - TransparentFX
