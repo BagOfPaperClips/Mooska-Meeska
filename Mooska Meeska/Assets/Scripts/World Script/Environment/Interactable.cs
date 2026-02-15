@@ -25,6 +25,7 @@ public class Interactables : MonoBehaviour
     private MouseLook mouseLook;
     private bool dead = false;
 
+    private KeyCode InteractKey;
 
     void Awake()
     {
@@ -78,7 +79,9 @@ public class Interactables : MonoBehaviour
 {
     if (!canInteract) return;
 
-    if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.F))
+    InteractKey = KeyBinding.GetKey(GameKeys.Interact, KeyCode.E);
+
+    if (Input.GetKeyDown(InteractKey))
     {
         switch (gameObject.tag)
         {
