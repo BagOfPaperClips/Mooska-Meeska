@@ -16,6 +16,8 @@ public class BirdBookManager : MonoBehaviour
     private SceneLoader sceneLoader;
     private PauseManager pauseManager;
 
+    private KeyCode openBookKey;
+
     private void Awake()
     {
         if (sceneLoader == null)
@@ -40,7 +42,6 @@ public class BirdBookManager : MonoBehaviour
         {
             birdBookUI.SetActive(false);
         }
-
     }
 
     // Update is called once per frame
@@ -53,7 +54,8 @@ public class BirdBookManager : MonoBehaviour
 
         if (!Instructions.activeSelf)
         {
-            if (Input.GetKeyUp(KeyCode.J))
+            openBookKey = KeyBinding.GetKey(GameKeys.OpenBook, KeyCode.Q);
+            if (Input.GetKeyUp(openBookKey))
             {
                 ToggleBook();
             }

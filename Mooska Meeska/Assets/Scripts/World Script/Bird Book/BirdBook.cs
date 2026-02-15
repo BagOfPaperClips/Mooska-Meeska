@@ -20,6 +20,9 @@ public class BirdBook : MonoBehaviour
     [Header("Bird Spawner")]
     private BirdSpawner birdSpawner;
 
+    private KeyCode PageRightKey;
+    private KeyCode PageLeftKey;
+
     private void Awake()
     {
        
@@ -74,12 +77,15 @@ public class BirdBook : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.K))
+        PageRightKey = KeyBinding.GetKey(GameKeys.PageRight, KeyCode.L);
+        PageLeftKey = KeyBinding.GetKey(GameKeys.PageLeft, KeyCode.K);
+
+        if (Input.GetKeyDown(PageLeftKey))
         {
             MoveRight();
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(PageRightKey))
         {
             MoveLeft();
         }

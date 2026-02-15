@@ -10,6 +10,12 @@ public class SceneTransitioner : MonoBehaviour
     {
         SceneManager.LoadScene("Title");
     }
+
+    public void KeyBind()
+    {
+        SceneManager.LoadScene("KeyBind");
+    }
+
     public void Game()
     {
         SceneManager.LoadScene("Game");

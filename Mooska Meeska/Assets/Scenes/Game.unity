@@ -16931,7 +16931,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587979851}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.31419474, y: 0.6503653, z: -0.33896884, w: 0.60283226}
+  m_LocalRotation: {x: 0.31419474, y: 0.65036535, z: -0.33896884, w: 0.6028323}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -29000,7 +29000,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087608875}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.33588523, y: 0.6376231, z: -0.3623696, w: 0.5910213}
+  m_LocalRotation: {x: 0.33588523, y: 0.63762313, z: -0.3623696, w: 0.59102136}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -31576,6 +31576,7 @@ GameObject:
   - component: {fileID: 1210129725}
   - component: {fileID: 1210129727}
   - component: {fileID: 1210129726}
+  - component: {fileID: 1210129728}
   m_Layer: 5
   m_Name: PressJ
   m_TagString: Untagged
@@ -31599,7 +31600,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -160, y: 17}
+  m_AnchoredPosition: {x: -188, y: 17}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1210129726
@@ -31649,10 +31650,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.7
+  m_fontSize: 24.4
   m_fontSizeBase: 22.7
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -31699,6 +31700,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210129724}
   m_CullTransparentMesh: 1
+--- !u!114 &1210129728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210129724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adee132737615ba45a2b6c27e633d92b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextMesh: {fileID: 0}
+  Key: 1
+  defaultKey: 0
 --- !u!1 &1210254675
 GameObject:
   m_ObjectHideFlags: 0
@@ -44413,7 +44429,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733350513}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.32507926, y: 0.6441089, z: -0.3507116, w: 0.59703314}
+  m_LocalRotation: {x: 0.3250793, y: 0.6441089, z: -0.35071164, w: 0.59703314}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -46405,6 +46421,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextMesh: {fileID: 0}
   Key: 108
+  right: 1
+  defaultKey: 108
   changeRatePerSecond: 5
   currentValueR: 0
   currentValueG: 0
@@ -55348,6 +55366,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextMesh: {fileID: 0}
   Key: 107
+  right: 0
+  defaultKey: 107
   changeRatePerSecond: 5
   currentValueR: 0
   currentValueG: 0

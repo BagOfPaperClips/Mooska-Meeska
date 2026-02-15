@@ -7,7 +7,13 @@ public class KeysIdentifier : MonoBehaviour
 {
     [Header("Text")]
     [SerializeField] private TextMeshProUGUI TextMesh;
-    [SerializeField] private KeyCode Key = KeyCode.K;
+    [SerializeField] private GameKeys Key = GameKeys.PageRight;
+
+    [Header("Left or Right")]
+    [SerializeField] private bool right = false;
+
+    [Header("Default Key")]
+    [SerializeField] private KeyCode defaultKey;
 
     [Header ("Change Rate")]
     [SerializeField] private float changeRatePerSecond = 5f;
@@ -34,6 +40,18 @@ public class KeysIdentifier : MonoBehaviour
             initialColor = TextMesh.color;
         }
 
+        if (!right)
+        {
+            Key = GameKeys.PageLeft;
+            defaultKey = KeyCode.L;
+        }
+
+        else
+        {
+            Key = GameKeys.PageRight;
+            defaultKey = KeyCode.K;
+        }
+
         revert = false;
 
         currentValueR = TextMesh.color.r * 255f;
@@ -45,12 +63,21 @@ public class KeysIdentifier : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(Key))
+
+  
+        KeyCode boundKey = KeyBinding.GetKey(Key, defaultKey);
+        if (Input.GetKeyDown(boundKey))
         {
             Debug.Log("Pressed: " + Key);
             TextMesh.color = Color.red;
             revert = true;
         }
+
+        if (TextMesh != null)
+        {
+            TextMesh.text = boundKey.ToString();
+        }
+
 
         if (revert)
         {
