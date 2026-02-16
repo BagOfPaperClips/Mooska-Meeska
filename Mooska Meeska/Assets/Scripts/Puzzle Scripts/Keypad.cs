@@ -31,6 +31,7 @@ public class Keypad : MonoBehaviour
 
     public void OnEnable()
     {
+        Clear();
         player.GetComponent<Movement>().enabled = false;
         
     }
@@ -45,10 +46,15 @@ public class Keypad : MonoBehaviour
         if(texty.text == answer)
         {
             texty.text = "Correct";
+            StartCoroutine(WaitForSeconds());
         }
         else
         {
             texty.text = "Wrong";
+            Debug.Log("Iron");
+            
+
+            
         }
     }
 
@@ -59,6 +65,16 @@ public class Keypad : MonoBehaviour
 
     public void Exit()
     {
+        
+        Clear();
+        player.GetComponent<Movement>().enabled = true;
+        mouseLook.LockCursor();
+        keypad.gameObject.SetActive(false);
+    }
+
+    IEnumerator WaitForSeconds()
+    {
+        yield return new WaitForSeconds(1f);
         player.GetComponent<Movement>().enabled = true;
         mouseLook.LockCursor();
         keypad.gameObject.SetActive(false);
