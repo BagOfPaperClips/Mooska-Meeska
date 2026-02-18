@@ -18,6 +18,8 @@ public class BirdBookManager : MonoBehaviour
 
     private KeyCode openBookKey;
 
+    
+
     private void Awake()
     {
         if (sceneLoader == null)

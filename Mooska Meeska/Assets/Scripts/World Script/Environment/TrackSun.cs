@@ -33,7 +33,41 @@ public class TrackSun : MonoBehaviour
         mouseLook = FindFirstObjectByType<MouseLook>();
         detectionMask = wall | bird;
     }
+// void Update()
+// {
+//     Vector3 sunDirection = -sun.forward;
+//     Debug.DrawRay(player.position, sunDirection * 100f, Color.yellow);
 
+//     // FIRST: Check if a wall blocks the sunlight
+//     if (Physics.Raycast(player.position, sunDirection, out RaycastHit wallHit, 1000f, wall))
+//     {
+//         hidden = true;
+//         return; // Wall blocks everything
+//     }
+
+//     // SECOND: If no wall hit, check for bird
+//     if (Physics.Raycast(player.position, sunDirection, out RaycastHit birdHit, 1000f, bird))
+//     {
+//         hidden = false;
+
+//         Debug.Log("CAUGHT");
+
+//         BirdInstance birdInstance = birdHit.collider.GetComponentInParent<BirdInstance>();
+
+//         if (birdInstance != null)
+//         {
+//             Debug.Log("Who's that pokemon? ITS " + birdInstance.data.birdName);
+//         }
+
+//         mouseLook.UnlockCursor();
+//         SceneManager.LoadScene("Death");
+//     }
+//     else
+//     {
+//         // Nothing hit at all
+//         hidden = false;
+//     }
+// }
     void Update()
     {
         Vector3 sunDirection = -sun.forward; 
@@ -48,11 +82,13 @@ public class TrackSun : MonoBehaviour
 
             if (((1 << hit.collider.gameObject.layer) & wall) != 0)
             {
+                Debug.Log("Don't be suspicious");
+                
                 hidden = true;
                 return;
             }
 
-            if (((1 << hit.collider.gameObject.layer) & bird) != 0)
+            else if (((1 << hit.collider.gameObject.layer) & bird) != 0)
             {
                 hidden = false;
 
