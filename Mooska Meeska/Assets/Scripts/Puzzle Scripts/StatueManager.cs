@@ -2,34 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class StatueManager : MonoBehaviour
 {
-   public Statue[] statues;
-   private bool statuesSolved = false;
+    [Header("All Statues in Scene")]
+    public Statue[] statues;
 
-   public void CheckStatues()
-   {
-      if (statuesSolved)
-      {
-         return;
-      }
+    private bool statuesSolved = false;
 
-      foreach(Statue statue in statues)
-      {
-         if (!statue.IsAligned())
-         {
+    public void CheckStatues()
+    {
+        if (statuesSolved)
             return;
-         }
-      }
 
-      SolveStatues();
-   }
+        // Check if every statue is correct
+        foreach (Statue statue in statues)
+        {
+            if (!statue.IsCorrectColour())
+                return;
+        }
 
-   void SolveStatues()
-   {
-      statuesSolved = true;
+        SolveStatues();
+    }
 
-   }
-
-   
+    void SolveStatues()
+    {
+        statuesSolved = true;
+        Debug.Log("Puzzle Solved!");
+        // Add any additional logic here (like opening doors, triggering effects, etc.)
+    }
 }
