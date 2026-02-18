@@ -33,41 +33,7 @@ public class TrackSun : MonoBehaviour
         mouseLook = FindFirstObjectByType<MouseLook>();
         detectionMask = wall | bird;
     }
-// void Update()
-// {
-//     Vector3 sunDirection = -sun.forward;
-//     Debug.DrawRay(player.position, sunDirection * 100f, Color.yellow);
 
-//     // FIRST: Check if a wall blocks the sunlight
-//     if (Physics.Raycast(player.position, sunDirection, out RaycastHit wallHit, 1000f, wall))
-//     {
-//         hidden = true;
-//         return; // Wall blocks everything
-//     }
-
-//     // SECOND: If no wall hit, check for bird
-//     if (Physics.Raycast(player.position, sunDirection, out RaycastHit birdHit, 1000f, bird))
-//     {
-//         hidden = false;
-
-//         Debug.Log("CAUGHT");
-
-//         BirdInstance birdInstance = birdHit.collider.GetComponentInParent<BirdInstance>();
-
-//         if (birdInstance != null)
-//         {
-//             Debug.Log("Who's that pokemon? ITS " + birdInstance.data.birdName);
-//         }
-
-//         mouseLook.UnlockCursor();
-//         SceneManager.LoadScene("Death");
-//     }
-//     else
-//     {
-//         // Nothing hit at all
-//         hidden = false;
-//     }
-// }
     void Update()
     {
         Vector3 sunDirection = -sun.forward; 
