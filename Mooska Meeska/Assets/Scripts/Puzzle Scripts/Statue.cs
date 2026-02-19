@@ -9,47 +9,19 @@ using UnityEngine.Rendering;
 public class Statue : MonoBehaviour
 {
     [Header("Rotation Settings")]
-    public float rotationStep = 90f;
-    public float rotationSpeed = 180f;
+    public float rotationStep = 90f;      // How much to rotate each press
+    public float rotationSpeed = 180f;    // Rotation speed in degrees/sec
 
     private Quaternion targetRotation;
     private bool isRotating = false;
-    private int currentIndex = 0;
 
     [Header("Player Interaction")]
     public bool playerInRange = false;
-    public StatueManager manager;
-
-    [Header("Materials (Order Matches Rotation)")]
-    public Renderer statueRenderer;
-    public Material[] rotationMaterials; // Assign in Inspector
-
-    [Header("Correct Colour Index")]
-    public int correctIndex;  // Set per statue in Inspector
-
 
     void Start()
     {
-        // Pick a random starting index
-        currentIndex = Random.Range(0, rotationMaterials.Length);
-
-        transform.rotation = Quaternion.Euler(0f, currentIndex * rotationStep, 0f);
+        // Set initial rotation
         targetRotation = transform.rotation;
-
-        // Set initial material
-        statueRenderer.material = rotationMaterials[currentIndex];
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-            playerInRange = true;
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-            playerInRange = false;
     }
 
     void Update()
@@ -62,55 +34,39 @@ public class Statue : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && playerInRange && !isRotating)
         {
-            // Advance index
-            currentIndex = (currentIndex + 1) % rotationMaterials.Length;
-
-            // Set target rotation
-            targetRotation = Quaternion.Euler(0f, currentIndex * rotationStep, 0f);
-
-            // Immediately update material
-            statueRenderer.material = rotationMaterials[currentIndex];
-
-            // Start rotating
+            // Rotate by rotationStep on Y-axis
+            targetRotation = transform.rotation * Quaternion.Euler(0f, rotationStep, 0f);
             isRotating = true;
         }
     }
 
     void HandleRotation()
-{
-    if (!isRotating)
-        return;
-
-    transform.rotation = Quaternion.RotateTowards(
-        transform.rotation,
-        targetRotation,
-        rotationSpeed * Time.deltaTime
-    );
-
-    if (Quaternion.Angle(transform.rotation, targetRotation) < 0.1f)
     {
-        transform.rotation = targetRotation;
-        isRotating = false;
+        if (!isRotating)
+            return;
 
-        // Update material after rotation
+        transform.rotation = Quaternion.RotateTowards(
+            transform.rotation,
+            targetRotation,
+            rotationSpeed * Time.deltaTime
+        );
+
         if (Quaternion.Angle(transform.rotation, targetRotation) < 0.1f)
-{
-    transform.rotation = targetRotation;
-    isRotating = false;
-
-    // Update material AFTER rotation
-    statueRenderer.material = rotationMaterials[currentIndex];
-
-    if (manager != null)
-        manager.CheckStatues();
-}
+        {
+            transform.rotation = targetRotation;
+            isRotating = false;
+        }
     }
-}
 
-
-    // Called by StatueManager
-    public bool IsCorrectColour()
+    private void OnTriggerEnter(Collider other)
     {
-        return currentIndex == correctIndex;
+        if (other.CompareTag("Player"))
+            playerInRange = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+            playerInRange = false;
     }
 }

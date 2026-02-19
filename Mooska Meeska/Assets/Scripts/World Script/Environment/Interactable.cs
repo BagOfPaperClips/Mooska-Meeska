@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class Interactables : MonoBehaviour
 {
     [Header("References")]
@@ -26,121 +27,94 @@ public class Interactables : MonoBehaviour
     private MouseLook mouseLook;
     private bool dead = false;
 
-    private KeyCode InteractKey;
-
     [Header("Puzzles")]
     public GameObject Keypad;
+
+    private bool canInteract;
 
     void Awake()
     {
         mouseLook = FindFirstObjectByType<MouseLook>();
         var p = GameObject.FindWithTag("Player");
-
         if (p != null)
-        {
             player = p.transform;
-        }
-
-        
     }
-
-    // Update is called once per frame
-
-
-    private bool canInteract;
 
     void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-    {
-        
-            if(this.gameObject.tag != "MouseTrap")
-            {
-                canInteract = true;
-            alert.SetActive(true);
-            }
-            else
-            {
-                mouseLook.enabled = false;
-                mouseLook.UnlockCursor();
-                SceneManager.LoadScene("Death");
-            }
-        
-    }
-    }
+        if (!collision.gameObject.CompareTag("Player")) return;
 
+        if (this.gameObject.tag != "MouseTrap")
+        {
+            canInteract = true;
+            alert.SetActive(true);
+        }
+        else
+        {
+            mouseLook.enabled = false;
+            mouseLook.UnlockCursor();
+            SceneManager.LoadScene("Death");
+        }
+    }
 
     void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-    {
+        if (!collision.gameObject.CompareTag("Player")) return;
+
         canInteract = false;
         alert.SetActive(false);
     }
-    }
 
     void Update()
-{
-    if (!canInteract) return;
-
-    InteractKey = KeyBinding.GetKey(GameKeys.Interact, KeyCode.E);
-
-    if (Input.GetKeyDown(InteractKey))
     {
-        switch (gameObject.tag)
+        if (!canInteract) return;
+
+        // Use the static key helper
+        if (Input.GetKeyDown(KeyBinder.InteractKey))
         {
-            case "Poster":
-                PageCollected();
-                break;
-            case "FakeChest":
-                NoKey();
-                break;
-            case "TrueChest":
-                HasKey();
-                break;
-            case "Cage":
-                OpenCage();
-            break;
-            case "Meeska":
-                FreeMeeska();
-            break;
-            case "Keypad":
-                OpenKeypad();
-            break;
+            switch (gameObject.tag)
+            {
+                case "Poster":
+                    PageCollected();
+                    break;
+                case "FakeChest":
+                    NoKey();
+                    break;
+                case "TrueChest":
+                    HasKey();
+                    break;
+                case "Cage":
+                    OpenCage();
+                    break;
+                case "Meeska":
+                    FreeMeeska();
+                    break;
+                case "Keypad":
+                    OpenKeypad();
+                    break;
+            }
         }
     }
-}
 
     void PageCollected()
     {
         if (BirdBook.instance != null)
-        {
-             
             BirdBook.instance.UnlockBird(birdSO);
-        }
 
         text.text = "You have collected a page\nfor the Bird Book";
         text.gameObject.SetActive(true);
         StartCoroutine(WaitForSeconds());
-
     }
 
-
     void NoKey()
-    {   
-        
-        Debug.Log("Dang, it's empty");
+    {
         text.text = "Dang, it's empty";
         text.gameObject.SetActive(true);
         StartCoroutine(WaitForSeconds());
-
-        
     }
 
     void HasKey()
     {
-
-        Debug.Log("You found a key");
         text.text = "You Found a Key";
         text.gameObject.SetActive(true);
         StartCoroutine(WaitForSeconds());
@@ -149,48 +123,25 @@ public class Interactables : MonoBehaviour
 
     void OpenCage()
     {
-        if(inventoryManager.redKey != 0)
+        if (inventoryManager.redKey != 0)
         {
-            
-            text.gameObject.SetActive(true);
             text.text = "You Open the Cage";
-            StartCoroutine(WaitForSeconds());
         }
         else
         {
-            
-            text.gameObject.SetActive(true);
             text.text = "The Cage is Locked";
             hold = true;
-            StartCoroutine(WaitForSeconds());
         }
+
+        text.gameObject.SetActive(true);
+        StartCoroutine(WaitForSeconds());
     }
 
     void FreeMeeska()
     {
-        
         mouseLook.enabled = false;
         mouseLook.UnlockCursor();
         SceneManager.LoadScene("Win");
-    }
-
-
-    IEnumerator WaitForSeconds()
-    {
-        
-        if(hold == false)
-        {
-            Destroy(gameObject);
-            
-        }
-        
-        yield return new WaitForSeconds(3);
-        text.gameObject.SetActive(false);
-        
-        
-
-        hold = false;
-        
     }
 
     void OpenKeypad()
@@ -198,7 +149,215 @@ public class Interactables : MonoBehaviour
         Keypad.SetActive(true);
     }
 
+    IEnumerator WaitForSeconds()
+    {
+        if (!hold)
+            Destroy(gameObject);
+
+        yield return new WaitForSeconds(3);
+        text.gameObject.SetActive(false);
+        hold = false;
+    }
+}
+
+
+
+
+
+// public class Interactables : MonoBehaviour
+// {
+//     [Header("References")]
+//     public BirdSO birdSO;
+//     private Transform player;
+//     public GameObject alert;
+
+//     [Header("DEBUGGING")]
+//     public float Distance;
+
+//     [Header("Inventory")]
+//     public InventoryManager inventoryManager;
+//     public KeySO key;
+
+//     [Header("Display")]
+//     public TextMeshProUGUI text;
+//     public bool hold = false;
+//     private MouseLook mouseLook;
+//     private bool dead = false;
+
+//     private KeyCode InteractKey;
+
+//     [Header("Puzzles")]
+//     public GameObject Keypad;
+
+//     void Awake()
+//     {
+//         mouseLook = FindFirstObjectByType<MouseLook>();
+//         var p = GameObject.FindWithTag("Player");
+
+//         if (p != null)
+//         {
+//             player = p.transform;
+//         }
+
+        
+//     }
+
+//     // Update is called once per frame
+
+
+//     private bool canInteract;
+
+//     void OnTriggerEnter(Collider collision)
+//     {
+//         if (collision.gameObject.CompareTag("Player"))
+//     {
+        
+//             if(this.gameObject.tag != "MouseTrap")
+//             {
+//                 canInteract = true;
+//             alert.SetActive(true);
+//             }
+//             else
+//             {
+//                 mouseLook.enabled = false;
+//                 mouseLook.UnlockCursor();
+//                 SceneManager.LoadScene("Death");
+//             }
+        
+//     }
+//     }
+
+
+//     void OnTriggerExit(Collider collision)
+//     {
+//         if (collision.gameObject.CompareTag("Player"))
+//     {
+//         canInteract = false;
+//         alert.SetActive(false);
+//     }
+//     }
+
+//     void Update()
+// {
+//     if (!canInteract) return;
+
+//     InteractKey = KeyBinding.GetKey(GameKeys.Interact, KeyCode.E);
+
+//     if (Input.GetKeyDown(InteractKey))
+//     {
+//         switch (gameObject.tag)
+//         {
+//             case "Poster":
+//                 PageCollected();
+//                 break;
+//             case "FakeChest":
+//                 NoKey();
+//                 break;
+//             case "TrueChest":
+//                 HasKey();
+//                 break;
+//             case "Cage":
+//                 OpenCage();
+//             break;
+//             case "Meeska":
+//                 FreeMeeska();
+//             break;
+//             case "Keypad":
+//                 OpenKeypad();
+//             break;
+//         }
+//     }
+// }
+
+//     void PageCollected()
+//     {
+//         if (BirdBook.instance != null)
+//         {
+             
+//             BirdBook.instance.UnlockBird(birdSO);
+//         }
+
+//         text.text = "You have collected a page\nfor the Bird Book";
+//         text.gameObject.SetActive(true);
+//         StartCoroutine(WaitForSeconds());
+
+//     }
+
+
+//     void NoKey()
+//     {   
+        
+//         Debug.Log("Dang, it's empty");
+//         text.text = "Dang, it's empty";
+//         text.gameObject.SetActive(true);
+//         StartCoroutine(WaitForSeconds());
+
+        
+//     }
+
+//     void HasKey()
+//     {
+
+//         Debug.Log("You found a key");
+//         text.text = "You Found a Key";
+//         text.gameObject.SetActive(true);
+//         StartCoroutine(WaitForSeconds());
+//         inventoryManager.AddKey(key);
+//     }
+
+//     void OpenCage()
+//     {
+//         if(inventoryManager.redKey != 0)
+//         {
+            
+//             text.gameObject.SetActive(true);
+//             text.text = "You Open the Cage";
+//             StartCoroutine(WaitForSeconds());
+//         }
+//         else
+//         {
+            
+//             text.gameObject.SetActive(true);
+//             text.text = "The Cage is Locked";
+//             hold = true;
+//             StartCoroutine(WaitForSeconds());
+//         }
+//     }
+
+//     void FreeMeeska()
+//     {
+        
+//         mouseLook.enabled = false;
+//         mouseLook.UnlockCursor();
+//         SceneManager.LoadScene("Win");
+//     }
+
+
+//     IEnumerator WaitForSeconds()
+//     {
+        
+//         if(hold == false)
+//         {
+//             Destroy(gameObject);
+            
+//         }
+        
+//         yield return new WaitForSeconds(3);
+//         text.gameObject.SetActive(false);
+        
+        
+
+//         hold = false;
+        
+//     }
+
+//     void OpenKeypad()
+//     {
+//         Keypad.SetActive(true);
+//     }
+
+    
 
     
     
-}
+// }

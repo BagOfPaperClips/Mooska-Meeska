@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HoloMat3
+  m_Name: OrangeHolo
   m_Shader: {fileID: -6465566751694194690, guid: 1077ce48e95dd482cb1d1a70abdbe47a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -64,7 +64,7 @@ Material:
     - _ZWrite: 0
     - _ZWriteControl: 0
     m_Colors:
-    - _FresnelColour: {r: 0, g: 4.9971027, b: 15.698113, a: 1}
+    - _FresnelColour: {r: 3.2845802, g: 0.7398151, b: 0, a: 1}
     - _SanLinesTiling: {r: 1, g: 5, b: 0, a: 0}
     - _ScanLinesSpeed: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
