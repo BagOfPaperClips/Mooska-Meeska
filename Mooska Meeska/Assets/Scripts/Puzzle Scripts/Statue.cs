@@ -77,28 +77,36 @@ public class Statue : MonoBehaviour
     }
 
     void HandleRotation()
+{
+    if (!isRotating)
+        return;
+
+    transform.rotation = Quaternion.RotateTowards(
+        transform.rotation,
+        targetRotation,
+        rotationSpeed * Time.deltaTime
+    );
+
+    if (Quaternion.Angle(transform.rotation, targetRotation) < 0.1f)
     {
-        if (!isRotating)
-            return;
+        transform.rotation = targetRotation;
+        isRotating = false;
 
-        transform.rotation = Quaternion.RotateTowards(
-            transform.rotation,
-            targetRotation,
-            rotationSpeed * Time.deltaTime
-        );
+        // Update material after rotation
+        if (Quaternion.Angle(transform.rotation, targetRotation) < 0.1f)
+{
+    transform.rotation = targetRotation;
+    isRotating = false;
 
-        if (Quaternion.Angle(transform.rotation, targetRotation) < 0.01f)
-        {
-            transform.rotation = targetRotation;
-            isRotating = false;
+    // Update material AFTER rotation
+    statueRenderer.material = rotationMaterials[currentIndex];
 
-            // Notify manager after rotation
-            if (manager != null)
-                manager.CheckStatues();
-        }
-
-        
+    if (manager != null)
+        manager.CheckStatues();
+}
     }
+}
+
 
     // Called by StatueManager
     public bool IsCorrectColour()
