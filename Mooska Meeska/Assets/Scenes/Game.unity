@@ -4162,6 +4162,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5140407977232905050, guid: 3ed88b2d804882a43a949044ac69051d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e376c375f9020344da492f797b97806c, type: 2}
     - target: {fileID: 919132149155446097, guid: 3ed88b2d804882a43a949044ac69051d, type: 3}
       propertyPath: m_Name
       value: Mooska
@@ -63475,7 +63479,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4e92926cb759a4d3e9c30123e1c283a5, type: 2}
+  - {fileID: 2100000, guid: e376c375f9020344da492f797b97806c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -63877,7 +63881,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4e92926cb759a4d3e9c30123e1c283a5, type: 2}
+  - {fileID: 2100000, guid: e376c375f9020344da492f797b97806c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
