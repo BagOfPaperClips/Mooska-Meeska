@@ -95,7 +95,6 @@ public class Interactables : MonoBehaviour
             }
         }
     }
-
     void PageCollected()
     {
         if (BirdBook.instance != null)
