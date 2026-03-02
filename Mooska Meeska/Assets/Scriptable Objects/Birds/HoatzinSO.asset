@@ -25,7 +25,7 @@ MonoBehaviour:
   LockedBirdStats: 'Bird Speed: .............
 
     Dive Timer: .........'
-  birdModel: {fileID: 919132149155446097, guid: a8b35d0f2b8448548a612ec8c92a42c3, type: 3}
+  birdModel: {fileID: 0}
   Hostile: 0
   found: 0
   birdSpeed: fast
