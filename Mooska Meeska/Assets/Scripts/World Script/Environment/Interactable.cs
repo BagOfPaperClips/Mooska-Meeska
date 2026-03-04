@@ -122,7 +122,7 @@ public class Interactables : MonoBehaviour
 
     void OpenCage()
     {
-        if (inventoryManager.redKey != 0)
+        if (inventoryManager.redKey != 0 && inventoryManager.greenKey!=0&&inventoryManager.yellowKey!=0&&inventoryManager.blueKey!=0)
         {
             text.text = "You Open the Cage";
         }
