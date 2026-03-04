@@ -173,12 +173,14 @@ public class Interactables : MonoBehaviour
 
     IEnumerator WaitForSeconds()
     {
-        if (!hold)
-            Destroy(gameObject);
-
         yield return new WaitForSeconds(3);
-        text.gameObject.SetActive(false);
-        hold = false;
+
+    text.gameObject.SetActive(false);
+
+    if (!hold)
+        Destroy(gameObject);
+
+    hold = false;
     }
 }
 
