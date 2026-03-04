@@ -44,17 +44,26 @@ public class Interactables : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Player")) return;
 
-        if (this.gameObject.tag != "MouseTrap")
+        
+        
+        
+        
+        // if (this.alert != null)
+        // {
+        canInteract = true;
+        
+        if(alert!= null)
         {
-            canInteract = true;
             alert.SetActive(true);
         }
-        else
-        {
-            mouseLook.enabled = false;
-            mouseLook.UnlockCursor();
-            SceneManager.LoadScene("Death");
-        }
+        
+        // }
+        // else
+        // {
+        //     mouseLook.enabled = false;
+        //     mouseLook.UnlockCursor();
+        //     SceneManager.LoadScene("Death");
+        // }
     }
 
     void OnTriggerExit(Collider collision)
@@ -62,7 +71,10 @@ public class Interactables : MonoBehaviour
         if (!collision.gameObject.CompareTag("Player")) return;
 
         canInteract = false;
-        alert.SetActive(false);
+        if(alert!= null)
+        {
+            alert.SetActive(false);
+        }
     }
 
     void Update()
