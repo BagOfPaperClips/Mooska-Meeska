@@ -32,6 +32,8 @@ public class Interactables : MonoBehaviour
 
     private bool canInteract;
 
+    private bool cageUnlocked = false;
+
     void Awake()
     {
         mouseLook = FindFirstObjectByType<MouseLook>();
@@ -99,7 +101,12 @@ public class Interactables : MonoBehaviour
                     OpenCage();
                     break;
                 case "Meeska":
-                    FreeMeeska();
+
+                    if(cageUnlocked == true)
+                    {
+                        FreeMeeska();
+                    }
+                    
                     break;
                 case "Keypad":
                     OpenKeypad();
@@ -134,6 +141,8 @@ public class Interactables : MonoBehaviour
 
     void OpenCage()
     {
+        
+        
         if (inventoryManager.redKey != 0 && inventoryManager.greenKey!=0&&inventoryManager.yellowKey!=0&&inventoryManager.blueKey!=0)
         {
             text.text = "You Open the Cage";
@@ -143,6 +152,8 @@ public class Interactables : MonoBehaviour
             text.text = "The Cage is Locked";
             hold = true;
         }
+
+        cageUnlocked = true;
 
         text.gameObject.SetActive(true);
         StartCoroutine(WaitForSeconds());
