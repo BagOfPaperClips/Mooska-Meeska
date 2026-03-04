@@ -102,10 +102,10 @@ public class Interactables : MonoBehaviour
                     break;
                 case "Meeska":
 
-                    if(cageUnlocked == true)
-                    {
-                        FreeMeeska();
-                    }
+                    
+                    FreeMeeska();
+                    
+                    
                     
                     break;
                 case "Keypad":
@@ -146,6 +146,8 @@ public class Interactables : MonoBehaviour
         if (inventoryManager.redKey != 0 && inventoryManager.greenKey!=0&&inventoryManager.yellowKey!=0&&inventoryManager.blueKey!=0)
         {
             text.text = "You Open the Cage";
+            cageUnlocked = true;
+
         }
         else
         {
@@ -153,7 +155,6 @@ public class Interactables : MonoBehaviour
             hold = true;
         }
 
-        cageUnlocked = true;
 
         text.gameObject.SetActive(true);
         StartCoroutine(WaitForSeconds());
