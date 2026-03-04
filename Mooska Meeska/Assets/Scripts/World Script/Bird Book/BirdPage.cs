@@ -16,9 +16,6 @@ public class BirdPage : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Stats;
     [SerializeField] private Image birdImage;
 
-    [Header("Locked")]
-    [SerializeField] private Sprite LockedBirdImage;
-
     public bool IsUnlocked { get; private set; }
 
     public void setLocked(BirdSO so)
@@ -43,7 +40,7 @@ public class BirdPage : MonoBehaviour
         if (birdImage != null)
         {
             
-            birdImage.sprite = LockedBirdImage;
+            birdImage.sprite = so.lockedBirdSprite;
         }
     }
 
