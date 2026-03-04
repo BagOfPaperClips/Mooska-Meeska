@@ -11,8 +11,8 @@ public class Instructions : MonoBehaviour
     {
         "", "Avoid the birds flying overhead! If they spot you, " + 
         "you won't have much time to find cover..", "Interact with " +
-        "wanted posters (cubes atm) to learn more about the bird mafia",
-        "Find keys to unlock spaces and save Meeska!"
+        " News Stands to learn more about the bird mafia",
+        "In 4 different areas hidden in chests "+"collect keys to unlock the cage and save Meeska!"
     };
     public int pageindex = 0;
     public TextMeshProUGUI bodyText;
