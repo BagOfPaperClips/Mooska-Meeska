@@ -16,7 +16,17 @@ public class BirdPage : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Stats;
     [SerializeField] private Image birdImage;
 
+    private BirdBook birdBook;
+
     public bool IsUnlocked { get; private set; }
+
+    private void Awake()
+    {
+        if (birdBook == null)
+        {
+            birdBook = FindFirstObjectByType<BirdBook>();
+        }
+    }
 
     public void setLocked(BirdSO so)
     {
@@ -40,7 +50,7 @@ public class BirdPage : MonoBehaviour
         if (birdImage != null)
         {
             
-            birdImage.sprite = so.lockedBirdSprite;
+            birdImage.sprite = birdBook.defaultImage;
         }
     }
 
@@ -72,6 +82,11 @@ public class BirdPage : MonoBehaviour
         if (birdImage != null)
         {
             birdImage.sprite = birdSO.birdImage;
+        }
+
+        if (birdImage == null)
+        {
+            birdImage.sprite = null;
         }
     }
 }
