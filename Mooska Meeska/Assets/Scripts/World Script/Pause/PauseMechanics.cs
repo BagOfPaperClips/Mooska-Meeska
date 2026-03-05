@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class PauseMechanics : MonoBehaviour
 {
     [SerializeField] public GameObject HelpGO;
+    [SerializeField] public GameObject ControlsGO;
     [SerializeField] public GameObject ExitGO;
 
     private void Awake()
@@ -11,6 +12,16 @@ public class PauseMechanics : MonoBehaviour
         if (HelpGO != null)
         {
             HelpGO.SetActive(false);
+        }
+
+        if (ControlsGO != null)
+        {
+            ControlsGO.SetActive(false);
+        }
+
+        if (ExitGO != null)
+        {
+            ExitGO.SetActive(false);
         }
     }
     public void Resume()
@@ -42,6 +53,23 @@ public class PauseMechanics : MonoBehaviour
         if (HelpGO != null)
         {
             HelpGO.SetActive(true);
+        }
+
+        gameObject.SetActive(false);
+    }
+
+    public void Controls()
+    {
+        if (PauseManager.instance == null)
+        {
+            return; 
+        }
+
+        PauseManager.instance.SetPaused(true);
+
+        if (ControlsGO != null)
+        {
+            ControlsGO.SetActive(true);
         }
 
         gameObject.SetActive(false);

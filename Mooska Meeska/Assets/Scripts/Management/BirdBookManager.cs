@@ -57,7 +57,7 @@ public class BirdBookManager : MonoBehaviour
         if (!Instructions.activeSelf)
         {
             openBookKey = KeyBinding.GetKey(GameKeys.OpenBook, KeyCode.Q);
-            if (Input.GetKeyUp(openBookKey))
+            if (Input.GetKeyUp(openBookKey) && !pauseManager.isPaused)
             {
                 ToggleBook();
             }
