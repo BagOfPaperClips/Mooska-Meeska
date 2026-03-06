@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
 
     Vector3 moveDir;
 
-    public float sprintTime = 3;
+    public float sprintTime = 1;
     public float remainingTime;
     [SerializeField] int seconds;
     public Image stamBar;
@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour
 
         if ((Input.GetKey(KeyCode.LeftShift)) && remainingTime > 0 && start)
         {
-            speed = 20f;
+            speed = 30f;
             remainingTime -= Time.deltaTime;
             isReady = true;
 
@@ -45,7 +45,7 @@ public class Movement : MonoBehaviour
         else
         {
             isReady = false;
-            if (remainingTime < 3 && isReady == false)
+            if (remainingTime < 1 && isReady == false)
             {
                 remainingTime += Time.deltaTime * 0.7f;
                 start = false;
