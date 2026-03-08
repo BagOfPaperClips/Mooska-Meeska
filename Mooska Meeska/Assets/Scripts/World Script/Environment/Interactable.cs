@@ -32,6 +32,8 @@ public class Interactables : MonoBehaviour
 
     private bool canInteract;
 
+    private bool cageUnlocked = false;
+
     void Awake()
     {
         mouseLook = FindFirstObjectByType<MouseLook>();
@@ -44,17 +46,26 @@ public class Interactables : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Player")) return;
 
-        if (this.gameObject.tag != "MouseTrap")
+        
+        
+        
+        
+        // if (this.alert != null)
+        // {
+        canInteract = true;
+        
+        if(alert!= null)
         {
-            canInteract = true;
             alert.SetActive(true);
         }
-        else
-        {
-            mouseLook.enabled = false;
-            mouseLook.UnlockCursor();
-            SceneManager.LoadScene("Death");
-        }
+        
+        // }
+        // else
+        // {
+        //     mouseLook.enabled = false;
+        //     mouseLook.UnlockCursor();
+        //     SceneManager.LoadScene("Death");
+        // }
     }
 
     void OnTriggerExit(Collider collision)
@@ -62,7 +73,10 @@ public class Interactables : MonoBehaviour
         if (!collision.gameObject.CompareTag("Player")) return;
 
         canInteract = false;
-        alert.SetActive(false);
+        if(alert!= null)
+        {
+            alert.SetActive(false);
+        }
     }
 
     void Update()
@@ -87,7 +101,12 @@ public class Interactables : MonoBehaviour
                     OpenCage();
                     break;
                 case "Meeska":
+
+                    
                     FreeMeeska();
+                    
+                    
+                    
                     break;
                 case "Keypad":
                     OpenKeypad();
@@ -122,15 +141,20 @@ public class Interactables : MonoBehaviour
 
     void OpenCage()
     {
-        if (inventoryManager.redKey != 0)
+        
+        
+        if (inventoryManager.redKey != 0 && inventoryManager.greenKey!=0&&inventoryManager.yellowKey!=0&&inventoryManager.blueKey!=0)
         {
             text.text = "You Open the Cage";
+            cageUnlocked = true;
+
         }
         else
         {
             text.text = "The Cage is Locked";
             hold = true;
         }
+
 
         text.gameObject.SetActive(true);
         StartCoroutine(WaitForSeconds());
@@ -150,12 +174,14 @@ public class Interactables : MonoBehaviour
 
     IEnumerator WaitForSeconds()
     {
-        if (!hold)
-            Destroy(gameObject);
-
         yield return new WaitForSeconds(3);
-        text.gameObject.SetActive(false);
-        hold = false;
+
+    text.gameObject.SetActive(false);
+
+    if (!hold)
+        Destroy(gameObject);
+
+    hold = false;
     }
 }
 

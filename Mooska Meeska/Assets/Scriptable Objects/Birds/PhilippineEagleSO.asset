@@ -20,11 +20,12 @@ MonoBehaviour:
   birdCall: {fileID: 0}
   birdImage: {fileID: 0}
   LockedBirdName: ????????????????
+  lockedBirdSprite: {fileID: 21300000, guid: bb7afeb1153b07f4798424570e945830, type: 3}
   LockedBirdDescription: ................. ............. ............
   LockedBirdStats: 'Bird Speed: .............
 
     Dive Timer: .........'
-  birdModel: {fileID: 0}
+  birdModel: {fileID: 919132149155446097, guid: 8259d888cb4daa04aa5386964ab85d97, type: 3}
   Hostile: 1
   found: 0
   birdSpeed: 5
