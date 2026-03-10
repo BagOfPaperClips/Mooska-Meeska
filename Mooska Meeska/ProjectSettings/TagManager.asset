@@ -13,6 +13,7 @@ TagManager:
   - MouseTrap
   - Bird Book
   - Keypad
+  - puzzle2
   layers:
   - Default
   - TransparentFX
