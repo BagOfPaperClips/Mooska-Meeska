@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using System.Threading;
 
-public class Puzzle2 : MonoBehaviour
+public class Puzzle1 : MonoBehaviour
 {
     private int score = 0;
 
