@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
 {
 
     public CharacterController c;
-    public float speed = 7f;
+    public float speed = 9f;
 
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
