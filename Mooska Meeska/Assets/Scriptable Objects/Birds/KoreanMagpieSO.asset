@@ -18,9 +18,9 @@ MonoBehaviour:
     hostile bird.
   birdStats: 
   birdCall: {fileID: 0}
-  birdImage: {fileID: 0}
+  birdImage: {fileID: 21300000, guid: e457c36b80c57384284cc2bdf8d859ae, type: 3}
   LockedBirdName: ????????????????????
-  lockedBirdSprite: {fileID: 21300000, guid: e457c36b80c57384284cc2bdf8d859ae, type: 3}
+  lockedBirdSprite: {fileID: 21300000, guid: 8f45649230bc9a545a3d7f58a09d5ef6, type: 3}
   LockedBirdDescription: ...............
   LockedBirdStats: 'Bird Speed: .............
 
