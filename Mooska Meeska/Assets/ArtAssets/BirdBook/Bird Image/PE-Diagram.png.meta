@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8f45649230bc9a545a3d7f58a09d5ef6
+guid: f556e576b1b44744fa585ac1eed804fc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,18 +95,40 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PE-Diagram_0
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 587
+        width: 438
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a265624089a1946b0dbf7995b276d0
+      internalID: 462136952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 6f8cb09102193fa4597b738923bedde7
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PE-Diagram_0: 462136952
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
