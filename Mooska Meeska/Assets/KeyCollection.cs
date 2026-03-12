@@ -7,6 +7,7 @@ public class KeyCollection : MonoBehaviour
 {
     [SerializeField] int num = 0;
     [SerializeField] TextMeshProUGUI text1;
+    [SerializeField] TextMeshProUGUI text2;
 
     [SerializeField] GameObject door1;
     [SerializeField] GameObject door2;
@@ -88,6 +89,7 @@ public class KeyCollection : MonoBehaviour
         {
             case 1:
                 text1.text = num + "/2";
+                text2.text = num + "/2";
                 yield return new WaitForSeconds(1f);
                 text1.text = "";
                 if(num == 2)
@@ -97,6 +99,7 @@ public class KeyCollection : MonoBehaviour
                 break;
             case 2:
                 text1.text = (num-2) + "/4";
+                text2.text = (num - 2) + "/4";
                 yield return new WaitForSeconds(1f);
                 text1.text = "";
                 if (num == 6)
@@ -106,6 +109,7 @@ public class KeyCollection : MonoBehaviour
                 break;
             case 3:
                 text1.text = (num-6) + "/6";
+                text2.text = (num - 6) + "/6";
                 yield return new WaitForSeconds(1f);
                 text1.text = "";
                 if (num == 12)
@@ -115,6 +119,7 @@ public class KeyCollection : MonoBehaviour
                 break;
             case 4:
                 text1.text = (num-12) + "/8";
+                text2.text = (num - 12) + "/8";
                 yield return new WaitForSeconds(1f);
                 text1.text = "";
                 if (num == 20)
