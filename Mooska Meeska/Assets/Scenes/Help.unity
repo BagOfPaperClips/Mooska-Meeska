@@ -231,7 +231,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.3123, y: 90.307}
+  m_AnchoredPosition: {x: -6.3123, y: 166}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &120686454
@@ -254,9 +254,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>WSAD</b> - PLAYER MOVEMENT UP, DOWN, LEFT OR RIGHT\n<b>MOUSE</b> -
-    CAMERA MOVEMENT\n<b>E</b> - INTERACTING WITH OBJECTS\n<b>Q</b> - OPEN BIRD BOOK\n<b>SHIFT</b>
-    - TO SPRINT \n<b></b>"
+  m_text: "CAREFULLY WANDER THE MOUSE CITY BY AVOIDING THE BIRD SHADOWS TO SAVE YOUR
+    TWIN!\n\nCOLLECT \"ITEMS\" FROM NEW STANDS TO LEARN ABOUT THE FLYING BIRDS AND
+    DIFFERENTIATE THEIR SHADOWS. OPEN THE BIRD BOOK TO LEARN WHO IS A FRIEND OR FOE!\n\nCONTROLS\n<b>WSAD</b>
+    - PLAYER MOVEMENT UP, DOWN, LEFT OR RIGHT\n<b>MOUSE</b> - CAMERA MOVEMENT\n<b>E</b>
+    - INTERACTING WITH OBJECTS\n<b>Q</b> - OPEN BIRD BOOK\n<b>SHIFT</b> - TO SPRINT
+    \n<b></b>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fa6fdd7d0b2a86d408c47df620460bca, type: 2}
   m_sharedMaterial: {fileID: 8359076039453552289, guid: fa6fdd7d0b2a86d408c47df620460bca, type: 2}
@@ -283,13 +286,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 5
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -714,7 +717,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.000061, y: -355.97}
+  m_AnchoredPosition: {x: 6.000061, y: -416.02}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1229548118
@@ -925,7 +928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.3123, y: 350.63}
+  m_AnchoredPosition: {x: -6.3123, y: 430.7}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1845301453
