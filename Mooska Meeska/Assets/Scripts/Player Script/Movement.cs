@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Movement : MonoBehaviour
 {
 
@@ -26,9 +27,12 @@ public class Movement : MonoBehaviour
     public bool isReady = false;
     public bool start = true;
 
+    public Animator walk;
+
     private void Start()
     {
         remainingTime = sprintTime;
+        walk.GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
@@ -71,9 +75,15 @@ public class Movement : MonoBehaviour
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             c.Move(moveDir * speed * Time.deltaTime);
 
-            
-        }
+            walk.SetBool("isWalking", true);
+            walk.SetBool("isStanding", false);
 
+        }
+        else if(dir.magnitude < 0.1f)
+        {
+            walk.SetBool("isStanding", true);
+            walk.SetBool("isWalking", false);
+        }
     }
 
 }
