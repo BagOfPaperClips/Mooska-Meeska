@@ -20,6 +20,9 @@ public class BirdBook : MonoBehaviour
     [Header("Bird Spawner")]
     private BirdSpawner birdSpawner;
 
+    [Header("Reference")]
+    public Sprite defaultImage;
+
     private KeyCode PageRightKey;
     private KeyCode PageLeftKey;
 

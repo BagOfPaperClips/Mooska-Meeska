@@ -18,13 +18,14 @@ MonoBehaviour:
     hostile bird.
   birdStats: 
   birdCall: {fileID: 0}
-  birdImage: {fileID: 0}
+  birdImage: {fileID: 21300000, guid: e457c36b80c57384284cc2bdf8d859ae, type: 3}
   LockedBirdName: ????????????????????
+  lockedBirdSprite: {fileID: 21300000, guid: 8f45649230bc9a545a3d7f58a09d5ef6, type: 3}
   LockedBirdDescription: ...............
   LockedBirdStats: 'Bird Speed: .............
 
     Dive Timer: .........'
-  birdModel: {fileID: 0}
+  birdModel: {fileID: 919132149155446097, guid: 9e809f5b9ce0c394a8db31e25fb6a69b, type: 3}
   Hostile: 1
   found: 0
   birdSpeed: 0
