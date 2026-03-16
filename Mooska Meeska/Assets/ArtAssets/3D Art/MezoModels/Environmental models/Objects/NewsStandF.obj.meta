@@ -3,7 +3,12 @@ guid: dd45493aa1e404fd19a251e7a7bf5c0b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NewsStation_DefaultMat
+    second: {fileID: 4402785207488402794, guid: baf6028cd53b4445c9ba6ad27e94cb94, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
