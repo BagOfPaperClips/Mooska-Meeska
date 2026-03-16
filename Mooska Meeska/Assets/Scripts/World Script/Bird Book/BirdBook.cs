@@ -9,6 +9,7 @@ public class BirdBook : MonoBehaviour
     [SerializeField] private GameObject[] pages;
 
     private BirdPage[] BookPages;
+    private bool unlocked = false;
 
     [Header("Birds")]
     [SerializeField] private BirdSO[] Birds;
@@ -21,6 +22,9 @@ public class BirdBook : MonoBehaviour
     private BirdSpawner birdSpawner;
 
     [Header("Reference")]
+    public GameObject unlockedBook;
+    public GameObject lockedBook;
+
     public Sprite defaultImage;
 
     private KeyCode PageRightKey;
@@ -28,7 +32,18 @@ public class BirdBook : MonoBehaviour
 
     private void Awake()
     {
-       
+       unlocked = false;
+
+        if (unlockedBook != null)
+        {
+            unlockedBook.SetActive(unlocked);
+        }
+
+        if (lockedBook != null)
+        {
+            lockedBook.SetActive(!unlocked);
+        }
+
        for(int i = 0; i< Birds.Length; i++)
         {
             Birds[i].found = false;
@@ -80,8 +95,19 @@ public class BirdBook : MonoBehaviour
             return;
         }
 
+        if (unlockedBook != null)
+        {
+            unlockedBook.SetActive(unlocked);
+        }
+
+        if (lockedBook != null)
+        {
+            lockedBook.SetActive(!unlocked);
+        }
+
         PageRightKey = KeyBinding.GetKey(GameKeys.PageRight, KeyCode.L);
         PageLeftKey = KeyBinding.GetKey(GameKeys.PageLeft, KeyCode.K);
+
 
         if (Input.GetKeyDown(PageLeftKey))
         {
@@ -120,6 +146,7 @@ public class BirdBook : MonoBehaviour
 
     private void LockAllPages()
     {
+        unlocked = false;
         if (BookPages == null)
         {
             return;
@@ -190,6 +217,7 @@ public class BirdBook : MonoBehaviour
 
     public void UnlockBird(BirdSO so)
     {
+        unlocked = true;
         if (so == null)
         {
             
@@ -201,6 +229,7 @@ public class BirdBook : MonoBehaviour
 
     public void UnlockID(int id)
     {
+        unlocked = true;
         if (BookPages == null)
         {
             return;

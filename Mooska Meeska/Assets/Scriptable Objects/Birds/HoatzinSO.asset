@@ -19,15 +19,15 @@ MonoBehaviour:
 
     Dive Timer: 5'
   birdCall: {fileID: 0}
-  birdImage: {fileID: 21300000, guid: d5d68e230b35fa644be07d1b2f591e2e, type: 3}
+  birdImage: {fileID: -78444057, guid: 5ddc0095102ba4443afb13c48f6c7222, type: 3}
+  birdSilhouette: {fileID: -295984102, guid: fcb7439968b02b94ba1613ef33065965, type: 3}
   LockedBirdName: ????????
-  lockedBirdSprite: {fileID: 21300000, guid: 8f45649230bc9a545a3d7f58a09d5ef6, type: 3}
   LockedBirdDescription: .....................................
   LockedBirdStats: 'Bird Speed: .............
 
     Dive Timer: .........'
   birdModel: {fileID: 919132149155446097, guid: a8b35d0f2b8448548a612ec8c92a42c3, type: 3}
   Hostile: 0
-  found: 0
+  found: 1
   birdSpeed: fast
   diveTimer: 5

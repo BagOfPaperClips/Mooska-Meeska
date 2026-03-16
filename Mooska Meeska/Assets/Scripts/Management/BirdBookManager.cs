@@ -11,14 +11,12 @@ public class BirdBookManager : MonoBehaviour
     [SerializeField] private GameObject Instructions;
     [SerializeField] private GameObject[] PauseMenu;
 
-
     public bool isOpen { private set; get; }
     private SceneLoader sceneLoader;
     private PauseManager pauseManager;
 
     private KeyCode openBookKey;
 
-    
 
     private void Awake()
     {
