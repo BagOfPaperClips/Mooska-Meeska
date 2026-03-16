@@ -1,5 +1,9 @@
+using System;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BirdBook : MonoBehaviour
 {
@@ -21,6 +25,12 @@ public class BirdBook : MonoBehaviour
     [Header("Bird Spawner")]
     private BirdSpawner birdSpawner;
 
+    [Header("Locked Book")]
+    [SerializeField] private TextMeshProUGUI lockedBookText;
+    [SerializeField] private float changeRatePerSecond = 5f;
+    private Color initialColor;
+    private bool revert = false;
+
     [Header("Reference")]
     public GameObject unlockedBook;
     public GameObject lockedBook;
@@ -29,6 +39,7 @@ public class BirdBook : MonoBehaviour
 
     private KeyCode PageRightKey;
     private KeyCode PageLeftKey;
+
 
     private void Awake()
     {
@@ -75,6 +86,11 @@ public class BirdBook : MonoBehaviour
                 BookPages[i] = pages[i].GetComponent<BirdPage>();
             }
         }
+
+        if (lockedBookText != null)
+        {
+            initialColor = lockedBookText.color;
+        }
     }
 
     private void Start()
@@ -109,15 +125,55 @@ public class BirdBook : MonoBehaviour
         PageLeftKey = KeyBinding.GetKey(GameKeys.PageLeft, KeyCode.K);
 
 
-        if (Input.GetKeyDown(PageLeftKey))
-        {
-            MoveRight();
-        }
 
         if (Input.GetKeyDown(PageRightKey))
         {
-            MoveLeft();
+            if (unlocked)
+            {
+                MoveRight();
+            }
+
+            else
+            {
+                TriggerLockedFlash();
+            }
         }
+
+        if (Input.GetKeyDown(PageLeftKey))
+        {
+            if (unlocked)
+            {
+                MoveLeft();
+            }
+
+            else
+            {
+                TriggerLockedFlash();
+            }
+        }
+
+        if (revert && lockedBookText != null)
+        {
+            float t = changeRatePerSecond * Time.unscaledDeltaTime;
+            lockedBookText.color = Color.Lerp(lockedBookText.color, initialColor, t);
+
+            if (Vector4.Distance(lockedBookText.color, initialColor) < 0.01f)
+            {
+                lockedBookText.color = initialColor;
+                revert = false;
+            }
+        }
+    }
+
+    private void TriggerLockedFlash()
+    {
+        if (lockedBookText == null)
+        {
+            return;
+        }
+
+        lockedBookText.color = Color.red;
+        revert = true;
     }
 
     public void MoveRight()
