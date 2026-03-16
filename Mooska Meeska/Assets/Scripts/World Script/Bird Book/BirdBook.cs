@@ -178,6 +178,20 @@ public class BirdBook : MonoBehaviour
 
     public void MoveRight()
     {
+        TriggerLockedFlash();
+
+        if (revert && lockedBookText != null)
+        {
+            float t = changeRatePerSecond * Time.unscaledDeltaTime;
+            lockedBookText.color = Color.Lerp(lockedBookText.color, initialColor, t);
+
+            if (Vector4.Distance(lockedBookText.color, initialColor) < 0.01f)
+            {
+                lockedBookText.color = initialColor;
+                revert = false;
+            }
+        }
+
         currentIndex++;
 
         if (currentIndex >= pages.Length)
@@ -190,6 +204,20 @@ public class BirdBook : MonoBehaviour
 
     public void MoveLeft()
     {
+        TriggerLockedFlash();
+
+        if (revert && lockedBookText != null)
+        {
+            float t = changeRatePerSecond * Time.unscaledDeltaTime;
+            lockedBookText.color = Color.Lerp(lockedBookText.color, initialColor, t);
+
+            if (Vector4.Distance(lockedBookText.color, initialColor) < 0.01f)
+            {
+                lockedBookText.color = initialColor;
+                revert = false;
+            }
+        }
+
         currentIndex--;
 
         if (currentIndex < 0)
