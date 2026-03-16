@@ -19,7 +19,7 @@ public class KeyCollection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        text2.enabled= false;
     }
 
     // Update is called once per frame
@@ -30,6 +30,7 @@ public class KeyCollection : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
+        text2.enabled = true;
         if (collision.CompareTag("puzzle2"))
         {
             num += 1;
@@ -47,33 +48,33 @@ public class KeyCollection : MonoBehaviour
                     section = 2;
                 }
             }
-            else if(num <= 6)
+            else if(num <= 5)
             {
                 StartCoroutine(addScore());
 
-                if (num == 6)
+                if (num == 5)
                 {
                     //open door1
                     door2.SetActive(false);
                     section = 3;
                 }
             }
-            else if (num <= 12)
+            else if (num <= 9)
             {
                 StartCoroutine(addScore());
 
-                if (num == 12)
+                if (num == 9)
                 {
                     //open door1
                     door3.SetActive(false);
                     section = 4;
                 }
             }
-            else if (num <= 20)
+            else if (num <= 14)
             {
                 StartCoroutine(addScore());
 
-                if (num == 20)
+                if (num == 14)
                 {
                     //open CAGE
                     cage.SetActive(false);
@@ -98,33 +99,33 @@ public class KeyCollection : MonoBehaviour
                 }
                 break;
             case 2:
-                text1.text = (num-2) + "/4";
-                text2.text = (num - 2) + "/4";
+                text1.text = (num- 2) + "/3";
+                text2.text = (num - 2) + "/3";
                 yield return new WaitForSeconds(1f);
                 text1.text = "";
-                if (num == 6)
+                if (num == 5)
                 {
                     StartCoroutine(doorOpen());
                 }
                 break;
             case 3:
-                text1.text = (num-6) + "/6";
-                text2.text = (num - 6) + "/6";
+                text1.text = (num- 5) + "/4";
+                text2.text = (num - 5) + "/4";
                 yield return new WaitForSeconds(1f);
                 text1.text = "";
-                if (num == 12)
+                if (num == 9)
                 {
                     StartCoroutine(doorOpen());
                 }
                 break;
             case 4:
-                text1.text = (num-12) + "/8";
-                text2.text = (num - 12) + "/8";
+                text1.text = (num-9) + "/5";
+                text2.text = (num - 9) + "/5";
                 yield return new WaitForSeconds(1f);
                 text1.text = "";
-                if (num == 20)
+                if (num == 14)
                 {
-                    StartCoroutine(doorOpen());
+                    StartCoroutine(cageOpen());
                 }
                 break;
         }
@@ -134,6 +135,14 @@ public class KeyCollection : MonoBehaviour
     {
 
         text1.text = "I think a door opened";
+        yield return new WaitForSeconds(1f);
+        text1.text = "";
+    }
+
+    IEnumerator cageOpen()
+    {
+
+        text1.text = "I think the cage opened!";
         yield return new WaitForSeconds(1f);
         text1.text = "";
     }
