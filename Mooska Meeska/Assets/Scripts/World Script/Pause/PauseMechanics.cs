@@ -5,6 +5,7 @@ public class PauseMechanics : MonoBehaviour
 {
     [SerializeField] public GameObject HelpGO;
     [SerializeField] public GameObject ControlsGO;
+    [SerializeField] public GameObject ChangeLogGO;
     [SerializeField] public GameObject ExitGO;
 
     private void Awake()
@@ -17,6 +18,11 @@ public class PauseMechanics : MonoBehaviour
         if (ControlsGO != null)
         {
             ControlsGO.SetActive(false);
+        }
+
+        if (ChangeLogGO != null)
+        {
+            ChangeLogGO.SetActive(false);
         }
 
         if (ExitGO != null)
@@ -90,6 +96,23 @@ public class PauseMechanics : MonoBehaviour
         {
             HelpGO.SetActive(false);
         }
+    }
+
+    public void ChangeLog()
+    {
+        if (PauseManager.instance == null)
+        {
+            return;
+        }
+
+        PauseManager.instance.SetPaused(true);
+
+        if (ChangeLogGO != null)
+        {
+            ChangeLogGO.SetActive(true);
+        }
+
+        gameObject.SetActive(false);
     }
 
     public void Exit()
