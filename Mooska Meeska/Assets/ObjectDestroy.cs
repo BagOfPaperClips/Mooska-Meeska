@@ -6,6 +6,7 @@ public class ObjectDestroy : MonoBehaviour
 {
 
     [SerializeField] BoxCollider box;
+    [SerializeField] GameObject b;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,8 @@ public class ObjectDestroy : MonoBehaviour
         {
             box = gameObject.GetComponent<BoxCollider>();
             box.enabled = false;
-            Destroy(gameObject, 0.8f);
+            b.SetActive(false);
+            //Destroy(gameObject, 0.8f);
         }
     }
 
