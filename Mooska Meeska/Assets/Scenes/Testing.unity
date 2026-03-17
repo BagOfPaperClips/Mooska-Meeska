@@ -471,6 +471,55 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 106400694}
   m_SourcePrefab: {fileID: 100100000, guid: 60838fee029c5fd4f847fcf8bde32cdb, type: 3}
+--- !u!1 &8866662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8866664}
+  - component: {fileID: 8866663}
+  m_Layer: 0
+  m_Name: PostProcessing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &8866663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8866662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 3acc9b3b835a34d079a281b271b797d8, type: 2}
+--- !u!4 &8866664
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8866662}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -521.1904, y: -42.809193, z: -61.45951}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &10808852
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,9 +966,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 1
+  Restored: {fileID: 0}
+  Torn: {fileID: 0}
   Name: {fileID: 729526481}
   Description: {fileID: 899099425}
   Stats: {fileID: 0}
+  birdSilhouette: {fileID: 0}
   birdImage: {fileID: 0}
 --- !u!114 &16845112
 MonoBehaviour:
@@ -16339,9 +16391,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 1
+  Restored: {fileID: 0}
+  Torn: {fileID: 0}
   Name: {fileID: 587315867}
   Description: {fileID: 1414488411}
   Stats: {fileID: 0}
+  birdSilhouette: {fileID: 0}
   birdImage: {fileID: 0}
 --- !u!114 &303476316
 MonoBehaviour:
@@ -18000,7 +18055,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b5081c4693a410540ba41306496a6c32, type: 2}
+  - {fileID: 2100000, guid: 185fa6b86e0c14380854380bfe88409f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23505,9 +23560,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 5
+  Restored: {fileID: 0}
+  Torn: {fileID: 0}
   Name: {fileID: 2089349260}
   Description: {fileID: 200853154}
   Stats: {fileID: 965137254}
+  birdSilhouette: {fileID: 0}
   birdImage: {fileID: 1617832521}
 --- !u!1 &464355613
 GameObject:
@@ -23804,6 +23862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HelpGO: {fileID: 97675804}
   ControlsGO: {fileID: 673693550}
+  ChangeLogGO: {fileID: 0}
   ExitGO: {fileID: 1903524741}
 --- !u!1 &466503759
 GameObject:
@@ -43489,9 +43548,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 2
+  Restored: {fileID: 0}
+  Torn: {fileID: 0}
   Name: {fileID: 729526481}
   Description: {fileID: 899099425}
   Stats: {fileID: 1029620974}
+  birdSilhouette: {fileID: 0}
   birdImage: {fileID: 2005548052}
 --- !u!4 &969357432 stripped
 Transform:
@@ -53409,9 +53471,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 1
+  Restored: {fileID: 0}
+  Torn: {fileID: 0}
   Name: {fileID: 1930224013}
   Description: {fileID: 36914399}
   Stats: {fileID: 0}
+  birdSilhouette: {fileID: 0}
   birdImage: {fileID: 0}
 --- !u!114 &1190627395
 MonoBehaviour:
@@ -53633,9 +53698,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 3
+  Restored: {fileID: 0}
+  Torn: {fileID: 0}
   Name: {fileID: 1930224013}
   Description: {fileID: 36914399}
   Stats: {fileID: 1829329008}
+  birdSilhouette: {fileID: 0}
   birdImage: {fileID: 1382234542}
 --- !u!1 &1195640704
 GameObject:
@@ -56830,6 +56898,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d145efc0190d4439a8a503c617f05cf1, type: 2}
   - {fileID: 11400000, guid: 289e0f9018cb44f728621e87dcdd5639, type: 2}
   - {fileID: 11400000, guid: 40e43138b1824415b83d3076e08fe4c4, type: 2}
+  lockedBookText: {fileID: 0}
+  changeRatePerSecond: 5
+  unlockedBook: {fileID: 0}
+  lockedBook: {fileID: 0}
   defaultImage: {fileID: 0}
 --- !u!23 &1251267657
 MeshRenderer:
@@ -57191,9 +57263,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 1
+  Restored: {fileID: 0}
+  Torn: {fileID: 0}
   Name: {fileID: 587315867}
   Description: {fileID: 1414488411}
   Stats: {fileID: 748884686}
+  birdSilhouette: {fileID: 0}
   birdImage: {fileID: 778092417}
 --- !u!4 &1261170039 stripped
 Transform:
@@ -70714,9 +70789,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 1
+  Restored: {fileID: 0}
+  Torn: {fileID: 0}
   Name: {fileID: 2089349260}
   Description: {fileID: 200853154}
   Stats: {fileID: 0}
+  birdSilhouette: {fileID: 0}
   birdImage: {fileID: 0}
 --- !u!114 &1532595465
 MonoBehaviour:
@@ -71175,6 +71253,7 @@ MonoBehaviour:
   maxStam: 3
   isReady: 0
   start: 1
+  walk: {fileID: 0}
 --- !u!4 &1540356354
 Transform:
   m_ObjectHideFlags: 0
@@ -85768,9 +85847,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 1
+  Restored: {fileID: 0}
+  Torn: {fileID: 0}
   Name: {fileID: 963078230}
   Description: {fileID: 1339417666}
   Stats: {fileID: 0}
+  birdSilhouette: {fileID: 0}
   birdImage: {fileID: 0}
 --- !u!114 &1871603701
 MonoBehaviour:
@@ -86475,9 +86557,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 4
+  Restored: {fileID: 0}
+  Torn: {fileID: 0}
   Name: {fileID: 963078230}
   Description: {fileID: 1339417666}
   Stats: {fileID: 205449501}
+  birdSilhouette: {fileID: 0}
   birdImage: {fileID: 1839830945}
 --- !u!1 &1898942279
 GameObject:
@@ -101936,3 +102021,4 @@ SceneRoots:
   - {fileID: 140267619}
   - {fileID: 1302758536}
   - {fileID: 1581197195}
+  - {fileID: 8866664}
