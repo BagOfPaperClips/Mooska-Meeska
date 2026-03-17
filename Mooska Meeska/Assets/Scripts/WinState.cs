@@ -23,6 +23,8 @@ public class WinState : MonoBehaviour
     {
         if (collision.CompareTag("Meeska"))
         {
+            Debug.Log("wait for it");
+            mouseLook.enabled = false;
             mouseLook.UnlockCursor();
             SceneManager.LoadScene("Win");
         }

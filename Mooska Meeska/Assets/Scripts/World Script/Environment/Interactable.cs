@@ -38,6 +38,8 @@ public class Interactables : MonoBehaviour
 
     private bool cageUnlocked = false;
 
+    public KeyCollection keyCollection;
+
     void Awake()
     {
         mouseLook = FindFirstObjectByType<MouseLook>();
@@ -156,7 +158,7 @@ public class Interactables : MonoBehaviour
     {
         
         
-        if (inventoryManager.redKey != 0 && inventoryManager.greenKey!=0&&inventoryManager.yellowKey!=0&&inventoryManager.blueKey!=0)
+        if (keyCollection)
         {
             text.text = "You Open the Cage";
             cageUnlocked = true;
@@ -175,6 +177,7 @@ public class Interactables : MonoBehaviour
 
     void FreeMeeska()
     {
+        Debug.Log("wait for it");
         mouseLook.enabled = false;
         mouseLook.UnlockCursor();
         SceneManager.LoadScene("Win");
