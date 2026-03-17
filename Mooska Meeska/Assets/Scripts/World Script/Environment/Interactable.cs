@@ -26,6 +26,10 @@ public class Interactables : MonoBehaviour
     public bool hold = false;
     private MouseLook mouseLook;
     private bool dead = false;
+    public Material Onmat;
+    public Material OffMat;
+    public Renderer rendy;
+    private bool alreadyCollected;
 
     [Header("Puzzles")]
     public GameObject Keypad;
@@ -118,10 +122,19 @@ public class Interactables : MonoBehaviour
     {
         if (BirdBook.instance != null)
             BirdBook.instance.UnlockBird(birdSO);
+        if(alreadyCollected == true)
+        {
+            text.text = "You have already collected this page";
+        }
+        else
+        {
+            text.text = "You have collected a page\nfor the Bird Book";
+        }
 
-        text.text = "You have collected a page\nfor the Bird Book";
+        alreadyCollected = true;
+
         text.gameObject.SetActive(true);
-        StartCoroutine(WaitForSeconds());
+        StartCoroutine(TurnOffNews());
     }
 
     void NoKey()
@@ -183,6 +196,18 @@ public class Interactables : MonoBehaviour
 
     hold = false;
     }
+
+
+    IEnumerator TurnOffNews()
+    {
+        rendy.material = OffMat;
+        
+        yield return new WaitForSeconds(3);
+
+        text.gameObject.SetActive(false);
+
+    }
+
 }
 
 
