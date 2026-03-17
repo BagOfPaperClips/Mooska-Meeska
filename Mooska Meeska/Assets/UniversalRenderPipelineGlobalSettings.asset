@@ -21,7 +21,8 @@ MonoBehaviour:
   - DIstrict4
   - Birds
   - Walls
-  m_ValidRenderingLayers: 127
+  - Layer 7
+  m_ValidRenderingLayers: 255
   lightLayerName0: 
   lightLayerName1: 
   lightLayerName2: 
