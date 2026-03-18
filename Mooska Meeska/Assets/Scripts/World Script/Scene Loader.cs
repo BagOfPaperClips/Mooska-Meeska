@@ -13,19 +13,28 @@ public class SceneLoader : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject LoadingScreen;
     [SerializeField] private Image LoadingBarFill;
+    [SerializeField] private Image LoadingMouse;
 
     [Header("Fill")]
     //[SerializeField] private float MaxfillSpeed = 2.5f;
     //[SerializeField] private float MinfillSpeed = 5.5f;
     [Range(0.1f, 1.0f)] [SerializeField] private float fillSpeed = 0.4f;
+    [SerializeField] private float maxRange = 30.0f;
+    [SerializeField] private float minRange = -27.0f;
 
     [Header("UI Warmup")]
     [SerializeField] private bool preWarm = true;
     [SerializeField] private float birdBookShowTime = 1.0f;
     [SerializeField] private float pauseMenuShowTime = 0.5f;
 
+    [Header("Debug")]
+    [SerializeField] private float BarFill;
+
     private BirdBookManager birdBookManager;
     private PauseManager pauseManager;
+
+    private RectTransform mouseRect;
+    private float mouseY;
 
     public bool IsLoading { get; private set; }
     private bool finishing;
@@ -53,6 +62,13 @@ public class SceneLoader : MonoBehaviour
         {
             LoadingBarFill.fillAmount = 0f;
         }
+
+        if (LoadingMouse != null)
+        {
+            mouseRect = LoadingMouse.rectTransform;
+            mouseY = mouseRect.anchoredPosition.y;
+        }
+        BarFill = LoadingBarFill.fillAmount;
 
         BeginLoading();
         birdBookManager = FindFirstObjectByType<BirdBookManager>();
@@ -96,6 +112,16 @@ public class SceneLoader : MonoBehaviour
     public void FinishLoading()
     {
         finishing = true;
+    }
+
+    private void Update()
+    {
+        
+        if (LoadingBarFill != null || mouseRect != null)
+        {
+            float x = Mathf.Lerp(minRange, maxRange, LoadingBarFill.fillAmount);
+            mouseRect.anchoredPosition = new Vector2(x, mouseY);
+        }
     }
 
     private IEnumerator FillRoutine()
