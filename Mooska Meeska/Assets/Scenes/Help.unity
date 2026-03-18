@@ -269,8 +269,8 @@ MonoBehaviour:
     Use the building
     and tree shadows to your advantage, they keep you hidden from the birds'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f26364bef7e47ab42a39448949457c1e, type: 2}
-  m_sharedMaterial: {fileID: 7944846282157994432, guid: f26364bef7e47ab42a39448949457c1e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1c9e2f696ed239a4eb56218a972e04c5, type: 2}
+  m_sharedMaterial: {fileID: 4872037238834540855, guid: 1c9e2f696ed239a4eb56218a972e04c5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -294,8 +294,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

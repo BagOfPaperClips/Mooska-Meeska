@@ -10,7 +10,7 @@ public class Instructions : MonoBehaviour
     string[] pageText = 
     {
         "", "Avoid the birds flying overhead! If they spot you, " + 
-        "you will die!", "Interact with the " +
+        "you will die! But, use the building and tree shadows to hide, they keep you hidden!", "Interact with the " +
         "News Stands to learn more about the bird mafia and keep track of them in your bird book!",
         "Collect the golden feathers to unlock doors in the area you're trapped in."+ 
         " These feathers are the keys to saving Meeska from her cage!"   
@@ -19,6 +19,7 @@ public class Instructions : MonoBehaviour
         // pls WORK
         // it didnt change WHY ARE YOU SO DIFFICULT
         // omg spelling error
+        // ok good morning
     };
     public int pageindex = 0;
     public TextMeshProUGUI bodyText;
