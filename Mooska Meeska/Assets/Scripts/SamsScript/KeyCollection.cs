@@ -135,7 +135,7 @@ public class KeyCollection : MonoBehaviour
     {
 
         text1.text = "I think a door opened";
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2.5f);
         text1.text = "";
     }
 
@@ -143,7 +143,7 @@ public class KeyCollection : MonoBehaviour
     {
 
         text1.text = "I think the cage opened!";
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2.5f);
         text1.text = "";
     }
 }

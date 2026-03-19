@@ -37,30 +37,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if ((Input.GetKey(KeyCode.LeftShift)) && remainingTime > 0 && start)
-        {
-            speed = 30f;
-            remainingTime -= Time.deltaTime;
-            isReady = true;
-
-
-        }
-        else
-        {
-            isReady = false;
-            if (remainingTime < 1 && isReady == false)
-            {
-                remainingTime += Time.deltaTime * 0.7f;
-                start = false;
-            }
-            else
-            {
-                start = true;
-            }
-                speed = 7f;
-        }
-        stamBar.fillAmount = remainingTime / sprintTime;
+        speed = 30f;
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
