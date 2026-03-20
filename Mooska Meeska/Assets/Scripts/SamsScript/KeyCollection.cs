@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
+using Unity.VisualScripting;
 public class KeyCollection : MonoBehaviour
 {
     [SerializeField] int num = 0;
     [SerializeField] TextMeshProUGUI text1;
     [SerializeField] TextMeshProUGUI text2;
 
-    [SerializeField] GameObject door1;
-    [SerializeField] GameObject Odoor1;
+    public GameObject door1;
+    public GameObject Odoor1;
 
-    [SerializeField] GameObject door2;
-    [SerializeField] GameObject Odoor2;
+    public GameObject door2;
+    public GameObject Odoor2;
 
-    [SerializeField] GameObject door3;
-    [SerializeField] GameObject Odoor3;
+    public GameObject door3;
+    public GameObject Odoor3;
 
-    [SerializeField] GameObject cage;
-    [SerializeField] GameObject Ocage;
+    public GameObject cage;
+    public GameObject Ocage;
 
     int section = 1;
     
@@ -158,5 +159,26 @@ public class KeyCollection : MonoBehaviour
         text2.text = "Find the Cage";
         yield return new WaitForSeconds(2.5f);
         text1.text = "";
+    }
+
+
+    public bool getOdoor1()
+    {
+        return Odoor1.activeSelf;
+    }
+
+    public bool getOdoor2()
+    {
+        return Odoor2.activeSelf;
+    }
+
+    public bool getOdoor3()
+    {
+        return Odoor3.activeSelf;
+    }
+
+    public bool getOcage()
+    {
+        return Ocage.activeSelf;
     }
 }
