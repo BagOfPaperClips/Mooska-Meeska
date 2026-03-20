@@ -16,10 +16,15 @@ public class TrackSun : MonoBehaviour
     public bool hidden;
 
     public static TrackSun instance;
+    
 
     private MouseLook mouseLook;
     private LayerMask detectionMask;
 
+    public GameObject respawnMenu;
+
+
+    
     void Awake()
     {
         if (instance != null && instance != this)
@@ -32,7 +37,11 @@ public class TrackSun : MonoBehaviour
 
         mouseLook = FindFirstObjectByType<MouseLook>();
         detectionMask = wall | bird;
+
+
     }
+
+    
 
     void Update()
     {
@@ -68,7 +77,8 @@ public class TrackSun : MonoBehaviour
                 }
 
                 mouseLook.UnlockCursor();
-                SceneManager.LoadScene("Death");
+                //SceneManager.LoadScene("Death");
+                respawnMenu.SetActive(true);
             }
         }
         else

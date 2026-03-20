@@ -9,6 +9,8 @@ public class MouseLook : MonoBehaviour
     private bool locked = false;
     private BirdBookManager birdBookManager;
 
+    [SerializeField] RespawnManager respawnManager;
+
     private void Awake()
     {
         birdBookManager = FindFirstObjectByType<BirdBookManager>();
@@ -38,6 +40,11 @@ public class MouseLook : MonoBehaviour
             {
                 lockin = true;
             }
+        }
+
+        if(respawnManager.gameObject.activeInHierarchy)
+        {
+            lockin = true;
         }
 
         if (lockin)
