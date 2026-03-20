@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = 30f;
+        speed = 20f;
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");

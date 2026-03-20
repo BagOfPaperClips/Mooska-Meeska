@@ -10,9 +10,16 @@ public class KeyCollection : MonoBehaviour
     [SerializeField] TextMeshProUGUI text2;
 
     [SerializeField] GameObject door1;
+    [SerializeField] GameObject Odoor1;
+
     [SerializeField] GameObject door2;
+    [SerializeField] GameObject Odoor2;
+
     [SerializeField] GameObject door3;
+    [SerializeField] GameObject Odoor3;
+
     [SerializeField] GameObject cage;
+    [SerializeField] GameObject Ocage;
 
     int section = 1;
     
@@ -45,6 +52,7 @@ public class KeyCollection : MonoBehaviour
                 {
                     //open door1
                     door1.SetActive(false);
+                    Odoor1.SetActive(true);
                     section = 2;
                 }
             }
@@ -56,6 +64,7 @@ public class KeyCollection : MonoBehaviour
                 {
                     //open door1
                     door2.SetActive(false);
+                    Odoor2.SetActive(true);
                     section = 3;
                 }
             }
@@ -67,6 +76,7 @@ public class KeyCollection : MonoBehaviour
                 {
                     //open door1
                     door3.SetActive(false);
+                    Odoor3.SetActive(true);
                     section = 4;
                 }
             }
@@ -78,6 +88,7 @@ public class KeyCollection : MonoBehaviour
                 {
                     //open CAGE
                     cage.SetActive(false);
+                    Ocage.SetActive(true);
                 }
             }
 
@@ -135,6 +146,7 @@ public class KeyCollection : MonoBehaviour
     {
 
         text1.text = "I think a door opened";
+        text2.text = "Find the Door";
         yield return new WaitForSeconds(2.5f);
         text1.text = "";
     }
@@ -143,6 +155,7 @@ public class KeyCollection : MonoBehaviour
     {
 
         text1.text = "I think the cage opened!";
+        text2.text = "Find the Cage";
         yield return new WaitForSeconds(2.5f);
         text1.text = "";
     }
