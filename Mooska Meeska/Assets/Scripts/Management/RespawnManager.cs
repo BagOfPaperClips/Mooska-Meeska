@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,8 +15,12 @@ public class RespawnManager : MonoBehaviour
     
     [SerializeField] SceneLoader sceneLoader;
 
-    public static RespawnManager instance {get; private set;}
-    public bool isCaught { get; private set; }
+    [SerializeField] KeyCollection keyCollection;
+
+    private Vector3 checkpoint1 = new Vector3(-430f, -1f, -55f);
+    private Vector3 checkpoint2 = new Vector3(-512.8f, -1f, -149f);
+    private Vector3 checkpoint3 = new Vector3(-390, -1f, -227.1f);
+
     
     
 
@@ -30,6 +35,22 @@ public class RespawnManager : MonoBehaviour
     void OnEnable()
     {
         mouseLook.UnlockCursor();
+
+        
+        if (keyCollection.Odoor3.activeSelf)
+        {
+            startpos = checkpoint3;
+        }
+        else if (keyCollection.Odoor2.activeSelf)
+        {
+            startpos = checkpoint2;
+        }
+        else if (keyCollection.Odoor1.activeSelf)
+        {
+            startpos = checkpoint1;
+        }
+       
+
     }
 
 
