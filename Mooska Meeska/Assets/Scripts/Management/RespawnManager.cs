@@ -11,6 +11,8 @@ public class RespawnManager : MonoBehaviour
     [SerializeField] Vector3 startpos;
     [SerializeField] GameObject player;
     [SerializeField] MouseLook mouseLook;
+
+    [SerializeField] Movement movement;
     
     [SerializeField] SceneLoader sceneLoader;
 
@@ -34,6 +36,7 @@ public class RespawnManager : MonoBehaviour
     void OnEnable()
     {
         mouseLook.UnlockCursor();
+        movement.enabled = false;
 
         
         if (keyCollection.Odoor3.activeSelf)
@@ -52,11 +55,18 @@ public class RespawnManager : MonoBehaviour
 
     }
 
+    void OnDisable()
+    {
+        mouseLook.LockCursor();
+
+        movement.enabled = true;
+    }
+
 
     public void Respawn()
     {
         player.transform.position = startpos;
-        mouseLook.LockCursor();
+        
         this.gameObject.SetActive(false);
     }
 
