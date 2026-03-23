@@ -114,6 +114,8 @@ public class KeyCollection : MonoBehaviour
 
     IEnumerator addScore()
     {
+        text2.fontSize = 150;
+        text1.fontSize = 120;
         switch (section)
         {
             case 1:
@@ -161,7 +163,8 @@ public class KeyCollection : MonoBehaviour
 
     IEnumerator doorOpen()
     {
-
+        text2.fontSize = 100;
+        text1.fontSize = 85;
         text1.text = "I think a door opened";
         text2.text = "Find the Door";
         yield return new WaitForSeconds(2.5f);
@@ -170,7 +173,8 @@ public class KeyCollection : MonoBehaviour
 
     IEnumerator cageOpen()
     {
-
+        text2.fontSize = 100;
+        text1.fontSize = 85;
         text1.text = "I think the cage opened!";
         text2.text = "Find the Cage";
         yield return new WaitForSeconds(2.5f);

@@ -40,6 +40,7 @@ public class RespawnManager : MonoBehaviour
     void OnEnable()
     {
         keyCollection.text2.text = "";
+        keyCollection.text1.text = "";
         mouseLook.UnlockCursor();
         movement.enabled = false;
 
