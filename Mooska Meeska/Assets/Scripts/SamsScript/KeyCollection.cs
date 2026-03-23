@@ -62,6 +62,7 @@ public class KeyCollection : MonoBehaviour
                     door1.SetActive(false);
                     Odoor1.SetActive(true);
                     section = 2;
+                    Debug.Log("Assertation");
                 }
             }
             else if(num <= 5)
@@ -75,6 +76,7 @@ public class KeyCollection : MonoBehaviour
                     door2.SetActive(false);
                     Odoor2.SetActive(true);
                     section = 3;
+                    Debug.Log("Dissertation");
                 }
             }
             else if (num <= 9)
