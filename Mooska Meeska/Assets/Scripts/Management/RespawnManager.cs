@@ -57,7 +57,7 @@ public class RespawnManager : MonoBehaviour
 
     void OnDisable()
     {
-        mouseLook.LockCursor();
+        
 
         movement.enabled = true;
     }
@@ -66,6 +66,8 @@ public class RespawnManager : MonoBehaviour
     public void Respawn()
     {
         player.transform.position = startpos;
+
+        mouseLook.LockCursor();
         
         this.gameObject.SetActive(false);
     }
@@ -73,6 +75,8 @@ public class RespawnManager : MonoBehaviour
     public void Quit()
     {
         SceneManager.LoadScene("Death");
+
+        
     }
 
     

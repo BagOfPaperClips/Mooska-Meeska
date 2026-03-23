@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MouseLook : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class MouseLook : MonoBehaviour
     void Update()
     {
         bool lockin = false;
+        Debug.Log(SceneManager.GetActiveScene().name);
+        
 
         if (PauseManager.instance != null)
         {
@@ -62,6 +65,11 @@ public class MouseLook : MonoBehaviour
                 LockCursor();
             }
         }
+
+
+
+        
+
     }
 
     public void LockCursor()
