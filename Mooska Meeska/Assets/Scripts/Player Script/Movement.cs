@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 
 public class Movement : MonoBehaviour
@@ -28,6 +29,8 @@ public class Movement : MonoBehaviour
     public bool start = true;
 
     public Animator walk;
+
+    public GameObject mouse;
 
     private void Start()
     {
