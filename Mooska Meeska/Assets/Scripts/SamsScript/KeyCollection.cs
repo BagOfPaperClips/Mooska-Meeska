@@ -7,8 +7,8 @@ using Unity.VisualScripting;
 public class KeyCollection : MonoBehaviour
 {
     [SerializeField] int num = 0;
-    [SerializeField] TextMeshProUGUI text1;
-    [SerializeField] TextMeshProUGUI text2;
+    public TextMeshProUGUI text1;
+    public TextMeshProUGUI text2;
 
     public GameObject door1;
     public GameObject Odoor1;
@@ -27,7 +27,8 @@ public class KeyCollection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text2.enabled= false;
+        text2.text = "0/2";
+        //text2.enabled= false;
     }
 
     // Update is called once per frame
@@ -38,7 +39,7 @@ public class KeyCollection : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        text2.enabled = true;
+        //text2.enabled = true;
         if (collision.CompareTag("puzzle2"))
         {
             num += 1;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class RespawnManager : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class RespawnManager : MonoBehaviour
     [SerializeField] SceneLoader sceneLoader;
 
     [SerializeField] KeyCollection keyCollection;
+
+    public TextMeshProUGUI text1;
+    public TextMeshProUGUI text2;
 
     private Vector3 checkpoint1 = new Vector3(-430f, -1f, -55f);
     private Vector3 checkpoint2 = new Vector3(-512.8f, -1f, -149f);
@@ -35,6 +39,7 @@ public class RespawnManager : MonoBehaviour
 
     void OnEnable()
     {
+        keyCollection.text2.text = "";
         mouseLook.UnlockCursor();
         movement.enabled = false;
 
