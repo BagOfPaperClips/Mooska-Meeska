@@ -22,6 +22,11 @@ public class KeyCollection : MonoBehaviour
     public GameObject cage;
     public GameObject Ocage;
 
+    public GameObject doorDialog1;
+    public GameObject doorDialog2;
+    public GameObject doorDialog3;
+    public GameObject doorDialog4;
+
     int section = 1;
     
     // Start is called before the first frame update
@@ -52,6 +57,7 @@ public class KeyCollection : MonoBehaviour
                  
                 if(num == 2)
                 {
+                    doorDialog1.SetActive(false);
                     //open door1
                     door1.SetActive(false);
                     Odoor1.SetActive(true);
@@ -64,6 +70,7 @@ public class KeyCollection : MonoBehaviour
 
                 if (num == 5)
                 {
+                    doorDialog2.SetActive(false);
                     //open door1
                     door2.SetActive(false);
                     Odoor2.SetActive(true);
@@ -76,6 +83,7 @@ public class KeyCollection : MonoBehaviour
 
                 if (num == 9)
                 {
+                    doorDialog3.SetActive(false);
                     //open door1
                     door3.SetActive(false);
                     Odoor3.SetActive(true);
@@ -88,10 +96,15 @@ public class KeyCollection : MonoBehaviour
 
                 if (num == 14)
                 {
+                    doorDialog4.SetActive(false);
                     //open CAGE
                     cage.SetActive(false);
                     Ocage.SetActive(true);
                 }
+            }
+            if (collision.CompareTag("ThroughDoor"))
+            {
+                text2.text = "";
             }
 
         }
@@ -182,4 +195,5 @@ public class KeyCollection : MonoBehaviour
     {
         return Ocage.activeSelf;
     }
+
 }
