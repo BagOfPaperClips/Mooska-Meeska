@@ -45,7 +45,6 @@ public class SceneLoader : MonoBehaviour
     private void Awake()
     {
 
-
         //if (MinfillSpeed > MaxfillSpeed)
         //{
         //    float temp = MinfillSpeed;
