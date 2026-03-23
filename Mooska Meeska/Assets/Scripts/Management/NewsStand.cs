@@ -50,11 +50,11 @@ public class NewsStand : MonoBehaviour
 
     IEnumerator TurnOffNews()
     {
-        rendy.gameObject.SetActive(false);
+        
         
         yield return new WaitForSeconds(3);
 
         text.gameObject.SetActive(false);
-
+        rendy.gameObject.SetActive(false);
     }
 }
