@@ -30,7 +30,7 @@ public class DoorDialog : MonoBehaviour
     private IEnumerator DoorText()
     {
         textdoor.fontSize = 85;
-        textdoor.text = "There are key holes on this door, I should find them";
+        textdoor.text = "There are key holes on this door,    I should find them";
         yield return new WaitForSeconds(2.5f);
         textdoor.text = "";
     }
