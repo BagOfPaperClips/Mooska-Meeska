@@ -107,6 +107,7 @@ public class KeyCollection : MonoBehaviour
             if (collision.CompareTag("ThroughDoor"))
             {
                 text2.text = "";
+                text1.text = "";
             }
 
         }

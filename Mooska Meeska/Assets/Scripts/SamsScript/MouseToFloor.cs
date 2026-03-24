@@ -14,12 +14,17 @@ public class MouseToFloor : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {/*
-        if(mouse.transform.position.y> -1)
+    {
+        if(mouse.transform.position.y> 0.07f)
         {
-            Transform p(mouse.transform.position.x, -1.07f, mouse.transform.position.z);
+            StartCoroutine(mousedrop());
+        }
+    }
 
-            mouse.transform.position = 
-        }*/
+    private IEnumerator mousedrop()
+    {
+        yield return new WaitForSeconds(1f);
+        Vector3 v = new Vector3(mouse.transform.position.x, 0.07f, mouse.transform.position.z);
+        mouse.transform.position = v;
     }
 }
