@@ -43,10 +43,6 @@ public class BirdPage : MonoBehaviour
             Restored.SetActive(IsUnlocked);
         }
 
-        if (PageNumber != null)
-        {
-            PageNumber.text = ID.ToString();
-        }
     }
 
     public void setLocked(BirdSO so)
@@ -69,6 +65,11 @@ public class BirdPage : MonoBehaviour
 
         Torn.SetActive(!IsUnlocked);
         Restored.SetActive(IsUnlocked);
+
+        if (PageNumber != null)
+        {
+            PageNumber.text = ID.ToString();
+        }
 
         if (Name != null)
         {
