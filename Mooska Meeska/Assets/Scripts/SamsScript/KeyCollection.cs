@@ -32,7 +32,7 @@ public class KeyCollection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text2.text = "";
+        text2.text = "0/2";
         //text2.enabled= false;
     }
 
