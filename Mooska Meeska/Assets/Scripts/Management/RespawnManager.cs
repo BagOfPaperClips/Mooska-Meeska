@@ -22,9 +22,9 @@ public class RespawnManager : MonoBehaviour
     public TextMeshProUGUI text1;
     public TextMeshProUGUI text2;
 
-    private Vector3 checkpoint1 = new Vector3(-430f, -1f, -55f);
-    private Vector3 checkpoint2 = new Vector3(-512.8f, -1f, -149f);
-    private Vector3 checkpoint3 = new Vector3(-390, -1f, -227.1f);
+    private Vector3 checkpoint1 = new Vector3(-1157.21f, -1f, -1710.38f);
+    private Vector3 checkpoint2 = new Vector3(-1240.59f, -1f, -1809.12f);
+    private Vector3 checkpoint3 = new Vector3(-1111.5f, -1f, -1884.1f);
 
     
     
