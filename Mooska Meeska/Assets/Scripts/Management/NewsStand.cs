@@ -50,7 +50,7 @@ public class NewsStand : MonoBehaviour
 
     IEnumerator TurnOffNews()
     {
-        
+        rendy.gameObject.GetComponent<Renderer>().enabled = false;
         
         yield return new WaitForSeconds(3);
 
