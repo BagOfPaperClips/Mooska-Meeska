@@ -22,9 +22,7 @@ MonoBehaviour:
   birdSilhouette: {fileID: 531223167, guid: fd9a4575729c5dd4fbdfa2a17006bf4d, type: 3}
   LockedBirdName: ????????????????????
   LockedBirdDescription: ...............
-  LockedBirdStats: 'Bird Speed: .............
-
-    Dive Timer: .........'
+  LockedBirdStats: 'Bird Speed: .............'
   birdModel: {fileID: 919132149155446097, guid: 9e809f5b9ce0c394a8db31e25fb6a69b, type: 3}
   Hostile: 1
   found: 0

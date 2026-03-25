@@ -20,6 +20,7 @@ public class BirdPage : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Stats;
     [SerializeField] private Image birdSilhouette;
     [SerializeField] private Image birdImage;
+    [SerializeField] private TextMeshProUGUI PageNumber;
 
     private BirdBook birdBook;
 
@@ -40,6 +41,11 @@ public class BirdPage : MonoBehaviour
         if (Restored != null)
         {
             Restored.SetActive(IsUnlocked);
+        }
+
+        if (PageNumber != null)
+        {
+            PageNumber.text = ID.ToString();
         }
     }
 
