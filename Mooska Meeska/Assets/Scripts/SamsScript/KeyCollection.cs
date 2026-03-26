@@ -27,6 +27,9 @@ public class KeyCollection : MonoBehaviour
     public GameObject doorDialog3;
     public GameObject doorDialog4;
 
+    public AudioSource doorSound;
+    public AudioSource cageSound;
+
     int section = 1;
     
     // Start is called before the first frame update
@@ -164,6 +167,7 @@ public class KeyCollection : MonoBehaviour
 
     IEnumerator doorOpen()
     {
+        doorSound.Play();
         text2.fontSize = 100;
         text1.fontSize = 85;
         text1.text = "I think a door opened";
@@ -174,6 +178,7 @@ public class KeyCollection : MonoBehaviour
 
     IEnumerator cageOpen()
     {
+        cageSound.Play();
         text2.fontSize = 100;
         text1.fontSize = 85;
         text1.text = "I think the cage opened!";
