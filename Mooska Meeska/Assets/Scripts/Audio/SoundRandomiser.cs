@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-
     public AudioClip[] sounds;
+    public float minInterval = 2f;
+    public float maxInterval = 5f;
     private AudioSource source;
-    // Start is called before the first frame update
+
     void Start()
     {
         source = GetComponent<AudioSource>();
+        StartCoroutine(PlayRandomLoop());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator PlayRandomLoop()
     {
-        if (Input.GetKeyDown(KeyCode.S))
-
+        while (true)
         {
             source.clip = sounds[Random.Range(0, sounds.Length)];
             source.Play();
+            yield return new WaitForSeconds(source.clip.length + Random.Range(minInterval, maxInterval));
         }
     }
-
 }
