@@ -231,7 +231,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.3123, y: 182}
+  m_AnchoredPosition: {x: -6.3123, y: 155}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &120686454
@@ -254,10 +254,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Avoid  BIRD SHADOWS TO SAVE YOUR TWIN OR DIE INSTANTLY!\n\nFInd the feathered
-    keys to unlock doors.\n\nFind NEW STANDS TO LEARN ABOUT THE BIRDS AND DIFFERENTIATE
-    THEIR SHADOWS. \n\nOPEN THE BIRD BOOK TO LEARN WHO IS A FRIEND OR FOE!\n\nBuilding
-    and tree shadows keep you hidden from the birds."
+  m_text: 'Bird shadows INSTANTLY kill you, avoid them!
+
+
+    FInd the golden keys
+    to unlock doors.
+
+
+    NEW STANDS HAVE INFORMATION ABOUT the BIRDS. COLLECT THEM
+    AND OPEN THE BIRD BOOK TO LEARN WHO IS A FRIEND OR FOE!
+
+
+    Building and tree
+    shadows keep you hidden from the birds!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1c9e2f696ed239a4eb56218a972e04c5, type: 2}
   m_sharedMaterial: {fileID: 4872037238834540855, guid: 1c9e2f696ed239a4eb56218a972e04c5, type: 2}
@@ -284,8 +293,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -760,7 +769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: -415}
+  m_AnchoredPosition: {x: 10, y: -405}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1229548118
