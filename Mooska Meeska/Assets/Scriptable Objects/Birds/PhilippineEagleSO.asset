@@ -14,15 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   birdName: Philippine Eagle
-  birdDescription: the Philippine Eagle is the National Bird of the Philippines.
-    It is a hostile bird
+  birdDescription: 'Description:
+
+    The Philippine Eagle is the National Bird of
+    the Philippines.'
+  birdFlightPattern: 'Flight Pattern:
+
+    Roam across Mouse city in vast, ominous
+    waves'
   birdStats: 
   birdCall: {fileID: 0}
   birdImage: {fileID: -1621815783, guid: a066cdc335cbde5479c746f4eae4d8b5, type: 3}
   birdSilhouette: {fileID: 717565804, guid: ca5155dc8f7253a4d9c55ce771c8276e, type: 3}
   LockedBirdName: ????????????????
-  LockedBirdDescription: ................. ............. ............
+  LockedBirdDescription: 'Description:
+
+    ................. ............. ............'
   LockedBirdStats: 'Bird Speed: .............'
+  LockedFlightPatten: 'Flight Pattern:
+
+    .... ...... ..... .... .. .... .......
+    .....'
   birdModel: {fileID: 919132149155446097, guid: 8259d888cb4daa04aa5386964ab85d97, type: 3}
   Hostile: 1
   found: 0

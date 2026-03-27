@@ -18,6 +18,7 @@ public class BirdPage : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Name;
     [SerializeField] private TextMeshProUGUI Description;
     [SerializeField] private TextMeshProUGUI Stats;
+    [SerializeField] private TextMeshProUGUI FlightPattern;
     [SerializeField] private Image birdSilhouette;
     [SerializeField] private Image birdImage;
     [SerializeField] private TextMeshProUGUI PageNumber;
@@ -79,6 +80,11 @@ public class BirdPage : MonoBehaviour
         if (Description != null)
         {
             Description.text = birdSO.birdDescription;
+        }
+
+        if (FlightPattern != null)
+        {
+            FlightPattern.text = birdSO.birdFlightPattern;
         }
 
         if (Stats != null)
