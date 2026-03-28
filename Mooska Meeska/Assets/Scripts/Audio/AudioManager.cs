@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour {
     private AudioClip targetClip;
 
     [Range(0f, 1f)]
-    public float volume = 1f; // adjustable in Inspector or via code
+    public float volume = 1f; 
 
     void Start () {
         audioSource = GetComponent<AudioSource>();
@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour {
     }
 
     IEnumerator Fade(AudioClip newClip) {
-        // Fade out from current volume (not forced to 1)
+        
         while(audioSource.volume > 0) {
             audioSource.volume -= Time.deltaTime;
             yield return null;
@@ -31,11 +31,11 @@ public class AudioManager : MonoBehaviour {
         audioSource.clip = newClip;
         audioSource.Play();
         audioSource.volume = 0f;
-        // Fade in up to the target volume, not always 1
+        
         while(audioSource.volume < volume) {
             audioSource.volume += Time.deltaTime;
             yield return null;
         }
-        audioSource.volume = volume; // clamp cleanly
+        audioSource.volume = volume; 
     }
 }
