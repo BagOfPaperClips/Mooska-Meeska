@@ -14,15 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   birdName: Emerald Dove
-  birdDescription: 'Description:
+  birdDescription: The Emerald Dove is the National Bird Of Tamil.
+  birdFlightPattern: '<indent=-25px><color=#000000>-</color><indent=0px>Haunts object-heavy
+    areas</indent>
 
-    The Emerald Dove is the National Bird Of Tamil.'
-  birdFlightPattern: 'Flight Pattern:
-
-    Haunt object heavy areas, rawn to abonded
-    machinery
-
-'
+    <indent=-25px><color=#000000>-</color><indent=0px>Especially
+    drawn to industrial objects and abandoned machinery</indent>'
   birdStats: 'Bird Speed: Medium'
   birdCall: {fileID: 0}
   birdImage: {fileID: 238581843, guid: 3f6f4f670cc4fc8439e953a222c299ba, type: 3}

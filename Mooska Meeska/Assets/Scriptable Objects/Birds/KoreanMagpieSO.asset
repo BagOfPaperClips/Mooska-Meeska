@@ -14,16 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   birdName: Korean Magpie
-  birdDescription: 'Description:
+  birdDescription: The Korean Magpie is the National Bird of South Korea.
+  birdFlightPattern: '<indent=-25px><color=#000000>-</color><indent=0px>Patrols in
+    swirling loops or stright paths </indent>
 
-    The Korean Magpie is the National Bird of South
-    Korea.'
-  birdFlightPattern: 'Flight Pattern:
-
-    Swirls aroudn stolen treasure or patrols
-    straight lines for curious prey
-
-'
+    <indent=-25px><color=#000000>-</color><indent=0px>Swirls
+    to keep watch over precious items</indent>'
   birdStats: 
   birdCall: {fileID: 0}
   birdImage: {fileID: 945699182, guid: 7dbfecb3c37b7a54dbcb5964ba46ce02, type: 3}

@@ -14,13 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   birdName: Hoatzin
-  birdDescription: 'Description:
+  birdDescription: The Hoatzin is the national bird of Guyana
+  birdFlightPattern: '<indent=-25px><color=#000000>-</color><indent=0px>Haunting
+    the air in slow circles </indent>
 
-    The Hoatzin is the national bird of Guyana'
-  birdFlightPattern: 'Flight Pattern:
-
-    Haunting the air in slow circles, heavy
-    with silent intent'
+    <indent=-25px><color=#000000>-</color><indent=0px>Heavy
+    with silent intent</indent>'
   birdStats: 'Bird Speed: Fast'
   birdCall: {fileID: 0}
   birdImage: {fileID: -78444057, guid: 5ddc0095102ba4443afb13c48f6c7222, type: 3}

@@ -14,14 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   birdName: Philippine Eagle
-  birdDescription: 'Description:
+  birdDescription: The Philippine Eagle is the National Bird of the Philippines.
+  birdFlightPattern: '<indent=-25px><color=#000000>-</color><indent=0px>Sweeps across
+    Mouse City in broad waves</indent>
 
-    The Philippine Eagle is the National Bird of
-    the Philippines.'
-  birdFlightPattern: 'Flight Pattern:
-
-    Roam across Mouse city in vast, ominous
-    waves'
+    <indent=-25px><color=#000000>-</color><indent=0px>The
+    largest patrol, covering the entire skyline </indent>'
   birdStats: 
   birdCall: {fileID: 0}
   birdImage: {fileID: -1621815783, guid: a066cdc335cbde5479c746f4eae4d8b5, type: 3}

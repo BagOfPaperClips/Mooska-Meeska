@@ -14,15 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   birdName: Loon
-  birdDescription: 'Description:
+  birdDescription: The Loon is a common bird found in Canada.
+  birdFlightPattern: '<indent=-25px><color=#000000>-</color><indent=0px>Weaves in
+    figure eights</indent>
 
-    The Loon is a common bird found in Canada.'
-  birdFlightPattern: 'Flight Pattern:
-
-    Eight figure weaves above their golden
-    possesions
-
-'
+    <indent=-25px><color=#000000>-</color><indent=0px>Circles
+    above precious golden items like a living guard</indent>'
   birdStats: 
   birdCall: {fileID: 0}
   birdImage: {fileID: -1393901652, guid: a123a109454c4ec4099ea04fcc67fd2f, type: 3}
