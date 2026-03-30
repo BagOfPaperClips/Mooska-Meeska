@@ -34,7 +34,7 @@ MonoBehaviour:
     ..... ...... ..... ..... .... .. .......
     .........'
   birdModel: {fileID: 919132149155446097, guid: 6703dee941c00674292284e7690905e5, type: 3}
-  Hostile: 0
+  Hostile: 1
   found: 0
   birdSpeed: Medium
   diveTimer: 4

@@ -19,6 +19,7 @@ public class BirdPage : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Description;
     [SerializeField] private TextMeshProUGUI Stats;
     [SerializeField] private TextMeshProUGUI FlightPattern;
+    [SerializeField] private GameObject[] Hostility;
     [SerializeField] private Image birdSilhouette;
     [SerializeField] private Image birdImage;
     [SerializeField] private TextMeshProUGUI PageNumber;
@@ -44,6 +45,7 @@ public class BirdPage : MonoBehaviour
             Restored.SetActive(IsUnlocked);
         }
 
+        
     }
 
     public void setLocked(BirdSO so)
@@ -52,6 +54,14 @@ public class BirdPage : MonoBehaviour
 
         Torn.SetActive(!IsUnlocked);
         Restored.SetActive(IsUnlocked);
+
+        if (Hostility != null)
+        {
+            for (int i = 0; i < Hostility.Length; i++)
+            {
+                Hostility[i].SetActive(false);
+            }
+        }
     }
 
     public void BirdSet(BirdSO birdSO)
@@ -95,6 +105,19 @@ public class BirdPage : MonoBehaviour
         if (birdSilhouette != null)
         {
             birdSilhouette.sprite = birdSO.birdSilhouette;
+        }
+
+        if (Hostility != null)
+        {
+            if (birdSO.Hostile)
+            {
+                Hostility[0].SetActive(true);
+            }
+
+            else
+            {
+                Hostility[1].SetActive(true);
+            }
         }
 
         if (birdImage != null)
