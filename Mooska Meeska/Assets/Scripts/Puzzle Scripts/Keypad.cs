@@ -14,6 +14,7 @@ public class Keypad : MonoBehaviour
    public GameObject player;
    private MouseLook mouseLook;
 
+   
    void Awake()
     {
         mouseLook = FindFirstObjectByType<MouseLook>();
@@ -47,6 +48,7 @@ public class Keypad : MonoBehaviour
         {
             texty.text = "Correct";
             StartCoroutine(WaitForSeconds());
+
         }
         else
         {

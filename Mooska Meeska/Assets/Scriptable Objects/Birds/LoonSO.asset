@@ -13,17 +13,18 @@ MonoBehaviour:
   m_Name: LoonSO
   m_EditorClassIdentifier: 
   id: 5
-  birdName: 
+  birdName: Loon
   birdDescription: The Loon is a common bird found in Canada, it is not hostile
   birdStats: 
   birdCall: {fileID: 0}
-  birdImage: {fileID: 0}
+  birdImage: {fileID: -1393901652, guid: a123a109454c4ec4099ea04fcc67fd2f, type: 3}
+  birdSilhouette: {fileID: 24306666, guid: 3526dcf53c3b48e4087a3150372bc896, type: 3}
   LockedBirdName: ??????????
   LockedBirdDescription: ............. .................... ....... ...................
   LockedBirdStats: 'Bird Speed: .............
 
     Dive Timer: .........'
-  birdModel: {fileID: 0}
+  birdModel: {fileID: 919132149155446097, guid: d8af9245f3af1c446a1f2bb14a028340, type: 3}
   Hostile: 0
   found: 0
   birdSpeed: 0

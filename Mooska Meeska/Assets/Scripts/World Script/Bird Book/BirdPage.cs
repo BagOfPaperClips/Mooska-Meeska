@@ -10,41 +10,45 @@ public class BirdPage : MonoBehaviour
     [Header("ID")]
     public int ID;
 
+    [Header("Restored/Torn")]
+    [SerializeField] private GameObject Restored;
+    [SerializeField] private GameObject Torn;
+
     [Header("References")]
     [SerializeField] private TextMeshProUGUI Name;
     [SerializeField] private TextMeshProUGUI Description;
     [SerializeField] private TextMeshProUGUI Stats;
+    [SerializeField] private Image birdSilhouette;
     [SerializeField] private Image birdImage;
 
-    [Header("Locked")]
-    [SerializeField] private Sprite LockedBirdImage;
+    private BirdBook birdBook;
 
     public bool IsUnlocked { get; private set; }
+
+    private void Awake()
+    {
+        if (birdBook == null)
+        {
+            birdBook = FindFirstObjectByType<BirdBook>();
+        }
+
+        if (Torn != null)
+        {
+            Torn.SetActive(!IsUnlocked);
+        }
+
+        if (Restored != null)
+        {
+            Restored.SetActive(IsUnlocked);
+        }
+    }
 
     public void setLocked(BirdSO so)
     {
         IsUnlocked = false;
 
-        if (Name != null)
-        {
-            Name.text = so.LockedBirdName;
-        }
-
-        if (Description != null)
-        {
-            Description.text = so.LockedBirdDescription;
-        }
-
-        if (Stats != null)
-        {
-            Stats.text = so.LockedBirdStats;
-        }
-
-        if (birdImage != null)
-        {
-            
-            birdImage.sprite = LockedBirdImage;
-        }
+        Torn.SetActive(!IsUnlocked);
+        Restored.SetActive(IsUnlocked);
     }
 
     public void BirdSet(BirdSO birdSO)
@@ -56,6 +60,9 @@ public class BirdPage : MonoBehaviour
 
 
         IsUnlocked = true;
+
+        Torn.SetActive(!IsUnlocked);
+        Restored.SetActive(IsUnlocked);
 
         if (Name != null)
         {
@@ -72,9 +79,15 @@ public class BirdPage : MonoBehaviour
             Stats.text = birdSO.birdStats;
         }
 
+        if (birdSilhouette != null)
+        {
+            birdSilhouette.sprite = birdSO.birdSilhouette;
+        }
+
         if (birdImage != null)
         {
             birdImage.sprite = birdSO.birdImage;
         }
+
     }
 }

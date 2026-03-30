@@ -11,14 +11,12 @@ public class BirdBookManager : MonoBehaviour
     [SerializeField] private GameObject Instructions;
     [SerializeField] private GameObject[] PauseMenu;
 
-
     public bool isOpen { private set; get; }
     private SceneLoader sceneLoader;
     private PauseManager pauseManager;
 
     private KeyCode openBookKey;
 
-    
 
     private void Awake()
     {
@@ -57,7 +55,7 @@ public class BirdBookManager : MonoBehaviour
         if (!Instructions.activeSelf)
         {
             openBookKey = KeyBinding.GetKey(GameKeys.OpenBook, KeyCode.Q);
-            if (Input.GetKeyUp(openBookKey))
+            if (Input.GetKeyUp(openBookKey) && !pauseManager.isPaused)
             {
                 ToggleBook();
             }

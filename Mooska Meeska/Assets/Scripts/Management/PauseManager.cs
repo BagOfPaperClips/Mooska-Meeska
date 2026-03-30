@@ -7,7 +7,8 @@ public class PauseManager : MonoBehaviour
 {
     [Header ("Pause Menu")]
     [SerializeField] private GameObject PauseScreen;
-    [SerializeField] private GameObject SettingScreen;
+    [SerializeField] private GameObject HelpScreen;
+    [SerializeField] private GameObject ControlsScreen;
     [SerializeField] private GameObject ExitScreen;
 
     [Header("Sounds(s)")]
@@ -38,9 +39,14 @@ public class PauseManager : MonoBehaviour
             PauseScreen.SetActive(false);
         }
 
-        if (SettingScreen != null)
+        if (HelpScreen != null)
         {
-            SettingScreen.SetActive(false);
+            HelpScreen.SetActive(false);
+        }
+
+        if (ControlsScreen != null)
+        {
+            ControlsScreen.SetActive(false);
         }
 
         if (ExitScreen != null)
@@ -66,9 +72,14 @@ public class PauseManager : MonoBehaviour
 
         if (!show)
         {
-            if (SettingScreen != null)
+            if (HelpScreen != null)
             {
-                SettingScreen.SetActive(false);
+                HelpScreen.SetActive(false);
+            }
+
+            if (ControlsScreen != null)
+            {
+                ControlsScreen.SetActive(false);
             }
 
             if (ExitScreen != null)
@@ -142,7 +153,8 @@ public class PauseManager : MonoBehaviour
             }
         }
         PauseScreen.SetActive(paused);
-        SettingScreen.SetActive(false);
+        HelpScreen.SetActive(false);
+        ControlsScreen.SetActive(false);
         ExitScreen.SetActive(false);
     }
 

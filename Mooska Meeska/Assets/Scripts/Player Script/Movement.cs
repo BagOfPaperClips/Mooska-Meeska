@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Movement : MonoBehaviour
 {
 
     public CharacterController c;
-    public float speed = 7f;
+    public float speed = 9f;
 
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
@@ -17,7 +18,7 @@ public class Movement : MonoBehaviour
 
     Vector3 moveDir;
 
-    public float sprintTime = 3;
+    public float sprintTime = 1;
     public float remainingTime;
     [SerializeField] int seconds;
     public Image stamBar;
@@ -26,37 +27,17 @@ public class Movement : MonoBehaviour
     public bool isReady = false;
     public bool start = true;
 
+    public Animator walk;
+
     private void Start()
     {
         remainingTime = sprintTime;
+        walk.GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
     {
-
-        if ((Input.GetKey(KeyCode.LeftShift)) && remainingTime > 0 && start)
-        {
-            speed = 20f;
-            remainingTime -= Time.deltaTime;
-            isReady = true;
-
-
-        }
-        else
-        {
-            isReady = false;
-            if (remainingTime < 3 && isReady == false)
-            {
-                remainingTime += Time.deltaTime * 0.7f;
-                start = false;
-            }
-            else
-            {
-                start = true;
-            }
-                speed = 7f;
-        }
-        stamBar.fillAmount = remainingTime / sprintTime;
+        speed = 20f;
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -71,9 +52,15 @@ public class Movement : MonoBehaviour
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             c.Move(moveDir * speed * Time.deltaTime);
 
-            
-        }
+            walk.SetBool("isWalking", true);
+            walk.SetBool("isStanding", false);
 
+        }
+        else if(dir.magnitude < 0.1f)
+        {
+            walk.SetBool("isStanding", true);
+            walk.SetBool("isWalking", false);
+        }
     }
 
 }

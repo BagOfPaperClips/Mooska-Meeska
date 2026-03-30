@@ -1,5 +1,9 @@
+using System;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BirdBook : MonoBehaviour
 {
@@ -9,6 +13,7 @@ public class BirdBook : MonoBehaviour
     [SerializeField] private GameObject[] pages;
 
     private BirdPage[] BookPages;
+    private bool unlocked = false;
 
     [Header("Birds")]
     [SerializeField] private BirdSO[] Birds;
@@ -20,12 +25,36 @@ public class BirdBook : MonoBehaviour
     [Header("Bird Spawner")]
     private BirdSpawner birdSpawner;
 
+    [Header("Locked Book")]
+    [SerializeField] private TextMeshProUGUI lockedBookText;
+    [SerializeField] private float changeRatePerSecond = 5f;
+    private Color initialColor;
+    private bool revert = false;
+
+    [Header("Reference")]
+    public GameObject unlockedBook;
+    public GameObject lockedBook;
+
+    public Sprite defaultImage;
+
     private KeyCode PageRightKey;
     private KeyCode PageLeftKey;
 
+
     private void Awake()
     {
-       
+       unlocked = false;
+
+        if (unlockedBook != null)
+        {
+            unlockedBook.SetActive(unlocked);
+        }
+
+        if (lockedBook != null)
+        {
+            lockedBook.SetActive(!unlocked);
+        }
+
        for(int i = 0; i< Birds.Length; i++)
         {
             Birds[i].found = false;
@@ -57,6 +86,11 @@ public class BirdBook : MonoBehaviour
                 BookPages[i] = pages[i].GetComponent<BirdPage>();
             }
         }
+
+        if (lockedBookText != null)
+        {
+            initialColor = lockedBookText.color;
+        }
     }
 
     private void Start()
@@ -77,22 +111,87 @@ public class BirdBook : MonoBehaviour
             return;
         }
 
+        if (unlockedBook != null)
+        {
+            unlockedBook.SetActive(unlocked);
+        }
+
+        if (lockedBook != null)
+        {
+            lockedBook.SetActive(!unlocked);
+        }
+
         PageRightKey = KeyBinding.GetKey(GameKeys.PageRight, KeyCode.L);
         PageLeftKey = KeyBinding.GetKey(GameKeys.PageLeft, KeyCode.K);
 
-        if (Input.GetKeyDown(PageLeftKey))
-        {
-            MoveRight();
-        }
+
 
         if (Input.GetKeyDown(PageRightKey))
         {
-            MoveLeft();
+            if (unlocked)
+            {
+                MoveRight();
+            }
+
+            else
+            {
+                TriggerLockedFlash();
+            }
         }
+
+        if (Input.GetKeyDown(PageLeftKey))
+        {
+            if (unlocked)
+            {
+                MoveLeft();
+            }
+
+            else
+            {
+                TriggerLockedFlash();
+            }
+        }
+
+        if (revert && lockedBookText != null)
+        {
+            float t = changeRatePerSecond * Time.unscaledDeltaTime;
+            lockedBookText.color = Color.Lerp(lockedBookText.color, initialColor, t);
+
+            if (Vector4.Distance(lockedBookText.color, initialColor) < 0.01f)
+            {
+                lockedBookText.color = initialColor;
+                revert = false;
+            }
+        }
+    }
+
+    private void TriggerLockedFlash()
+    {
+        if (lockedBookText == null)
+        {
+            return;
+        }
+
+        lockedBookText.color = Color.red;
+        revert = true;
     }
 
     public void MoveRight()
     {
+        TriggerLockedFlash();
+
+        if (revert && lockedBookText != null)
+        {
+            float t = changeRatePerSecond * Time.unscaledDeltaTime;
+            lockedBookText.color = Color.Lerp(lockedBookText.color, initialColor, t);
+
+            if (Vector4.Distance(lockedBookText.color, initialColor) < 0.01f)
+            {
+                lockedBookText.color = initialColor;
+                revert = false;
+            }
+        }
+
         currentIndex++;
 
         if (currentIndex >= pages.Length)
@@ -105,6 +204,20 @@ public class BirdBook : MonoBehaviour
 
     public void MoveLeft()
     {
+        TriggerLockedFlash();
+
+        if (revert && lockedBookText != null)
+        {
+            float t = changeRatePerSecond * Time.unscaledDeltaTime;
+            lockedBookText.color = Color.Lerp(lockedBookText.color, initialColor, t);
+
+            if (Vector4.Distance(lockedBookText.color, initialColor) < 0.01f)
+            {
+                lockedBookText.color = initialColor;
+                revert = false;
+            }
+        }
+
         currentIndex--;
 
         if (currentIndex < 0)
@@ -117,6 +230,7 @@ public class BirdBook : MonoBehaviour
 
     private void LockAllPages()
     {
+        unlocked = false;
         if (BookPages == null)
         {
             return;
@@ -187,6 +301,7 @@ public class BirdBook : MonoBehaviour
 
     public void UnlockBird(BirdSO so)
     {
+        unlocked = true;
         if (so == null)
         {
             
@@ -198,6 +313,7 @@ public class BirdBook : MonoBehaviour
 
     public void UnlockID(int id)
     {
+        unlocked = true;
         if (BookPages == null)
         {
             return;

@@ -13,6 +13,11 @@ TagManager:
   - MouseTrap
   - Bird Book
   - Keypad
+  - puzzle2
+  - Button1
+  - Button2
+  - Button3
+  - Button4
   layers:
   - Default
   - TransparentFX
@@ -23,13 +28,13 @@ TagManager:
   - Ground
   - Bird
   - Reveal
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Glow
+  - Section1
+  - Section2
+  - Section3
+  - Section4
+  - Player
+  - WorldBorder
   - 
   - 
   - 

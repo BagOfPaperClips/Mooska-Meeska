@@ -24,9 +24,12 @@ public class BirdSO : ScriptableObject
 
    [Header("Image")]
    public Sprite birdImage;
+   public Sprite birdSilhouette;
+
 
     [Header("Locked")]
     public string LockedBirdName;
+    //public Sprite lockedBirdSprite;
     [TextArea] public string LockedBirdDescription;
     [TextArea] public string LockedBirdStats;
 
