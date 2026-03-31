@@ -43,7 +43,8 @@ public class RespawnManager : MonoBehaviour
     {
        
         mouseLook.UnlockCursor();
-        player.gameObject.SetActive(false);
+        player.gameObject.GetComponent<Movement>().enabled = false;
+        player.gameObject.GetComponent<CharacterController>().enabled = false;
 
         
         
@@ -55,7 +56,8 @@ public class RespawnManager : MonoBehaviour
     {
         
 
-        player.gameObject.SetActive(true);
+        player.gameObject.GetComponent<Movement>().enabled = true;
+        player.gameObject.GetComponent<CharacterController>().enabled = true;
     }
 
 
