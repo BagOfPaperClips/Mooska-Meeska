@@ -20,6 +20,7 @@ TagManager:
   - Button4
   - DoorDialog
   - ThroughDoor
+  - Door
   layers:
   - Default
   - TransparentFX

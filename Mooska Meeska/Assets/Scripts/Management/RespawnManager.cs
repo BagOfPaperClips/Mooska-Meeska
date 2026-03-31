@@ -23,10 +23,10 @@ public class RespawnManager : MonoBehaviour
     public TextMeshProUGUI text2;
 
     
-    private Vector3 checkpoint1 = new Vector3(-1158.01f, -1f, -1649.6f);
-    private Vector3 checkpoint2 = new Vector3(-1157.21f, -1f, -1710.38f);
-    private Vector3 checkpoint3 = new Vector3(-1240.59f, -1f, -1809.12f);
-    private Vector3 checkpoint4 = new Vector3(-1111.5f, -1f, -1884.1f);
+    private Vector3 checkpoint1 = new Vector3(-1158.01f, 0.07f, -1649.6f);
+    private Vector3 checkpoint2 = new Vector3(-1157.21f, 0.07f, -1710.38f);
+    private Vector3 checkpoint3 = new Vector3(-1240.59f, 0.07f, -1809.12f);
+    private Vector3 checkpoint4 = new Vector3(-1111.5f, 0.07f, -1884.1f);
 
     
     
@@ -34,31 +34,19 @@ public class RespawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startpos = player.transform.position;
+        startpos = checkpoint1;
         Debug.Log("player position is at " + startpos);
         this.gameObject.SetActive(false);
     }
 
     void OnEnable()
     {
-        // keyCollection.text2.text = "";
-        // keyCollection.text1.text = "";
+       
         mouseLook.UnlockCursor();
-        movement.enabled = false;
+        player.gameObject.SetActive(false);
 
         
-        // if (keyCollection.Odoor3.activeSelf)
-        // {
-        //     startpos = checkpoint3;
-        // }
-        // else if (keyCollection.Odoor2.activeSelf)
-        // {
-        //     startpos = checkpoint2;
-        // }
-        // else if (keyCollection.Odoor1.activeSelf)
-        // {
-        //     startpos = checkpoint1;
-        // }
+        
        
 
     }
@@ -67,7 +55,7 @@ public class RespawnManager : MonoBehaviour
     {
         
 
-        movement.enabled = true;
+        player.gameObject.SetActive(true);
     }
 
 
