@@ -10,7 +10,7 @@ public class Instructions : MonoBehaviour
     string[] pageText = 
     {
         "", "Avoid the birds flying overhead! If they spot you, " + 
-        "you will die! But, use the building and tree shadows to hide, they keep you hidden!", "Interact with the " +
+        "you will die! Use the building and tree shadows to keep yourself hidden!", "Interact with the " +
         "News Stands to learn more about the bird mafia and keep track of them in your bird book!",
         "Collect the golden keys to unlock doors in the area you're trapped in."+ 
         " These are the keys to saving Meeska from her cage!"   
