@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class BirdBookManager : MonoBehaviour
@@ -14,6 +15,7 @@ public class BirdBookManager : MonoBehaviour
     public bool isOpen { private set; get; }
     private SceneLoader sceneLoader;
     private PauseManager pauseManager;
+    private MouseLook mouseLook;
 
     private KeyCode openBookKey;
 
@@ -31,6 +33,7 @@ public class BirdBookManager : MonoBehaviour
         }
 
         pauseManager = FindFirstObjectByType<PauseManager>();
+        mouseLook = FindFirstObjectByType<MouseLook>();
     }
 
     // Start is called before the first frame update
@@ -97,6 +100,16 @@ public class BirdBookManager : MonoBehaviour
 
         isOpen = !isOpen;
         birdBookUI.SetActive(isOpen);
+
+        if (isOpen)
+        {
+            mouseLook.UnlockCursor();
+        }
+
+        else
+        {
+            mouseLook.LockCursor();
+        }
 
         //if (PauseManager.instance != null)
         //{
