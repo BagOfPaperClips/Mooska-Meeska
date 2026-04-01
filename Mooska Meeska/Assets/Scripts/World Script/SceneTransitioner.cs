@@ -39,6 +39,11 @@ public class SceneTransitioner : MonoBehaviour
         SceneManager.LoadScene("Win");
     }
 
+        public void Comic()
+    {
+        SceneManager.LoadScene("Comic");
+    }
+
     public void Quit()
     {
         Application.Quit();
