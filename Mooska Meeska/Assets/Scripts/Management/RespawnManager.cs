@@ -22,6 +22,7 @@ public class RespawnManager : MonoBehaviour
     public TextMeshProUGUI text1;
     public TextMeshProUGUI text2;
 
+    [SerializeField] AudioSource Deathsound;
     
     private Vector3 checkpoint1 = new Vector3(-1158.01f, 0.07f, -1649.6f);
     private Vector3 checkpoint2 = new Vector3(-1157.21f, 0.07f, -1710.38f);
@@ -50,6 +51,10 @@ public class RespawnManager : MonoBehaviour
         player.gameObject.GetComponent<CharacterController>().enabled = false;
 
         
+        if (Deathsound != null)  
+            Deathsound.Play();
+
+        
         
        
 
@@ -58,7 +63,7 @@ public class RespawnManager : MonoBehaviour
     void OnDisable()
     {
         
-
+        
         player.gameObject.GetComponent<Movement>().enabled = true;
         player.gameObject.GetComponent<CharacterController>().enabled = true;
     }
