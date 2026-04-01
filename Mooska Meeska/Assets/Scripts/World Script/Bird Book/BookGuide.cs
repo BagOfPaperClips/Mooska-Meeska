@@ -24,6 +24,6 @@ public class BookGuide : MonoBehaviour
     void Update()
     {
         KeyCode boundKey = KeyBinding.GetKey(Key, defaultKey);
-        TextMesh.text = "Press " + boundKey.ToString() + " For Bird Book";
+        TextMesh.text = boundKey.ToString();
     }
 }
