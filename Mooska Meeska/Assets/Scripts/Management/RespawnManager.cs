@@ -32,9 +32,12 @@ public class RespawnManager : MonoBehaviour
     
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        startpos = checkpoint1;
+        if (startpos == Vector3.zero)
+    {
+        startpos = new Vector3(-1158.01f, 0.07f, -1649.6f);
+    }
         Debug.Log("player position is at " + startpos);
         this.gameObject.SetActive(false);
     }
@@ -82,20 +85,20 @@ public class RespawnManager : MonoBehaviour
     {
         if(changeTo == 0)
         {
-            startpos = checkpoint1;
+            startpos = new Vector3(-1158.01f, 0.07f, -1649.6f);
         }
         else if(changeTo == 1)
         {
-            startpos = checkpoint2;
+            startpos = new Vector3(-1157.21f, 0.07f, -1710.38f);
             Debug.Log("blep");
         }
         else if(changeTo == 2)
         {
-            startpos = checkpoint3;
+            startpos = new Vector3(-1240.59f, 0.07f, -1809.12f);
         }
         else if(changeTo == 3)
         {
-            startpos = checkpoint4;
+            startpos = new Vector3(-1111.5f, 0.07f, -1884.1f);
         }
     }
 
