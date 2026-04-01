@@ -96,6 +96,10 @@ public class PauseManager : MonoBehaviour
         if (paused)
         {
             Time.timeScale = 0f;
+            mouseLook.UnlockCursor();
+            
+
+        
 
             if (audioSource != null)
             {
@@ -106,6 +110,8 @@ public class PauseManager : MonoBehaviour
         else
         {
             Time.timeScale = 1f;
+            mouseLook.LockCursor();
+
 
             if (audioSource != null)
             {
