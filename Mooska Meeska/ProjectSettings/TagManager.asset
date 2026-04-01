@@ -21,6 +21,10 @@ TagManager:
   - DoorDialog
   - ThroughDoor
   - Door
+  - ColourChange1
+  - ColourChange2
+  - ColourChange3
+  - ColourChange4
   layers:
   - Default
   - TransparentFX
