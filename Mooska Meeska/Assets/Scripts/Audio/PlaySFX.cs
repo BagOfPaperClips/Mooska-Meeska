@@ -5,13 +5,20 @@ using UnityEngine;
 public class PlaySFX : MonoBehaviour
 {
     [SerializeField] AudioSource mapAudio;
+    [SerializeField] Button myButton; 
 
-    private void OnTriggerEnter(Collider other)
+    private void Start()
     {
-        if (other.CompareTag("Player"))
-        {
-            mapAudio.Play();
-        }
+        myButton.onClick.AddListener(PlaySound);
+    }
+
+    private void PlaySound()
+    {
+        mapAudio.Play();
+    }
+
+    private void OnDestroy()
+    {
+        myButton.onClick.RemoveListener(PlaySound); 
     }
 }
-
