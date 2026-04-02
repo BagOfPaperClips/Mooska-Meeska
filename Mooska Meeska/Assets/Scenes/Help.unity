@@ -261,12 +261,12 @@ MonoBehaviour:
     to unlock doors.
 
 
-    NEW STANDS HAVE INFORMATION ABOUT the BIRDS. COLLECT THEM
-    AND OPEN THE BIRD BOOK TO LEARN WHO IS A FRIEND OR FOE!
+    NEWS STANDS HAVE INFORMATION ABOUT the BIRDS. COLLECT
+    THEM AND OPEN THE BIRD BOOK TO LEARN WHO IS A FRIEND OR FOE!
 
 
-    Building and tree
-    shadows keep you hidden from the birds!'
+    Building and
+    tree shadows keep you hidden from the birds!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1c9e2f696ed239a4eb56218a972e04c5, type: 2}
   m_sharedMaterial: {fileID: 4872037238834540855, guid: 1c9e2f696ed239a4eb56218a972e04c5, type: 2}
