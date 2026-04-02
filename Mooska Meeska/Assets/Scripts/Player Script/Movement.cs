@@ -31,16 +31,28 @@ public class Movement : MonoBehaviour
 
     public GameObject mouse;
 
+    private BirdBookManager birdBookManager;
+
     private void Start()
     {
         remainingTime = sprintTime;
         walk.GetComponent<Animator>();
+
+        birdBookManager = FindFirstObjectByType<BirdBookManager>();
     }
     // Update is called once per frame
     void Update()
     {
         speed = 20f;
 
+        if (birdBookManager != null && birdBookManager.isOpen)
+        {
+            moveDir = Vector3.zero;
+
+            walk.SetBool("isStanding", true);
+            walk.SetBool("isWalking", false);
+            return;
+        }
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 dir = new Vector3(horizontal, 0f, vertical).normalized;
