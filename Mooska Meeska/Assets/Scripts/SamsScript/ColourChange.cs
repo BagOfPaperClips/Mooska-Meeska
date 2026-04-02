@@ -29,7 +29,7 @@ public class ColourChange : MonoBehaviour
         {
             Debug.Log("AREA2");
             //l.color = new Color(60, 60, 96);
-            floor.color = new Color(0.60f, 0.5706564f, 0.8566037f, 0);
+            floor.color = new Color(0, 0, 1.0f, 0);
         }
         if (collision.CompareTag("ColourChange3"))
         {
