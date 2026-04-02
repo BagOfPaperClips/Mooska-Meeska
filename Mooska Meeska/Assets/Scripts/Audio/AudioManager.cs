@@ -38,4 +38,10 @@ public class AudioManager : MonoBehaviour {
         }
         audioSource.volume = volume; 
     }
+
+
+    public void SetMuted(bool muted) {
+    StopAllCoroutines();
+    audioSource.volume = muted ? 0f : volume;
+    }
 }
