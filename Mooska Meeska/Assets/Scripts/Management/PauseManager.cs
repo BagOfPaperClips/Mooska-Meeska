@@ -54,7 +54,7 @@ public class PauseManager : MonoBehaviour
             ExitScreen.SetActive(false);
         }
 
-        isPaused = true;
+        isPaused = false;
         Time.timeScale = 1.0f;
 
         pauseMechanics = FindFirstObjectByType<PauseMechanics>();
@@ -96,9 +96,14 @@ public class PauseManager : MonoBehaviour
         if (paused)
         {
             Time.timeScale = 0f;
-            mouseLook.UnlockCursor();
-            
 
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            if (mouseLook != null)
+            {
+                mouseLook.UnlockCursor();
+            }
         
 
             if (audioSource != null)
@@ -110,8 +115,15 @@ public class PauseManager : MonoBehaviour
         else
         {
             Time.timeScale = 1f;
-            mouseLook.LockCursor();
 
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+            if (mouseLook != null)
+            {
+                mouseLook.LockCursor();
+            }
 
             if (audioSource != null)
             {

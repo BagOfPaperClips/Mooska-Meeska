@@ -80,7 +80,7 @@ public class BirdBookManager : MonoBehaviour
             {
                 birdBookUI.SetActive(false);
                 isOpen = false;
-                mouseLook.LockCursor();
+                //mouseLook.LockCursor();
                 SetCameraMovement(true);
             }
         }
