@@ -13,6 +13,18 @@ TagManager:
   - MouseTrap
   - Bird Book
   - Keypad
+  - puzzle2
+  - Button1
+  - Button2
+  - Button3
+  - Button4
+  - DoorDialog
+  - ThroughDoor
+  - Door
+  - ColourChange1
+  - ColourChange2
+  - ColourChange3
+  - ColourChange4
   layers:
   - Default
   - TransparentFX
@@ -23,20 +35,20 @@ TagManager:
   - Ground
   - Bird
   - Reveal
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Glow
+  - Section1
+  - Section2
+  - Section3
+  - Section4
+  - Player
+  - Section1G
+  - Section2G
+  - Section3G
+  - Section4G
+  - ColourChange1
+  - ColourChange2
+  - ColourChange3
+  - ColourChange4
   - 
   - 
   - 

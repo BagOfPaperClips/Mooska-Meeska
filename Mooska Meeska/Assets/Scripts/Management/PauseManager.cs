@@ -7,7 +7,8 @@ public class PauseManager : MonoBehaviour
 {
     [Header ("Pause Menu")]
     [SerializeField] private GameObject PauseScreen;
-    [SerializeField] private GameObject SettingScreen;
+    [SerializeField] private GameObject HelpScreen;
+    [SerializeField] private GameObject ControlsScreen;
     [SerializeField] private GameObject ExitScreen;
 
     [Header("Sounds(s)")]
@@ -38,9 +39,14 @@ public class PauseManager : MonoBehaviour
             PauseScreen.SetActive(false);
         }
 
-        if (SettingScreen != null)
+        if (HelpScreen != null)
         {
-            SettingScreen.SetActive(false);
+            HelpScreen.SetActive(false);
+        }
+
+        if (ControlsScreen != null)
+        {
+            ControlsScreen.SetActive(false);
         }
 
         if (ExitScreen != null)
@@ -48,7 +54,7 @@ public class PauseManager : MonoBehaviour
             ExitScreen.SetActive(false);
         }
 
-        isPaused = true;
+        isPaused = false;
         Time.timeScale = 1.0f;
 
         pauseMechanics = FindFirstObjectByType<PauseMechanics>();
@@ -66,9 +72,14 @@ public class PauseManager : MonoBehaviour
 
         if (!show)
         {
-            if (SettingScreen != null)
+            if (HelpScreen != null)
             {
-                SettingScreen.SetActive(false);
+                HelpScreen.SetActive(false);
+            }
+
+            if (ControlsScreen != null)
+            {
+                ControlsScreen.SetActive(false);
             }
 
             if (ExitScreen != null)
@@ -86,6 +97,15 @@ public class PauseManager : MonoBehaviour
         {
             Time.timeScale = 0f;
 
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            if (mouseLook != null)
+            {
+                mouseLook.UnlockCursor();
+            }
+        
+
             if (audioSource != null)
             {
                 audioSource.Pause();
@@ -95,6 +115,15 @@ public class PauseManager : MonoBehaviour
         else
         {
             Time.timeScale = 1f;
+
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+            if (mouseLook != null)
+            {
+                mouseLook.LockCursor();
+            }
 
             if (audioSource != null)
             {
@@ -142,7 +171,8 @@ public class PauseManager : MonoBehaviour
             }
         }
         PauseScreen.SetActive(paused);
-        SettingScreen.SetActive(false);
+        HelpScreen.SetActive(false);
+        ControlsScreen.SetActive(false);
         ExitScreen.SetActive(false);
     }
 

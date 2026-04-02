@@ -14,19 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   birdName: Emerald Dove
-  birdDescription: The Emerald Dove is the National Bird Of Tamil. It is not hostile
-  birdStats: 'Bird Speed: Medium
+  birdDescription: The Emerald Dove is the National Bird Of Tamil.
+  birdFlightPattern: '<indent=-25px><color=#000000>-</color><indent=0px>Haunts object-heavy
+    areas</indent>
 
-    Dive Timer: 4'
+    <indent=-25px><color=#000000>-</color><indent=0px>Especially
+    drawn to industrial objects and abandoned machinery</indent>'
+  birdStats: 'Bird Speed: Medium'
   birdCall: {fileID: 0}
-  birdImage: {fileID: 0}
+  birdImage: {fileID: 238581843, guid: 3f6f4f670cc4fc8439e953a222c299ba, type: 3}
+  birdSilhouette: {fileID: 1780854867, guid: a9c3ec9a55ae8ab43a86111abe0ee5b6, type: 3}
   LockedBirdName: ??????????
-  LockedBirdDescription: ..........................................
-  LockedBirdStats: 'Bird Speed: .............
+  LockedBirdDescription: 'Description:
 
-    Dive Timer: .........'
-  birdModel: {fileID: 0}
-  Hostile: 0
+    ..........................................'
+  LockedBirdStats: 'Bird Speed: .............'
+  LockedFlightPatten: 'Flight Pattern:
+
+    ..... ...... ..... ..... .... .. .......
+    .........'
+  birdModel: {fileID: 919132149155446097, guid: 6703dee941c00674292284e7690905e5, type: 3}
+  Hostile: 1
   found: 0
   birdSpeed: Medium
   diveTimer: 4

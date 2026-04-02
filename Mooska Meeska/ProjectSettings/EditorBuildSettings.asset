@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: 6dbef4936c01a6e4e8850c3776df8c82
+  - enabled: 1
+    path: Assets/Scenes/Comic.unity
+    guid: 70ba64d982e603b4dac9d0177f77a5c4
   m_configObjects: {}

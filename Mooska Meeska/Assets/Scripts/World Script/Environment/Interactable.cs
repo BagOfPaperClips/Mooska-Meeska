@@ -26,11 +26,19 @@ public class Interactables : MonoBehaviour
     public bool hold = false;
     private MouseLook mouseLook;
     private bool dead = false;
+    public Material Onmat;
+    public Material OffMat;
+    public Renderer rendy;
+    private bool alreadyCollected;
 
     [Header("Puzzles")]
     public GameObject Keypad;
 
     private bool canInteract;
+
+    private bool cageUnlocked = false;
+
+    public KeyCollection keyCollection;
 
     void Awake()
     {
@@ -44,17 +52,26 @@ public class Interactables : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Player")) return;
 
-        if (this.gameObject.tag != "MouseTrap")
+        
+        
+        
+        
+        // if (this.alert != null)
+        // {
+        canInteract = true;
+        
+        if(alert!= null)
         {
-            canInteract = true;
             alert.SetActive(true);
         }
-        else
-        {
-            mouseLook.enabled = false;
-            mouseLook.UnlockCursor();
-            SceneManager.LoadScene("Death");
-        }
+        
+        // }
+        // else
+        // {
+        //     mouseLook.enabled = false;
+        //     mouseLook.UnlockCursor();
+        //     SceneManager.LoadScene("Death");
+        // }
     }
 
     void OnTriggerExit(Collider collision)
@@ -62,7 +79,10 @@ public class Interactables : MonoBehaviour
         if (!collision.gameObject.CompareTag("Player")) return;
 
         canInteract = false;
-        alert.SetActive(false);
+        if(alert!= null)
+        {
+            alert.SetActive(false);
+        }
     }
 
     void Update()
@@ -87,7 +107,12 @@ public class Interactables : MonoBehaviour
                     OpenCage();
                     break;
                 case "Meeska":
+
+                    
                     FreeMeeska();
+                    
+                    
+                    
                     break;
                 case "Keypad":
                     OpenKeypad();
@@ -99,10 +124,19 @@ public class Interactables : MonoBehaviour
     {
         if (BirdBook.instance != null)
             BirdBook.instance.UnlockBird(birdSO);
+        if(alreadyCollected == true)
+        {
+            text.text = "You have already collected this page";
+        }
+        else
+        {
+            text.text = "You have collected a page\nfor the Bird Book";
+        }
 
-        text.text = "You have collected a page\nfor the Bird Book";
+        alreadyCollected = true;
+
         text.gameObject.SetActive(true);
-        StartCoroutine(WaitForSeconds());
+        StartCoroutine(TurnOffNews());
     }
 
     void NoKey()
@@ -122,9 +156,13 @@ public class Interactables : MonoBehaviour
 
     void OpenCage()
     {
-        if (inventoryManager.redKey != 0)
+        
+        
+        if (keyCollection)
         {
             text.text = "You Open the Cage";
+            cageUnlocked = true;
+
         }
         else
         {
@@ -132,12 +170,14 @@ public class Interactables : MonoBehaviour
             hold = true;
         }
 
+
         text.gameObject.SetActive(true);
         StartCoroutine(WaitForSeconds());
     }
 
     void FreeMeeska()
     {
+        Debug.Log("wait for it");
         mouseLook.enabled = false;
         mouseLook.UnlockCursor();
         SceneManager.LoadScene("Win");
@@ -150,13 +190,27 @@ public class Interactables : MonoBehaviour
 
     IEnumerator WaitForSeconds()
     {
-        if (!hold)
-            Destroy(gameObject);
-
         yield return new WaitForSeconds(3);
-        text.gameObject.SetActive(false);
-        hold = false;
+
+    text.gameObject.SetActive(false);
+
+    if (!hold)
+        Destroy(gameObject);
+
+    hold = false;
     }
+
+
+    IEnumerator TurnOffNews()
+    {
+        rendy.material = OffMat;
+        
+        yield return new WaitForSeconds(3);
+
+        text.gameObject.SetActive(false);
+
+    }
+
 }
 
 

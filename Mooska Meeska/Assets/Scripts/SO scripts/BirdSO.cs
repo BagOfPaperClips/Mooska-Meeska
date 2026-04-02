@@ -16,6 +16,7 @@ public class BirdSO : ScriptableObject
    [Header("Bird Log")]
    public string birdName;
    [TextArea]public string birdDescription;
+   [TextArea] public string birdFlightPattern;
    [TextArea] public string birdStats;
 
 
@@ -24,11 +25,15 @@ public class BirdSO : ScriptableObject
 
    [Header("Image")]
    public Sprite birdImage;
+   public Sprite birdSilhouette;
+
 
     [Header("Locked")]
     public string LockedBirdName;
+    //public Sprite lockedBirdSprite;
     [TextArea] public string LockedBirdDescription;
     [TextArea] public string LockedBirdStats;
+    [TextArea] public string LockedFlightPatten;
 
     [Header("Reference")]
    public GameObject birdModel;

@@ -10,40 +10,57 @@ public class BirdPage : MonoBehaviour
     [Header("ID")]
     public int ID;
 
+    [Header("Restored/Torn")]
+    [SerializeField] private GameObject Restored;
+    [SerializeField] private GameObject Torn;
+
     [Header("References")]
     [SerializeField] private TextMeshProUGUI Name;
     [SerializeField] private TextMeshProUGUI Description;
     [SerializeField] private TextMeshProUGUI Stats;
+    [SerializeField] private TextMeshProUGUI FlightPattern;
+    [SerializeField] private GameObject[] Hostility;
+    [SerializeField] private Image birdSilhouette;
     [SerializeField] private Image birdImage;
+    [SerializeField] private TextMeshProUGUI PageNumber;
 
-    [Header("Locked")]
-    [SerializeField] private Sprite LockedBirdImage;
+    private BirdBook birdBook;
 
     public bool IsUnlocked { get; private set; }
+
+    private void Awake()
+    {
+        if (birdBook == null)
+        {
+            birdBook = FindFirstObjectByType<BirdBook>();
+        }
+
+        if (Torn != null)
+        {
+            Torn.SetActive(!IsUnlocked);
+        }
+
+        if (Restored != null)
+        {
+            Restored.SetActive(IsUnlocked);
+        }
+
+        
+    }
 
     public void setLocked(BirdSO so)
     {
         IsUnlocked = false;
 
-        if (Name != null)
-        {
-            Name.text = so.LockedBirdName;
-        }
+        Torn.SetActive(!IsUnlocked);
+        Restored.SetActive(IsUnlocked);
 
-        if (Description != null)
+        if (Hostility != null)
         {
-            Description.text = so.LockedBirdDescription;
-        }
-
-        if (Stats != null)
-        {
-            Stats.text = so.LockedBirdStats;
-        }
-
-        if (birdImage != null)
-        {
-            
-            birdImage.sprite = LockedBirdImage;
+            for (int i = 0; i < Hostility.Length; i++)
+            {
+                Hostility[i].SetActive(false);
+            }
         }
     }
 
@@ -57,6 +74,14 @@ public class BirdPage : MonoBehaviour
 
         IsUnlocked = true;
 
+        Torn.SetActive(!IsUnlocked);
+        Restored.SetActive(IsUnlocked);
+
+        if (PageNumber != null)
+        {
+            PageNumber.text = ID.ToString();
+        }
+
         if (Name != null)
         {
             Name.text = birdSO.birdName;
@@ -67,14 +92,38 @@ public class BirdPage : MonoBehaviour
             Description.text = birdSO.birdDescription;
         }
 
+        if (FlightPattern != null)
+        {
+            FlightPattern.text = birdSO.birdFlightPattern;
+        }
+
         if (Stats != null)
         {
             Stats.text = birdSO.birdStats;
+        }
+
+        if (birdSilhouette != null)
+        {
+            birdSilhouette.sprite = birdSO.birdSilhouette;
+        }
+
+        if (Hostility != null)
+        {
+            if (birdSO.Hostile)
+            {
+                Hostility[0].SetActive(true);
+            }
+
+            else
+            {
+                Hostility[1].SetActive(true);
+            }
         }
 
         if (birdImage != null)
         {
             birdImage.sprite = birdSO.birdImage;
         }
+
     }
 }

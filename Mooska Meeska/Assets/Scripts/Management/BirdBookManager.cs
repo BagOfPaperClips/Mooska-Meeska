@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using Cinemachine;
+using Unity.VisualScripting;
 
 public class BirdBookManager : MonoBehaviour
 {
@@ -11,14 +14,18 @@ public class BirdBookManager : MonoBehaviour
     [SerializeField] private GameObject Instructions;
     [SerializeField] private GameObject[] PauseMenu;
 
+    [Header("Camera")]
+    [SerializeField] private CinemachineFreeLook freeLookCamera;
 
     public bool isOpen { private set; get; }
     private SceneLoader sceneLoader;
     private PauseManager pauseManager;
+    private MouseLook mouseLook;
 
     private KeyCode openBookKey;
 
-    
+    private float defaultXSpeed;
+    private float defaultYSpeed;
 
     private void Awake()
     {
@@ -32,7 +39,14 @@ public class BirdBookManager : MonoBehaviour
             }
         }
 
+        if (freeLookCamera != null)
+        {
+            defaultXSpeed = freeLookCamera.m_XAxis.m_MaxSpeed;
+            defaultYSpeed = freeLookCamera.m_YAxis.m_MaxSpeed;
+        }
+
         pauseManager = FindFirstObjectByType<PauseManager>();
+        mouseLook = FindFirstObjectByType<MouseLook>();
     }
 
     // Start is called before the first frame update
@@ -57,7 +71,7 @@ public class BirdBookManager : MonoBehaviour
         if (!Instructions.activeSelf)
         {
             openBookKey = KeyBinding.GetKey(GameKeys.OpenBook, KeyCode.Q);
-            if (Input.GetKeyUp(openBookKey))
+            if (Input.GetKeyUp(openBookKey) && !pauseManager.isPaused)
             {
                 ToggleBook();
             }
@@ -66,6 +80,8 @@ public class BirdBookManager : MonoBehaviour
             {
                 birdBookUI.SetActive(false);
                 isOpen = false;
+                //mouseLook.LockCursor();
+                SetCameraMovement(true);
             }
         }
 
@@ -96,9 +112,22 @@ public class BirdBookManager : MonoBehaviour
         {
             return;
         }
+        
 
         isOpen = !isOpen;
         birdBookUI.SetActive(isOpen);
+
+        if (isOpen)
+        {
+            mouseLook.UnlockCursor();
+            SetCameraMovement(false);
+        }
+
+        else
+        {
+            mouseLook.LockCursor();
+            SetCameraMovement(true);
+        }
 
         //if (PauseManager.instance != null)
         //{
@@ -125,5 +154,25 @@ public class BirdBookManager : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void SetCameraMovement(bool canMove)
+    {
+        if (freeLookCamera == null)
+        {
+            return;
+        }
+
+        if (canMove)
+        {
+            freeLookCamera.m_XAxis.m_MaxSpeed = defaultXSpeed;
+            freeLookCamera.m_YAxis.m_MaxSpeed = defaultYSpeed;
+        }
+
+        else
+        {
+            freeLookCamera.m_XAxis.m_MaxSpeed = 0f;
+            freeLookCamera.m_YAxis.m_MaxSpeed = 0f;
+        }
     }
 }

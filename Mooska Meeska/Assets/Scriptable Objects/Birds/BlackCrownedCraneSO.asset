@@ -14,20 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   birdName: Black Crowned Crane
-  birdDescription: The Black Crowned Crane is the National Bird of Nigeria. It is
-    hostile
-  birdStats: 'Bird Speed: Slow
+  birdDescription: The Black Crowned Crane is the National Bird of Nigeria.
+  birdFlightPattern: '<indent=-25px><color=#000000>-</color><indent=0px>Patrols in
+    oval shaped routes</indent>
 
-    Dive Timer: 3'
+    <indent=-25px><color=#000000>-</color><indent=0px>Keeps
+    a steady loop, repeating the same watch path</indent>'
+  birdStats: 'Bird Speed: Slow'
   birdCall: {fileID: 0}
-  birdImage: {fileID: 0}
+  birdImage: {fileID: 225843823, guid: 131c2afea505af3479a6aa792801ffcf, type: 3}
+  birdSilhouette: {fileID: -236062926, guid: 215c798f0fec0e2468e5944334736bdd, type: 3}
   LockedBirdName: ??????????
-  LockedBirdDescription: ..........................................
-  LockedBirdStats: 'Bird Speed: .............
+  LockedBirdDescription: 'Description:
 
-    Dive Timer: .........'
-  birdModel: {fileID: 0}
+    ............ ........... ...................'
+  LockedBirdStats: 'Bird Speed: .............'
+  LockedFlightPatten: 'Flight Pattern:
+
+    .... .. ..... ..... ...... ... ......'
+  birdModel: {fileID: 919132149155446097, guid: 60838fee029c5fd4f847fcf8bde32cdb, type: 3}
   Hostile: 1
-  found: 0
+  found: 1
   birdSpeed: slow
   diveTimer: 3
